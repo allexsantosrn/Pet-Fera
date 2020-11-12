@@ -33,7 +33,7 @@ A tarefa central da Parte I do Projeto de Programação é desenvolver um progra
 	9 - Alterar Funcionário;
 	10 - Consultar Funcionário;
 
-##Compilação
+## Compilação
 
 Executar o seguinte comando no terminal: g++ -std=c++11 -Wall main.cpp -o prog
 Em seguida: ./prog
