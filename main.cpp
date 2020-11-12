@@ -1,12 +1,12 @@
 #include <iostream>
 
-#include "painel.hpp"
+//#include "painel.hpp"
 
 using namespace std;
 
 int main () {
 
-	Painel painel;
+	//Painel painel;
 
 	int selecao;
 
@@ -57,7 +57,7 @@ int main () {
 				break;
 
 			case 7:
-				painel.CadastrarFuncionario();
+				//painel.CadastrarFuncionario();
 				break;
 
 			case 8:
