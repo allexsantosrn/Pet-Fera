@@ -1,87 +1,82 @@
 #include <iostream>
 
-#include "painel.h"
-
-using namespace std;
+#include "menu.hpp"
 
 int main () {
 
-	Painel painel;
+	Menu menu;
 
 	int selecao;
 
-
 	while (true) {
 
-
-		cout << endl << "---------Pet Fera---------" << endl;
-		cout << "(1) Cadastrar Animal" << endl;
-		cout << "(2) Remover Animal" << endl;
-		cout << "(3) Alterar Animal" << endl;
-		cout << "(4) Consultar Animal" << endl;
-		cout << "(5) Consultar Classe de Animais" << endl;
-		cout << "(6) Consultar Animais de Funcionario" << endl;
-		cout << "(7) Cadastrar Funcionário" << endl;
-		cout << "(8) Remover Funcionário" << endl;
-		cout << "(9) Alterar Funcionário" << endl;
-		cout << "(10) Consultar Funcionário" << endl;
-		cout << "(0) Sair" << endl;
-		cout << "Selecionar Opção: ";
-		cin >> selecao;	
-
+		std::cout << "---------Pet Fera---------" << std::endl;
+		std::cout << "Escolha uma das opções abaixo:" << std::endl;
+		std::cout << "(1) Cadastrar Animal" << std::endl;
+		std::cout << "(2) Remover Animal" << std::endl;
+		std::cout << "(3) Alterar Animal" << std::endl;
+		std::cout << "(4) Consultar Animal" << std::endl;
+		std::cout << "(5) Consultar Classe de Animais" << std::endl;
+		std::cout << "(6) Consultar Animais de Funcionario" << std::endl;
+		std::cout << "(7) Cadastrar Funcionário" << std::endl;
+		std::cout << "(8) Remover Funcionário" << std::endl;
+		std::cout << "(9) Alterar Funcionário" << std::endl;
+		std::cout << "(10) Consultar Funcionário" << std::endl;
+		std::cout << "(0) Sair" << std::endl;
+		std::cout << "Selecionar Opção: ";
+		std::cin >> selecao;	
 
 		switch(selecao) {
 
 			case 1:
-				cout << "teste1" << endl;
+				std::cout << "teste1" << std::endl;
 				break;
 
 			case 2:
-				cout << "teste2" << endl;
+				std::cout << "teste2" << std::endl;
 				break;
 
 			case 3:
-				cout << "teste3" << endl;
+				std::cout << "teste3" << std::endl;
 				break;
 
 			case 4:
-				cout << "teste4" << endl;
+				std::cout << "teste4" << std::endl;
 				break;
 
 			case 5:
-				cout << "teste5" << endl;
+				std::cout << "teste5" << std::endl;
 				break;
 
 			case 6:
-				cout << "teste6" << endl;
+				std::cout << "teste6" << std::endl;
 				break;
 
 			case 7:
-				painel.CadastrarFuncionario();
+				menu.cadastrarFuncionario();
 				break;
 
 			case 8:
-				cout << "teste8" << endl;
+				std::cout << "teste8" << std::endl;
 				break;
 
 			case 9:
-				cout << "teste9" << endl;
+				std::cout << "teste9" << std::endl;
 				break;
 
 			case 10: 
-				cout << "teste10" << endl;
+				std::cout << "teste10" << std::endl;
 				break;
 
 			case 0:
-				cout << "Programa encerrado." << endl;
+				std::cout << "Programa encerrado. Volte sempre." << std::endl;
 				return 0;
 
 			default:
-				cout << "Valor inválido." << endl;
+				std::cout << "Opção inválida. Selecione uma opção entre 1 a 10." << std::endl;
 				break;
 
 		}
-
 
 }
 
