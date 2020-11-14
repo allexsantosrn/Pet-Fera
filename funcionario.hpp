@@ -2,14 +2,18 @@
 #define _FUNCIONARIO_
 
 #include <string>
+#include <ostream>
+#include <istream>
 
-class Funcionario {
+	class Funcionario {
 		
 		protected:		
+
 			int id;					 
 			std::string nome;			
 			std::string funcao;			
-			std::string cpf;				
+			std::string cpf;
+						
 			 
 		public:
 
@@ -35,6 +39,10 @@ class Funcionario {
 
 			void setCpf(std::string _cpf);
 
+			friend std::ostream& operator<< (std::ostream &o, Funcionario f);
+
+			friend std::istream& operator>> (std::istream &i, Funcionario &f);
+			
 	};
 
 #endif
