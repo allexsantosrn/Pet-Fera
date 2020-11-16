@@ -18,7 +18,7 @@
 			
 			Tratador();
 
-			Tratador(int _id, std::string _nome, std::string _funcao, std::string _cpf, std::string _nivelseguranca);
+			Tratador(int _id, std::string _nome, std::string _cargo, std::string _cpf, std::string _nivelseguranca);
 
 			~Tratador();
 

@@ -2,8 +2,8 @@
 
 Veterinario::Veterinario() {}
 
-Veterinario::Veterinario(int _id, std::string _nome, std::string _funcao, std::string _cpf, std::string _crmv):
-					Funcionario(_id,_nome,_funcao,_cpf),
+Veterinario::Veterinario(int _id, std::string _nome, std::string _cargo, std::string _cpf, std::string _crmv):
+					Funcionario(_id,_nome,_cargo,_cpf),
 					crmv(_crmv)   {}
 
 Veterinario::~Veterinario() {}
@@ -26,14 +26,14 @@ operator<< (std::ostream &o, Veterinario v){
 	o << "Id: " << v.getId() << std::endl;
 	o << "Nome: " << v.getNome() << std::endl;
 	o << "CPF: " << v.getCpf() << std::endl;
-	o << "Função: " << v.getFuncao() << std::endl;
-	o << "Nível de Segurança: " << v.getCrmv();
+	o << "Cargo: " << v.getCargo() << std::endl;
+	o << "CRMV " << v.getCrmv();
 	return o;
 }
 
 std::istream&
 operator>> (std::istream &i, Veterinario &v){
-	i >> v.id >> v.nome >> v.cpf >> v.funcao >> v.crmv;
+	i >> v.id >> v.nome >> v.cpf >> v.cargo >> v.crmv;
 	return i;
 }
 

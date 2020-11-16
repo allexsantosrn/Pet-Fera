@@ -2,8 +2,10 @@
 
 Funcionario::Funcionario() {}
 
-Funcionario::Funcionario(int _id, std::string _nome, std::string _funcao, std::string _cpf):
-						 id(_id),nome(_nome),funcao(_funcao),cpf(_cpf) {}
+Funcionario::Funcionario(int _id, std::string _nome, std::string _cargo, std::string _cpf):
+						 id(_id),nome(_nome),cargo(_cargo),cpf(_cpf) {}
+
+
 
 Funcionario::~Funcionario() {}
 
@@ -21,9 +23,9 @@ Funcionario::getNome() {
 	}
 
 std::string 
-Funcionario::getFuncao() {
+Funcionario::getCargo() {
 
-		return funcao;
+		return cargo;
 	}
 
 std::string 
@@ -47,9 +49,9 @@ Funcionario::setNome(std::string _nome) {
 
 	
 void 
-Funcionario::setFuncao(std::string _funcao) {
+Funcionario::setCargo(std::string _cargo) {
 
-		funcao = _funcao;
+		cargo = _cargo;
 	}
 
 		
@@ -64,13 +66,13 @@ operator<< (std::ostream &o, Funcionario f){
 	o << "Id: " << f.getId() << std::endl;
 	o << "Nome: " << f.getNome() << std::endl;
 	o << "CPF: " << f.getCpf() << std::endl;
-	o << "Função: " << f.getFuncao();
+	o << "Cargo: " << f.getCargo();
 	return o;
 }
 
 std::istream&
 operator>> (std::istream &i, Funcionario &f){
-	i >> f.id >> f.nome >> f.cpf >> f.funcao;
+	i >> f.id >> f.nome >> f.cpf >> f.cargo;
 	return i;
-}
+} 
 

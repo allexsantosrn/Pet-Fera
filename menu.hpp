@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include "funcionario.hpp"
+#include "veterinario.hpp"
+#include "tratador.hpp"
 
 class Menu {
 

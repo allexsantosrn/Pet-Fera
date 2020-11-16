@@ -4,6 +4,7 @@
 #include <string>
 #include <ostream>
 #include <istream>
+#include <iostream>
 
 	class Funcionario {
 		
@@ -11,7 +12,7 @@
 
 			int id;					 
 			std::string nome;			
-			std::string funcao;			
+			std::string cargo;			
 			std::string cpf;
 						
 			 
@@ -19,7 +20,7 @@
 
 			Funcionario();
 				
-			Funcionario(int _id, std::string _nome, std::string _funcao, std::string _cpf);
+			Funcionario(int _id, std::string _nome, std::string _cargo, std::string _cpf);
 
 			~Funcionario();
 
@@ -27,7 +28,7 @@
 
 			std::string getNome();
 
-			std::string getFuncao();
+			std::string getCargo();
 
 			std::string getCpf();
 
@@ -35,7 +36,7 @@
 
 			void setNome(std::string _nome);
 
-			void setFuncao(std::string _funcao);
+			void setCargo(std::string _cargo);
 
 			void setCpf(std::string _cpf);
 
