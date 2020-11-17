@@ -1,6 +1,6 @@
 # Projeto Final de Linguagem de Programação I
 
-### Projeto Loja Pet Fera
+### Projeto Pet Fera
 
 **Componentes:**
 
@@ -27,7 +27,7 @@ A tarefa central da Parte I do Projeto de Programação é desenvolver um progra
 	3 - Alterar animal;
 	4 - Consultar animal;
 	5 - Consultar classe de animais;
-    6 - Consultar animais sob responsabilidade;
+    	6 - Consultar animais sob responsabilidade de funcionário;
 	7 - Cadastrar Funcionário;
 	8 - Remover Funcionário;
 	9 - Alterar Funcionário;
@@ -35,6 +35,7 @@ A tarefa central da Parte I do Projeto de Programação é desenvolver um progra
 
 ## Compilação
 
-Executar o seguinte comando no terminal: g++ -std=c++11 -Wall main.cpp -o prog
-Em seguida: ./prog
+Executar o seguinte comando no terminal: g++ -Wall main.cpp menu.cpp funcionario.cpp veterinario.cpp tratador.cpp -o prog
+
+Em seguida para compilar: ./prog
 

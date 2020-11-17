@@ -9,7 +9,7 @@
 
 	class Tratador : public Funcionario {
 
-		private:
+		protected:
 
 			std::string nivelseguranca;
 

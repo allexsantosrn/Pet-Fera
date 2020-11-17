@@ -9,7 +9,7 @@
 
 	class Veterinario : public Funcionario {
 
-		private:
+		protected:
 
 			std::string crmv;
 

@@ -4,11 +4,7 @@ void
 Menu::cadastrarFuncionario() {	
 
 	int id;
-	std::string cargo;
-	std::string nome;
-	std::string cpf;
-	std::string crmv;
-	std::string nivel;
+	std::string cargo, nome, cpf, crmv, nivel;
 
 
 	std::cout << "Informe o número de identificação do funcionário(ID): " << std::endl;
