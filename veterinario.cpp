@@ -27,7 +27,7 @@ operator<< (std::ostream &o, Veterinario v){
 	o << "Nome: " << v.getNome() << std::endl;
 	o << "CPF: " << v.getCpf() << std::endl;
 	o << "Cargo: " << v.getCargo() << std::endl;
-	o << "CRMV " << v.getCrmv();
+	o << "CRMV: " << v.getCrmv();
 	return o;
 }
 

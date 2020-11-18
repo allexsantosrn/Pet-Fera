@@ -2,9 +2,15 @@
 
 Funcionario::Funcionario() {}
 
-Funcionario::Funcionario(int _id, std::string _nome, std::string _cargo, std::string _cpf):
-						 id(_id),nome(_nome),cargo(_cargo),cpf(_cpf) {}
+Funcionario::Funcionario(int _id, std::string _nome, std::string _cargo, std::string _cpf) {
 
+
+	setId(_id);
+	setNome(_nome);
+	setCargo(_cargo);
+	setCpf(_cpf);
+
+	}
 
 
 Funcionario::~Funcionario() {}
