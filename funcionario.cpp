@@ -82,3 +82,13 @@ operator>> (std::istream &i, Funcionario &f){
 	return i;
 } 
 
+/*bool Funcionario::operator==(const Funcionario &f) {
+		if(id == f.id) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}*/
+
+

@@ -43,6 +43,8 @@
 			friend std::ostream& operator<< (std::ostream &o, Funcionario f);
 
 			friend std::istream& operator>> (std::istream &i, Funcionario &f);
+
+			//bool operator==(const Funcionario &f);
 			
 	};
 

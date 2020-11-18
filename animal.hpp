@@ -9,7 +9,6 @@
 #include <istream>
 #include <iostream>
 
-<<<<<<< HEAD
 
 	class Animal {
 		
