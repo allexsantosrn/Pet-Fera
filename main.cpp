@@ -10,7 +10,7 @@ int main () {
 
 	while (true) {
 
-		std::cout << "---------Pet Fera---------" << std::endl;
+		std::cout << "---------Loja Pet Fera---------" << std::endl;
 		std::cout << "Escolha uma das opções abaixo:" << std::endl;
 		std::cout << "(1) Cadastrar Animal" << std::endl;
 		std::cout << "(2) Remover Animal" << std::endl;
@@ -57,7 +57,8 @@ int main () {
 				break;
 
 			case 8:
-				std::cout << "teste8" << std::endl;
+				menu.removerFuncionario();
+				
 				break;
 
 			case 9:
@@ -65,7 +66,7 @@ int main () {
 				break;
 
 			case 10: 
-				std::cout << "teste10" << std::endl;
+				menu.consultarFuncionario();
 				break;
 
 			case 0:

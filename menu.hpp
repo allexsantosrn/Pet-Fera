@@ -22,6 +22,8 @@ private:
 public:
 
 	void cadastrarFuncionario();
+	void removerFuncionario();
+	void consultarFuncionario();
 	
 };
 
