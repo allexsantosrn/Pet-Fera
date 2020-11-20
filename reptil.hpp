@@ -31,6 +31,9 @@
 		friend std::ostream& operator << (std::ostream &o,Reptil r);
 
 		friend std::istream& operator >> (std::istream &i,Reptil &r);
+	};
+
+	#endif
 
 
 
