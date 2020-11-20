@@ -22,9 +22,9 @@
 
 			~Tratador();
 
-			void setNivelseguranca(std::string _nivelseguranca);
+			void setnivelSeguranca(std::string _nivelseguranca);
 
-			std::string getNivelseguranca();
+			std::string getnivelSeguranca();
 			
 			friend std::ostream& operator<< (std::ostream &o, Tratador t);
 

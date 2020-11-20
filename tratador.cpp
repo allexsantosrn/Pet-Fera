@@ -10,13 +10,13 @@ Tratador::~Tratador() {}
 
 
 std::string
-Tratador::getNivelseguranca () {
+Tratador::getnivelSeguranca () {
 
 		return nivelseguranca;
 	}
 
 void
-Tratador::setNivelseguranca(std::string _nivelseguranca) {
+Tratador::setnivelSeguranca(std::string _nivelseguranca) {
 
 		nivelseguranca = _nivelseguranca;
 	}	
@@ -27,7 +27,7 @@ operator<< (std::ostream &o, Tratador t){
 	o << "Nome: " << t.getNome() << std::endl;
 	o << "CPF: " << t.getCpf() << std::endl;
 	o << "Cargo: " << t.getCargo() << std::endl;
-	o << "Nível de Segurança: " <<t.getNivelseguranca();
+	o << "Nível de Segurança: " <<t.getnivelSeguranca();
 	return o;
 }
 

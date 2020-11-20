@@ -18,16 +18,15 @@ Menu::cadastrarFuncionario() {
 
 	std::cout << "Informe o cpf do funcionário: " << std::endl;
 	std::cin >> cpf;
-
+	
 	std::cout << "Informe o cargo do funcionário(Veterinário ou Tratador): " << std::endl;
 	std::cin >> cargo;
-
 
 
 	if (cargo == "veterinário" || cargo == "Veterinário") {
 
 		std::cout << "Informe o CRMV do Veterinario: " << std::endl;
-		std::cin >> crmv;	
+		std::cin >> crmv;
 
 
 		funcs = std::make_shared<Veterinario>(id, nome, cargo, cpf, nivel);

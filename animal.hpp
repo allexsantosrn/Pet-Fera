@@ -16,7 +16,7 @@
 			int id;								
 			std::string classe;						
 			std::string nome;						
-			std::string cientifico;					
+			std::string nomecientifico;					
 			char sexo;							
 			Veterinario veterinario;			
 			Tratador tratador;					
@@ -26,7 +26,7 @@
 
 			Animal();
 
-			Animal(int _id, std::string _classe, std::string _nome, std::string _cientifico, char _sexo, Veterinario _veterinario, Tratador _tratador);
+			Animal(int _id, std::string _classe, std::string _nome, std::string _nomecientifico, char _sexo, Veterinario _veterinario, Tratador _tratador);
 
 			~Animal();
 
@@ -36,7 +36,7 @@
 
 			std::string getNome();
 
-			std::string getCientifico();
+			std::string getnomeCientifico();
 
 			char getSexo();
 
@@ -50,7 +50,7 @@
 
 			void setNome(std::string _nome);
 
-			void setCientifico(std::string _cientifico);
+			void setnomeCientifico(std::string _cientifico);
 
 			void setSexo(char _sexo);
 
