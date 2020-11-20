@@ -18,53 +18,53 @@ Funcionario::~Funcionario() {}
 int 
 Funcionario::getId() {
 
-		return id;
+		return this->id;
 	}
 
 
 std::string
 Funcionario::getNome() {
 
-		return nome;
+		return this->nome;
 	}
 
 std::string 
 Funcionario::getCargo() {
 
-		return cargo;
+		return this->cargo;
 	}
 
 std::string 
 Funcionario::getCpf() {
 
-		return cpf;
+		return this->cpf;
 	}
 
 void 
 Funcionario::setId(int _id) {
 
-		id = _id;
+		this->id = _id;
 	}
 
 	
 void 
 Funcionario::setNome(std::string _nome) {
 
-		nome = _nome;
+		this->nome = _nome;
 	}
 
 	
 void 
 Funcionario::setCargo(std::string _cargo) {
 
-		cargo = _cargo;
+		this->cargo = _cargo;
 	}
 
 		
 void 
 Funcionario::setCpf(std::string _cpf) {
 	
-		cpf = _cpf;
+		this->cpf = _cpf;
 	}
 
 std::ostream& 
@@ -81,14 +81,5 @@ operator>> (std::istream &i, Funcionario &f){
 	i >> f.id >> f.nome >> f.cpf >> f.cargo;
 	return i;
 } 
-
-/*bool Funcionario::operator==(const Funcionario &f) {
-		if(id == f.id) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}*/
 
 

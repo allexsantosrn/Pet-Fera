@@ -19,79 +19,93 @@ Animal::~Animal() {}
 
 int 
 Animal::getId() {
-		return id;
+
+		return this->id;
 	}
 
 std::string 
 Animal::getClasse() {
-		return classe;
+
+		return this->classe;
 	}
 
 	
 std::string 
 Animal::getNome() {
-		return nome;
+
+		return this->nome;
 	}
 
 std::string 
 Animal::getnomeCientifico() {
-		return nomecientifico;
+
+		return this->nomecientifico;
 	}
 
 char 
 Animal::getSexo() {
-		return sexo;
+
+		return this->sexo;
 	}
 
 Veterinario 
 Animal::getVeterinario() {
-		return veterinario;
+
+		return this->veterinario;
 	}
 
 Tratador 
 Animal::getTratador() {
-		return tratador;
+
+		return this->tratador;
 	}
  
 void 
 Animal::setId(int _id) {
-		id = _id;
+
+		this->id = _id;
 	}
 
 	 
 void 
 Animal::setClasse(std::string _classe) {
-		classe = _classe;
+
+		this->classe = _classe;
 	}
 
 	
 void 
 Animal::setNome(std::string _nome) {
-		nome = _nome;
+
+		this->nome = _nome;
 	}
 
 	
 void 
 Animal::setnomeCientifico(std::string _nomecientifico) {
-		nomecientifico = _nomecientifico;
+
+		this->nomecientifico = _nomecientifico;
 	}
 
 	
 void 
 Animal::setSexo(char _sexo) {
-		sexo = _sexo;
+
+		this->sexo = _sexo;
 	}
 
 	
 void 
 Animal::setVeterinario(Veterinario _veterinario) {
-		veterinario = _veterinario;
+
+		this->veterinario = _veterinario;
 	}
 	
 	 
 void 
 Animal::setTratador(Tratador _tratador) {
-		tratador = _tratador;
+	
+		this->tratador = _tratador;
 	}
 
 std::ostream& 

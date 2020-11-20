@@ -10,22 +10,23 @@ Menu::cadastrarFuncionario() {
 	std::map<int, std::shared_ptr<Funcionario>>::iterator it;
 
 
-	std::cout << "Informe o número de identificação do funcionário(ID): " << std::endl;
+	std::cout << "Informe o número de identificação do funcionário(ID): ";
 	std::cin >> id;	  
 
-	std::cout << "Informe o nome do funcionário: " << std::endl;
-	std::cin >> nome;
-
-	std::cout << "Informe o cpf do funcionário: " << std::endl;
-	std::cin >> cpf;
+	std::cout << "Informe o nome do funcionário: ";
+	std::cin.ignore();
+	std::getline(std::cin, nome);
 	
-	std::cout << "Informe o cargo do funcionário(Veterinário ou Tratador): " << std::endl;
+	std::cout << "Informe o cpf do funcionário: ";
+	std::getline(std::cin, cpf);
+		
+	std::cout << "Informe o cargo do funcionário(Veterinário ou Tratador): ";
 	std::cin >> cargo;
 
 
 	if (cargo == "veterinário" || cargo == "Veterinário") {
 
-		std::cout << "Informe o CRMV do Veterinario: " << std::endl;
+		std::cout << "Informe o CRMV do Veterinario: ";
 		std::cin >> crmv;
 
 
@@ -36,7 +37,7 @@ Menu::cadastrarFuncionario() {
 
 			if (it != lista_funcionarios.end()) {
 
-				std::cout << "Erro de cadastro. Já existe um funcionário com o número de identificação(ID) informado." << std::endl;	
+				std::cout << "Erro de cadastro. Já existe um funcionário com o número de identificação(ID) informado.";	
 				
 			}
 
@@ -54,7 +55,7 @@ Menu::cadastrarFuncionario() {
 
 	else if (cargo == "tratador" || cargo == "Tratador") {
 
-		std::cout << "Informe o nível de segurança do tratador (Verde, Azul ou Vermelho) : " << std::endl;
+		std::cout << "Informe o nível de segurança do tratador (Verde, Azul ou Vermelho) : ";
 		std::cin.ignore();
 		getline(std::cin, nivel);
 
@@ -68,7 +69,7 @@ Menu::cadastrarFuncionario() {
 
 			if (it != lista_funcionarios.end()) {
 
-				std::cout << "Erro de cadastro. Já existe um funcionário com o número de identificação(ID) informado." << std::endl;	
+				std::cout << "Erro de cadastro. Já existe um funcionário com o número de identificação(ID) informado." << std::endl;
 				
 			}
 
@@ -90,7 +91,7 @@ Menu::cadastrarFuncionario() {
 
 		else {
 
-			std::cout << "Tratador não cadastrado. Nível de segurança inválido." << std::endl;		
+			std::cout << "Tratador não cadastrado. Nível de segurança inválido." << std::endl;
 			
 		}	
 	}						
@@ -99,7 +100,6 @@ Menu::cadastrarFuncionario() {
 	else {
 
 		std::cout << "Cargo inválido. Cadastro não realizado." << std::endl;
-
 	}
 
 }
@@ -152,7 +152,7 @@ Menu::consultarFuncionario() {
 
 	else {
 
-		std::cout << "Funcionário Inexistente na base de dados." << std::endl;	
+		std::cout << "Funcionário Inexistente na base de dados." << std::endl;
 		
 	}
 

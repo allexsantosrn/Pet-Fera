@@ -11,13 +11,13 @@ Reptil:: ~Reptil(){}
 char
 Reptil::getHabitat() {
 
-		return habitat;
+		return this->habitat;
 }
 
 void
-Reptil::setHabitat (char _habitat)
-{
-	habitat = _habitat;
+Reptil::setHabitat (char _habitat){
+	
+		this->habitat = _habitat;
 }
 
 std::ostream&

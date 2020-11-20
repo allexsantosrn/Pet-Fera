@@ -13,13 +13,13 @@ Anfibio::~Anfibio() {}
 int
 Anfibio::getqtdMudas () {
 
-		return qtdmudas;
+		return this->qtdmudas;
 	}
 
 void
 Anfibio::setqtdMudas(int _qtdmudas) {
 
-		qtdmudas = _qtdmudas;
+		this->qtdmudas = _qtdmudas;
 	}	
 
 std::ostream& 

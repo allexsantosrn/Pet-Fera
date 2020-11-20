@@ -19,7 +19,7 @@
 
 			Reptil();
 
-			Reptil(int _id, std::string _classe,std::string _nome,std::string _cientifico, char _sexo, Veterinario _veterinario, Tratador _tratador,char _habitat);
+			Reptil(int _id, std::string _classe,std::string _nome,std::string _cientifico, char _sexo, Veterinario _veterinario, Tratador _tratador, char _habitat);
 			
 			~Reptil();
 

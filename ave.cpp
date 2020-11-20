@@ -13,13 +13,13 @@ Ave::~Ave() {}
 std::string
 Ave::getformatoBico () {
 
-		return formatobico;
+		return this->formatobico;
 	}
 
 void
 Ave::setformatoBico(std::string _formatobico) {
 
-		formatobico = _formatobico;
+		this->formatobico = _formatobico;
 	}	
 
 std::ostream& 

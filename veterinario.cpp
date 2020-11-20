@@ -12,13 +12,13 @@ Veterinario::~Veterinario() {}
 std::string
 Veterinario::getCrmv () {
 
-		return crmv;
+		return this->crmv;
 	}
 
 void
 Veterinario::setCrmv(std::string _crmv) {
 
-		crmv = _crmv;
+		this->crmv = _crmv;
 	}	
 
 std::ostream& 

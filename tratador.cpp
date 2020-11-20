@@ -12,13 +12,13 @@ Tratador::~Tratador() {}
 std::string
 Tratador::getnivelSeguranca () {
 
-		return nivelseguranca;
-	}
+		return this->nivelseguranca;
+	}	
 
 void
 Tratador::setnivelSeguranca(std::string _nivelseguranca) {
 
-		nivelseguranca = _nivelseguranca;
+		this->nivelseguranca = _nivelseguranca;
 	}	
 
 std::ostream& 
