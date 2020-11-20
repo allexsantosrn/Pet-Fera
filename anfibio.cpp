@@ -29,9 +29,9 @@ operator<< (std::ostream &o, Anfibio a){
 	o << "Nome: " << a.getNome() << std::endl;
 	o << "Nome Científico: " << a.getnomeCientifico() << std::endl;
 	o << "Sexo: " << a.getSexo() << std::endl;
+	o << "Quantidade de Mudas: " << a.getqtdMudas() << std::endl;
 	o << "Veterinario Associado: \n" << a.getVeterinario() << std::endl;	
-	o << "Tratador Associado:\n " << a.getTratador() << std::endl;
-	o << "Quantidade de Mudas: " << a.getqtdMudas();
+	o << "Tratador Associado:\n " << a.getTratador(); 	
 	return o;
 	
 }

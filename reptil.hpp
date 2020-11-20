@@ -12,15 +12,14 @@
 		protected:
 			
 			//Marinho ou terrestre
-			char habitat
+			char habitat;
 
 
 		public: 
 
 			Reptil();
 
-			Reptil(int _id, std::string _classe,std::string _nome,std::string _cientifico
-				char _sexo, Veterinario _veterinario, Tratador _tratador,char _habitat);
+			Reptil(int _id, std::string _classe,std::string _nome,std::string _cientifico, char _sexo, Veterinario _veterinario, Tratador _tratador,char _habitat);
 			
 			~Reptil();
 
@@ -28,12 +27,16 @@
 
 			char getHabitat();
 
-		friend std::ostream& operator << (std::ostream &o,Reptil r);
+			friend std::ostream& operator << (std::ostream &o,Reptil r);
 
-		friend std::istream& operator >> (std::istream &i,Reptil &r);
+			friend std::istream& operator >> (std::istream &i,Reptil &r);
+
+
+
 	};
 
-	#endif
+	
+#endif		
 
 
 
