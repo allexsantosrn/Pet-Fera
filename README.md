@@ -35,9 +35,9 @@ A tarefa central da Parte I do Projeto de Programação é desenvolver um progra
 
 ## Compilação
 
-Executar o seguinte comando no terminal: g++ -Wall main.cpp menu.cpp funcionario.cpp veterinario.cpp tratador.cpp animal -o prog
+Executar o seguinte comando no terminal: g++ -std=c++11 -Wall main.cpp menu.cpp funcionario.cpp tratador.cpp veterinario.cpp animal.cpp anfibio.cpp ave.cpp reptil.cpp silvestre.cpp -o prog
 
-Caso queira testar os construtores do animal, veterinario e tratador, executar: g++ -Wall teste.cpp menu.cpp funcionario.cpp veterinario.cpp tratador.cpp animal -o prog
+Caso queira testar os construtores do animal, veterinario e tratador, executar: g++ -Wall teste.cpp funcionario.cpp tratador.cpp veterinario.cpp animal.cpp anfibio.cpp ave.cpp reptil.cpp silvestre.cpp -o prog
 
 Em seguida para compilar: ./prog
 

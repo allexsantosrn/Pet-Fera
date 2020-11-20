@@ -3,7 +3,7 @@
 Silvestre::Silvestre() {}
 
 Silvestre::Silvestre(int _numibama):
-				  	numibama(_numibama)   {}
+				  	 numibama(_numibama)   {}
 
 Silvestre::~Silvestre() {}
 

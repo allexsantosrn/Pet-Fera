@@ -1,9 +1,6 @@
 #ifndef _SILVESTRE_
 #define _SILVESTRE_
 
-#include <string>
-#include <ostream>
-#include <istream>
 #include <iostream>
 
 	class Silvestre {
