@@ -6,6 +6,7 @@
 #include "animal.hpp"
 #include "ave.hpp"
 #include "anfibio.hpp"
+#include "mamifero.hpp"
 
 int main( )
 
@@ -20,7 +21,7 @@ int main( )
 
 	Ave animal (4, "Mamifero", "Gato", "Felix Catus", 'M', veterinario, *trat, "Torto");
 
-	Anfibio animal2 (5, "Peixe", "Tubarão", "Peixes vistus", 'F', veterinario, *trat, 5);
+	Mamifero animal2 (5, "Peixe", "Tubarão", "Peixes vistus", 'F', veterinario, *trat, 5);
 
 
 	//std::cout << funcionario1 << std::endl;
