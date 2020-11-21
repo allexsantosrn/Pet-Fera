@@ -2,8 +2,9 @@
 
 Nativo::Nativo() {}
 
-Nativo::Nativo(std::string _regiaoorigem):
-				 regiaoorigem(_regiaoorigem)   {}
+Nativo::Nativo(int _numibama, std::string _regiaoorigem):
+               Silvestre(_numibama),
+			   regiaoorigem(_regiaoorigem)   {}
 
 Nativo::~Nativo() {}
 

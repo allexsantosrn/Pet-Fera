@@ -2,7 +2,8 @@
 
 Exotico::Exotico() {}
 
-Exotico::Exotico(std::string _paisorigem):
+Exotico::Exotico(int _numibama, std::string _paisorigem):
+				 Silvestre(_numibama),
 				 paisorigem(_paisorigem)   {}
 
 Exotico::~Exotico() {}

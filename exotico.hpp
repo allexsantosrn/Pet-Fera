@@ -17,7 +17,7 @@
 			
 			Exotico();
 			
-			Exotico(std::string _paisorigem);
+			Exotico(int _numibama, std::string _paisorigem);
 
 			~Exotico();
 

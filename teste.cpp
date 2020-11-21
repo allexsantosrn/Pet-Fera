@@ -7,6 +7,7 @@
 #include "ave.hpp"
 #include "anfibio.hpp"
 #include "mamifero.hpp"
+#include "anfibioexotico.hpp"
 
 int main( )
 
@@ -23,12 +24,14 @@ int main( )
 
 	Mamifero animal2 (5, "Peixe", "Tubarão", "Peixes vistus", 'F', veterinario, *trat, 5);
 
+	AnfibioExotico anfibium (10, "sapo", "Pedro", "Joao", 'F', veterinario, *trat, 5, 151515, "Panamá");
+
 
 	//std::cout << funcionario1 << std::endl;
 	//std::cout << funcionario2 << std::endl;
 	//std::cout << *trat << std::endl;
-	std::cout << animal << std::endl;
-	std::cout << animal2 << std::endl;
+	//std::cout << animal << std::endl;
+	std::cout << anfibium << std::endl;
 	
 	return 0;
 }

@@ -2,20 +2,20 @@
 
 Reptil::Reptil() {}
 
-Reptil::Reptil(int _id,std::string _classe,std::string _nome, std::string _cientifico,char _sexo,Veterinario _veterinario, Tratador _tratador , char _habitat):
+Reptil::Reptil(int _id,std::string _classe,std::string _nome, std::string _cientifico,char _sexo,Veterinario _veterinario, Tratador _tratador , std::string _habitat):
 			   Animal(_id,_classe,_nome, _cientifico,_sexo,_veterinario,_tratador),
 			   habitat(_habitat){}
 
 Reptil:: ~Reptil(){}
 
-char
+std::string
 Reptil::getHabitat() {
 
 		return this->habitat;
 }
 
 void
-Reptil::setHabitat (char _habitat){
+Reptil::setHabitat (std::string _habitat){
 	
 		this->habitat = _habitat;
 }

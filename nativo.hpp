@@ -17,7 +17,7 @@
 			
 			Nativo();
 			
-			Nativo(std::string _regiaoorigem);
+			Nativo(int _numibama, std::string _regiaoorigem);
 
 			~Nativo();
 

@@ -12,20 +12,20 @@
 		protected:
 			
 			//Marinho ou terrestre
-			char habitat;
+			std::string habitat;
 
 
 		public: 
 
 			Reptil();
 
-			Reptil(int _id, std::string _classe,std::string _nome,std::string _cientifico, char _sexo, Veterinario _veterinario, Tratador _tratador, char _habitat);
+			Reptil(int _id, std::string _classe,std::string _nome,std::string _cientifico, char _sexo, Veterinario _veterinario, Tratador _tratador, std::string _habitat);
 			
 			~Reptil();
 
-			void setHabitat(char _habitat);
+			void setHabitat(std::string _habitat);
 
-			char getHabitat();
+			std::string getHabitat();
 
 			friend std::ostream& operator << (std::ostream &o,Reptil r);
 
