@@ -9,6 +9,20 @@ ReptilExotico::ReptilExotico(int _id, std::string _classe, std::string _nome, st
 
 ReptilExotico::~ReptilExotico() {}
 
+std::ostream&
+operator << (std::ostream &o,ReptilExotico r){
+	o << "Id: " << r.getId() << std::endl;
+	o << "Classe: " << r.getClasse() << std::endl;
+	o << "Nome: " << r.getNome() << std::endl;
+	o << "Nome Científico: " << r.getnomeCientifico() << std::endl;
+	o << "Sexo: " << r.getSexo() << std::endl;
+	o << "Habitat: " << r.getHabitat() << std::endl;
+	o << "Codigo Ibama: " << r.getnumIbama() << std::endl;	
+	o << "País Origem: " << r.getpaisOrigem() << std::endl;
+	o << "Veterinario Associado: " << r.getVeterinario() << std::endl;
+	o << "Tratador Associado: " << r. getTratador();
+	return o;
+}
 
 
 

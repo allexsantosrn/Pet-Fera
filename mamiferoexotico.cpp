@@ -10,6 +10,22 @@ MamiferoExotico::MamiferoExotico(int _id, std::string _classe, std::string _nome
 MamiferoExotico::~MamiferoExotico() {}
 
 
+std::ostream&
+operator << (std::ostream &o,MamiferoExotico m){
+	o << "Id: " << m.getId() << std::endl;
+	o << "Classe: " << m.getClasse() << std::endl;
+	o << "Nome: " << m.getNome() << std::endl;
+	o << "Nome Científico: " << m.getnomeCientifico() << std::endl;
+	o << "Sexo: " << m.getSexo() << std::endl;
+	o << "Tamanho do Pelo: " << m.gettamPelo() << std::endl;
+	o << "Codigo Ibama: " << m.getnumIbama() << std::endl;	
+	o << "País Origem: " << m.getpaisOrigem() << std::endl;
+	o << "Veterinario Associado: " << m.getVeterinario() << std::endl;
+	o << "Tratador Associado: " << m. getTratador();
+	return o;
+}
+
+
 
 
 

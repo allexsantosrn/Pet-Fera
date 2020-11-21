@@ -17,6 +17,11 @@
 				
 			~ReptilExotico();
 
+
+			friend std::ostream& operator << (std::ostream &o,ReptilExotico r);
+
+			friend std::istream& operator >> (std::istream &i,ReptilExotico &r);
+
 	};
 
 

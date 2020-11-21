@@ -8,6 +8,13 @@
 #include "anfibio.hpp"
 #include "mamifero.hpp"
 #include "anfibioexotico.hpp"
+#include "aveexotica.hpp"
+#include "mamiferoexotico.hpp"
+#include "reptilexotico.hpp"
+#include "anfibionativo.hpp"
+#include "avenativa.hpp"
+#include "mamiferonativo.hpp"
+#include "reptilnativo.hpp"
 
 int main( )
 
@@ -24,7 +31,9 @@ int main( )
 
 	Mamifero animal2 (5, "Peixe", "Tubarão", "Peixes vistus", 'F', veterinario, *trat, 5);
 
-	AnfibioExotico anfibium (10, "sapo", "Pedro", "Joao", 'F', veterinario, *trat, 5, 151515, "Panamá");
+	AveNativa anfibium (10, "sapo", "Pedro", "Joao", 'F', veterinario, *trat, "torto", 523233, "Panamá"); 
+
+
 
 
 	//std::cout << funcionario1 << std::endl;

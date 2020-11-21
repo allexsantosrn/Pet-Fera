@@ -15,6 +15,10 @@
 					   Tratador _tratador, std::string _formatobico, int _numibama, std::string _paisorigem);
 			
 			~AveExotica();
+
+			friend std::ostream& operator << (std::ostream &o,AveExotica a);
+
+			friend std::istream& operator >> (std::istream &i,AveExotica &a);
 		
 	};
 

@@ -16,7 +16,7 @@ operator << (std::ostream &o,AnfibioExotico a){
 	o << "Nome: " << a.getNome() << std::endl;
 	o << "Nome Científico: " << a.getnomeCientifico() << std::endl;
 	o << "Sexo: " << a.getSexo() << std::endl;
-	o << "Habitat: " << a.getqtdMudas() << std::endl;
+	o << "Quantidade de Mudas: " << a.getqtdMudas() << std::endl;
 	o << "Codigo Ibama: " << a.getnumIbama() << std::endl;	
 	o << "País Origem: " << a.getpaisOrigem() << std::endl;
 	o << "Veterinario Associado: " << a.getVeterinario() << std::endl;
