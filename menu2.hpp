@@ -16,7 +16,8 @@ class Menu {
 
 private:
 
-	std::map<int, std::shared_ptr<Funcionario>> lista_funcionarios;		
+	std::map<int, std::shared_ptr<Veterinario>> lista_veterinarios;
+	std::map<int, std::shared_ptr<Tratadores>> lista_tratadores;
 	std::map<int, std::shared_ptr<Animal>> lista_animais;			
 
 public:
@@ -24,7 +25,6 @@ public:
 	void removerAnimal();
 	void consultarAnimal();
 	void cadastrarFuncionario();
-	void alterarFuncionario();
 	void removerFuncionario();
 	void consultarFuncionario();
 	

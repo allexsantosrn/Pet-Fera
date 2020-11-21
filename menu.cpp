@@ -1,5 +1,59 @@
 #include "menu.hpp"
 
+
+void 
+Menu::consultarAnimal() {
+
+	int id;
+	std::map<int, std::shared_ptr<Animal>>::iterator it; 
+	
+	std::cout << "Informe o número de identificação do animal(ID):";
+	std::cin >> id;
+
+	it = lista_animais.find(id);
+
+	if(it != lista_animais.end()) {
+
+			std::cout << *(it->second) << std::endl;
+			
+		}
+
+	else {
+
+		std::cout << "Animal inexistente na base de dados." << std::endl;
+		
+	}
+
+}
+
+
+void
+Menu::removerAnimal() {	
+
+	int id;
+	std::map<int, std::shared_ptr<Animal>>::iterator it; 
+
+	std::cout << "Informe o número de identificação do animal(ID):";
+	std::cin >> id;
+		
+	it = lista_animais.find(id);
+		
+	if(it != lista_animais.end()) {
+
+			lista_animais.erase(it);
+
+			std::cout <<"Animal removido com sucesso." << std::endl;
+			
+		}
+
+	else { 
+
+		std::cout << "Animal inexistente. Remoção não realizada." << std::endl;
+
+	}
+
+}
+
 void
 Menu::cadastrarFuncionario() {	
 
@@ -13,94 +67,125 @@ Menu::cadastrarFuncionario() {
 	std::cout << "Informe o número de identificação do funcionário(ID): ";
 	std::cin >> id;	  
 
-	std::cout << "Informe o nome do funcionário: ";
-	std::cin.ignore();
-	std::getline(std::cin, nome);
-	
-	std::cout << "Informe o cpf do funcionário: ";
-	std::getline(std::cin, cpf);
-		
-	std::cout << "Informe o cargo do funcionário(Veterinário ou Tratador): ";
-	std::cin >> cargo;
+	it = lista_funcionarios.find(id);
 
+	if (it != lista_funcionarios.end()) {
 
-	if (cargo == "veterinário" || cargo == "Veterinário") {
-
-		std::cout << "Informe o CRMV do Veterinario: ";
-		std::cin >> crmv;
-
-
-		funcs = std::make_shared<Veterinario>(id, nome, cargo, cpf, nivel);
-
-		it = lista_funcionarios.find(id);
-
-
-			if (it != lista_funcionarios.end()) {
-
-				std::cout << "Erro de cadastro. Já existe um funcionário com o número de identificação(ID) informado.";	
+			std::cout << "Erro de cadastro. Já existe um funcionário com o número de identificação(ID) informado." << std::endl;
 				
-			}
-
-
-			else {
-
-			lista_funcionarios[id] = funcs;
-
-			std::cout << "Veterinário cadastrado com sucesso!" << std::endl;
-
-			}
-
-		}		
-		
-
-	else if (cargo == "tratador" || cargo == "Tratador") {
-
-		std::cout << "Informe o nível de segurança do tratador (Verde, Azul ou Vermelho) : ";
-		std::cin.ignore();
-		getline(std::cin, nivel);
-
-
-
-		if (nivel == "Verde" ||  nivel == "Vermelho" || nivel == "Azul") {
-
-			
-			it = lista_funcionarios.find(id);
-
-
-			if (it != lista_funcionarios.end()) {
-
-				std::cout << "Erro de cadastro. Já existe um funcionário com o número de identificação(ID) informado." << std::endl;
-				
-			}
-
-
-			else {
-
-				funcs = std::make_shared<Tratador>(id, nome, cargo, cpf, nivel);
-
-				lista_funcionarios[id] = funcs;
-
-				std::cout << "Tratador cadastrado com sucesso!" << std::endl;
-
-			}	
-
-			
-
 		}
 
+	else {		
 
-		else {
+			std::cout << "Informe o nome do funcionário: ";
+			std::cin.ignore();
+			std::getline(std::cin, nome);
+	
+			std::cout << "Informe o cpf do funcionário: ";
+			std::getline(std::cin, cpf);
+		
+			std::cout << "Informe o cargo do funcionário(Veterinário ou Tratador): ";
+			std::cin >> cargo;
 
-			std::cout << "Tratador não cadastrado. Nível de segurança inválido." << std::endl;
-			
-		}	
+
+				if (cargo == "veterinário" || cargo == "Veterinário") {
+
+					std::cout << "Informe o CRMV do Veterinario: ";
+					std::cin >> crmv; 	
+
+
+					funcs = std::make_shared<Veterinario>(id, nome, cargo, cpf, crmv);
+
+					lista_funcionarios[id] = funcs;
+
+					std::cout << "Veterinário cadastrado com sucesso!" << std::endl;
+
+				}
+
+					 else if  (cargo == "tratador" || cargo == "Tratador") {
+
+							 std::cout << "Informe o nível de segurança do tratador (Verde, Azul ou Vermelho) : ";
+							 std::cin >> nivel;
+
+
+							 if (nivel == "Verde" ||  nivel == "Vermelho" || nivel == "Azul") {
+
+
+								 funcs = std::make_shared<Tratador>(id, nome, cargo, cpf, nivel);
+
+							 	 lista_funcionarios[id] = funcs;
+
+							 	 std::cout << "Tratador cadastrado com sucesso!" << std::endl; 
+
+							}
+
+
+								else {
+
+
+									std::cout << "Nível de segurança inválido. Funcionário não cadastrado." <<std::endl;
+
+
+								}
+
+
+
+					}
+
+
+						else {
+
+							std::cout << "Nível inválido. Funcionário não cadastrado." << std::endl;
+
+
+						}
+
+
+
+
+					
+
+		
 	}						
 
-	
-	else {
 
-		std::cout << "Cargo inválido. Cadastro não realizado." << std::endl;
-	}
+}
+
+
+void 
+Menu::alterarFuncionario() {
+
+	int id;
+	std::map<int, std::shared_ptr<Funcionario>>::iterator it; 
+
+	std::cout << "Informe o número de identificação do funcionário(ID): ";
+	std::cin >> id;
+		
+	it = lista_funcionarios.find(id);
+	
+	if (it != lista_funcionarios.end()) {
+    
+    	std::shared_ptr<Funcionario> f = it->second;
+
+		std::string cargo, nome, cpf, crmv, nivel;
+
+		std::cout << "Informe o nome do funcionário: ";
+		std::cin.ignore();
+		std::getline(std::cin, nome);
+	
+		std::cout << "Informe o cpf do funcionário: ";
+		std::getline(std::cin, cpf);
+		
+		std::cout << "Informe o cargo do funcionário(Veterinário ou Tratador): ";
+		std::cin >> cargo;
+
+				
+		//f->setId(novo_id);
+		f->setNome(nome);
+		f->setCargo(cargo);
+		f->setCpf(cpf);
+			
+	}	
 
 }
 
@@ -111,7 +196,7 @@ Menu::removerFuncionario() {
 	int id;
 	std::map<int, std::shared_ptr<Funcionario>>::iterator it; 
 
-	std::cout << "Digite o número de identificação do funcionário(ID):";
+	std::cout << "Informe o número de identificação do funcionário(ID):  ";
 	std::cin >> id;
 		
 	it = lista_funcionarios.find(id);
@@ -126,7 +211,7 @@ Menu::removerFuncionario() {
 
 	else { 
 
-		std::cout << "Funcionário Inexistente. Remoção não realizada." << std::endl;
+		std::cout << "Funcionário inexistente. Remoção não realizada." << std::endl;
 
 	}
 
@@ -139,7 +224,7 @@ Menu::consultarFuncionario() {
 	int id;
 	std::map<int, std::shared_ptr<Funcionario>>::iterator it; 
 	
-	std::cout << "Digite o número de identificação do funcionário(ID):";
+	std::cout << "Informe o número de identificação do funcionário(ID): ";
 	std::cin >> id;
 
 	it = lista_funcionarios.find(id);
@@ -147,12 +232,12 @@ Menu::consultarFuncionario() {
 	if(it != lista_funcionarios.end()) {
 
 			std::cout << *(it->second) << std::endl;
-			
+
 		}
 
 	else {
 
-		std::cout << "Funcionário Inexistente na base de dados." << std::endl;
+		std::cout << "Funcionário inexistente na base de dados." << std::endl;
 		
 	}
 

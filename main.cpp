@@ -33,15 +33,16 @@ int main () {
 				break;
 
 			case 2:
-				std::cout << "teste2" << std::endl;
+				menu.removerAnimal();
 				break;
+
 
 			case 3:
 				std::cout << "teste3" << std::endl;
 				break;
 
 			case 4:
-				std::cout << "teste4" << std::endl;
+				menu.consultarAnimal();
 				break;
 
 			case 5:
@@ -62,7 +63,7 @@ int main () {
 				break;
 
 			case 9:
-				std::cout << "teste9" << std::endl;
+				menu.alterarFuncionario();
 				break;
 
 			case 10: 
