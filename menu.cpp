@@ -138,12 +138,7 @@ Menu::cadastrarFuncionario() {
 							std::cout << "Nível inválido. Funcionário não cadastrado." << std::endl;
 
 
-						}
-
-
-
-
-					
+						}				
 
 		
 	}						
@@ -232,6 +227,7 @@ Menu::consultarFuncionario() {
 	if(it != lista_funcionarios.end()) {
 
 			std::cout << *(it->second) << std::endl;
+
 
 		}
 

@@ -67,6 +67,7 @@ Funcionario::setCpf(std::string _cpf) {
 		this->cpf = _cpf;
 	}
 
+
 std::ostream& 
 operator<< (std::ostream &o, Funcionario f){
 	o << "Id: " << f.getId() << std::endl;
@@ -76,10 +77,15 @@ operator<< (std::ostream &o, Funcionario f){
 	return o;
 }
 
+
 std::istream&
 operator>> (std::istream &i, Funcionario &f){
 	i >> f.id >> f.nome >> f.cpf >> f.cargo;
 	return i;
-} 
+}
+
+/*std::ostream& operator<< (std::ostream &o, Funcionario const &f) {
+		return f.print(o);
+	}*/
 
 

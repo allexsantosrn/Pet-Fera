@@ -40,11 +40,15 @@
 
 			void setCpf(std::string _cpf);
 
-			friend std::ostream& operator<< (std::ostream &o, Funcionario f);
+			friend std::ostream& operator<< (std::ostream &o, Funcionario const f);
 
 			friend std::istream& operator>> (std::istream &i, Funcionario &f);
 
 			//bool operator==(const Funcionario &f);
+
+		//private:
+
+			//virtual std::ostream& print(std::ostream&) const = 0;
 			
 	};
 

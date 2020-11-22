@@ -17,15 +17,16 @@ class Menu {
 private:
 
 	std::map<int, std::shared_ptr<Veterinario>> lista_veterinarios;
-	std::map<int, std::shared_ptr<Tratadores>> lista_tratadores;
+	std::map<int, std::shared_ptr<Tratador>> lista_tratadores;
 	std::map<int, std::shared_ptr<Animal>> lista_animais;			
 
 public:
 
-	void removerAnimal();
-	void consultarAnimal();
+	//void removerAnimal();
+	//void consultarAnimal();
 	void cadastrarFuncionario();
 	void removerFuncionario();
+	void alterarFuncionario();
 	void consultarFuncionario();
 	
 };

@@ -37,5 +37,17 @@ operator>> (std::istream &i, Tratador &t){
 	return i;
 }
 
+/*
+
+std::ostream& 
+	Tratador::print(std::ostream &o) const {
+		o << "Identificador: " << id << endl;
+		o << "Nome: " << nome << endl;
+		o << "CPF: " << cpf << endl;
+		o << "Cargo: " << funcao << endl; 
+		o << "Nível de Segurança: " << nivelseguranca;
+	return o;
+	} */
+
 
 

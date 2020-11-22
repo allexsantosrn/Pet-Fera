@@ -37,5 +37,18 @@ operator>> (std::istream &i, Veterinario &v){
 	return i;
 }
 
+/*
+
+std::ostream& 
+	Tratador::print(std::ostream &o) const {
+		o << "Identificador: " << id << endl;
+		o << "Nome: " << nome << endl;
+		o << "CPF: " << cpf << endl;
+		o << "Cargo: " << funcao << endl; 
+		o << "Crmv: " << crmv;
+	return o;
+	} */
+
+
 
 

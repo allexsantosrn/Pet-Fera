@@ -30,6 +30,9 @@
 
 			friend std::istream& operator>> (std::istream &i, Veterinario &v);
 			
+		//private:
+
+			//std::ostream& print(std::ostream &o) const;
 
 	};
 

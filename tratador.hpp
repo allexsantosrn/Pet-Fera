@@ -29,6 +29,10 @@
 			friend std::ostream& operator<< (std::ostream &o, Tratador t);
 
 			friend std::istream& operator>> (std::istream &i, Tratador &t);
+
+		//private:
+
+			//std::ostream& print(std::ostream &o) const;
 			
 
 	};
