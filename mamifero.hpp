@@ -2,8 +2,6 @@
 #define _MAMIFERO_
 
 #include "animal.hpp"
-#include "nativo.hpp"
-#include "exotico.hpp"
 
 #include <ostream> 
 #include <string>
@@ -40,51 +38,9 @@ namespace PetFera {
 			std::ostream& print(std::ostream&);
 
 	};
-
 	 
-	class MamiferoNativo : public Mamifero, public Nativo {
-
-		public:
-			 
-			MamiferoNativo();
-
-			 
-			MamiferoNativo(int _id, std::string _classe, std::string _nome, std::string _cientifico,
-			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tampelo, 
-			std::string _ibama, std::string _regiaoorigem);
-
-			 
-			~MamiferoNativo();
-
-		private:
-
-			 
-			std::ostream& print(std::ostream&);
-
-
-	};
- 
-	class MamiferoExotico : public Mamifero, public Exotico {
-
-		public:
-			 
-			MamiferoExotico();
-
-			 
-			MamiferoExotico(int _id, std::string _classe, std::string _nome, std::string _cientifico,
-			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tampelo,
-			std::string _numibama, std::string _paisorigem);
-
-			 
-			~MamiferoExotico();
-
-		private:
-
-			 
-			std::ostream& print(std::ostream&);
-
-
-	};
+	
+	
 }
 
 #endif
