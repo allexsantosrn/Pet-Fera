@@ -2,48 +2,89 @@
 #define _REPTIL_
 
 #include "animal.hpp"
+#include "nativo.hpp"
+#include "exotico.hpp"
 
+#include <ostream> 
 #include <string>
-#include <ostream>
-#include <istream>
 
-	class Reptil : public Animal{
+namespace PetFera {
+	
+	
+	class Reptil : public Animal {
 
 		protected:
-			
-			//Marinho ou terrestre
-			std::string habitat;
 
+			std::string tipopele;			 
 
-		public: 
-
+		public:
+			 
 			Reptil();
 
-			Reptil(int _id, std::string _classe,std::string _nome,std::string _cientifico, char _sexo, Veterinario _veterinario, Tratador _tratador, std::string _habitat);
-			
+			 	
+			Reptil(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, std::string _tipopele);
+
+			 
 			~Reptil();
 
-			void setHabitat(std::string _habitat);
+			 
+			std::string gettipoPele();
 
-			std::string getHabitat();
+			 
+			void settipoPele(std::string _tipopele);
 
-			friend std::ostream& operator << (std::ostream &o,Reptil r);
+		private:
 
-			friend std::istream& operator >> (std::istream &i,Reptil &r);
-
-
+			 
+			std::ostream& print(std::ostream&);
 
 	};
 
-	
-#endif		
+	 
+	class ReptilNativo : public Reptil, public Nativo {
+
+		public:
+			 
+			ReptilNativo();
+
+			 
+			ReptilNativo(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, std::string _tipopele, 
+			std::string _ibama, std::string _regiaoorigem);
+
+			 
+			~ReptilNativo();
+
+		private:
+
+			 
+			std::ostream& print(std::ostream&);
 
 
+	};
+ 
+	class ReptilExotico : public Reptil, public Exotico {
+
+		public:
+			 
+			ReptilExotico();
+
+			 
+			ReptilExotico(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, std::string _tipopele,
+			std::string _numibama, std::string _paisorigem);
+
+			 
+			~ReptilExotico();
+
+		private:
+
+			 
+			std::ostream& print(std::ostream&);
 
 
+	};
+}
 
-		
-
-			
-
-
+#endif

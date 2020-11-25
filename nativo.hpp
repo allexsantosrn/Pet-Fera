@@ -2,30 +2,38 @@
 #define _NATIVO_
 
 #include "silvestre.hpp"
-
-#include <iostream>
+ 
 #include <string>
 
 
+namespace PetFera {
+	
+	
 	class Nativo : public Silvestre {
 
 		protected:
 
-			std::string regiaoorigem;			
+			std::string regiaoorigem;			 
+			 		 
 
 		public:
-			
+			 
 			Nativo();
-			
-			Nativo(int _numibama, std::string _regiaoorigem);
 
+			 
+			Nativo(std::string _numibama, std::string _regiaoorigem);
+
+			 
 			~Nativo();
 
-			std::string getregiaoOrigem();
+			 
+			std::string getregiaoOrigem();		 
+			
+			 
+			void setregiaoOrigem(std::string _regiaoorigem);
 
-			void setregiaoOrigem(std::string _paisorigem);
-
+			 
 	};
-
+}
 
 #endif

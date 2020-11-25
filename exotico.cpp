@@ -1,26 +1,23 @@
 #include "exotico.hpp"
 
-Exotico::Exotico() {}
+namespace PetFera {
 
-Exotico::Exotico(int _numibama, std::string _paisorigem):
-				 Silvestre(_numibama),
-				 paisorigem(_paisorigem)   {}
+	// Construtor padrao
+	Exotico::Exotico() {}
 
-Exotico::~Exotico() {}
+	
+	Exotico::Exotico(std::string _numibama, std::string _paisorigem): Silvestre(_numibama) {
+					setpaisOrigem(_paisorigem);
+	}
 
+	// Destrutor padrao
+	Exotico::~Exotico() {}
 
-std::string
-Exotico::getpaisOrigem() {
-
+	std::string Exotico::getpaisOrigem() {
 		return this->paisorigem;
-	}	
+	}
 
-void
-Exotico::setpaisOrigem(std::string _paisorigem) {
-
+	void Exotico::setpaisOrigem(std::string _paisorigem) {
 		this->paisorigem = _paisorigem;
-	}	
-
-
-
-
+	}
+}

@@ -1,25 +1,25 @@
 #include "silvestre.hpp"
 
-Silvestre::Silvestre() {}
+namespace PetFera {
 
-Silvestre::Silvestre(int _numibama):
-				  	 numibama(_numibama)   {}
+	// Construtor padrao
+	Silvestre::Silvestre() {}
 
-Silvestre::~Silvestre() {}
+	 
+	Silvestre::Silvestre(std::string _numibama) {
+		setnumIbama(_numibama);
+	}
 
+	// Destrutor padrao
+	Silvestre::~Silvestre() {}
 
-int
-Silvestre::getnumIbama() {
-
+	 
+	std::string Silvestre::getnumIbama() {
 		return this->numibama;
-	}	
+	}
 
-void
-Silvestre::setnumIbama(int _numibama) {
-
+	 
+	void Silvestre::setnumIbama(std::string _numibama) {
 		this->numibama = _numibama;
-	}	
-
-
-
-
+	}
+}

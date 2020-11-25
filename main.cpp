@@ -1,16 +1,24 @@
-#include <iostream>
+/** 
+ * @file	main.cpp
+ * @brief	Implementacao da classe que representa o meu de seleção do usuário.
+ * @author	Alexandre Dantas dos Santos(allexkid@ufrn.edu.br)
+ * @since	19/11/2020
+ * @date 	24/11/2020
+ */	
 
+#include "petfera.hpp"
 #include "menu.hpp"
+
+#include <iostream>
 
 int main () {
 
-	Menu menu;
-
+	PetFera::Menu menu;
 	int selecao;
 
 	while (true) {
 
-		std::cout << "---------Loja Pet Fera---------" << std::endl;
+		std::cout << "**********Loja Pet Fera**********" << std::endl;
 		std::cout << "Escolha uma das opções abaixo:" << std::endl;
 		std::cout << "(1) Cadastrar Animal" << std::endl;
 		std::cout << "(2) Remover Animal" << std::endl;
@@ -29,16 +37,17 @@ int main () {
 		switch(selecao) {
 
 			case 1:
-				std::cout << "teste1" << std::endl;
+				menu.cadastrarAnimal();
 				break;
 
 			case 2:
-				menu.removerAnimal();
+
+				menu.removerAnimal();				
 				break;
 
 
 			case 3:
-				std::cout << "teste3" << std::endl;
+				//menu.alterarAnimal();
 				break;
 
 			case 4:
@@ -46,11 +55,11 @@ int main () {
 				break;
 
 			case 5:
-				std::cout << "teste5" << std::endl;
+				menu.consultarporClasse();
 				break;
 
 			case 6:
-				std::cout << "teste6" << std::endl;
+				menu.consultarporFuncionario();
 				break;
 
 			case 7:
@@ -59,7 +68,6 @@ int main () {
 
 			case 8:
 				menu.removerFuncionario();
-				
 				break;
 
 			case 9:
@@ -85,10 +93,3 @@ int main () {
 return 0;
 
 }
-
-
-	
-
-
-	
-	

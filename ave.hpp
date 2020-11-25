@@ -2,35 +2,90 @@
 #define _AVE_
 
 #include "animal.hpp"
+#include "nativo.hpp"
+#include "exotico.hpp"
+
+#include <ostream> 
 
 #include <string>
-#include <ostream>
-#include <istream>
 
+namespace PetFera {
+	
+	
 	class Ave : public Animal {
 
 		protected:
 
-			std::string formatobico;
-
+			int tambico;			 
 
 		public:
-			
+			 
 			Ave();
 
-			Ave(int _id, std::string _classe, std::string _nome, std::string _nomecientifico, char _sexo, Veterinario _veterinario, Tratador _tratador, std::string _formatobico);
+			 	
+			Ave(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tambico);
 
+			 
 			~Ave();
 
-			void setformatoBico(std::string _formatobico);
+			 
+			int gettamBico();
 
-			std::string getformatoBico();
-			
-			friend std::ostream& operator<< (std::ostream &o, Ave a);
+			 
+			void settamBico(int _tambico);
 
-			friend std::istream& operator>> (std::istream &i, Ave &a);			
+		private:
+
+			 
+			std::ostream& print(std::ostream&);
 
 	};
 
+	 
+	class AveNativa : public Ave, public Nativo {
+
+		public:
+			 
+			AveNativa();
+
+			 
+			AveNativa(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tambico, 
+			std::string _ibama, std::string _regiaoorigem);
+
+			 
+			~AveNativa();
+
+		private:
+
+			 
+			std::ostream& print(std::ostream&);
+
+
+	};
+ 
+	class AveExotica : public Ave, public Exotico {
+
+		public:
+			 
+			AveExotica();
+
+			 
+			AveExotica(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tambico,
+			std::string _numibama, std::string _paisorigem);
+
+			 
+			~AveExotica();
+
+		private:
+
+			 
+			std::ostream& print(std::ostream&);
+
+
+	};
+}
 
 #endif

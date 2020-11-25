@@ -3,28 +3,35 @@
 
 #include "silvestre.hpp"
 
-#include <iostream>
 #include <string>
+ 
 
-
+namespace PetFera {
+	
+	
 	class Exotico : public Silvestre {
 
 		protected:
 
-			std::string paisorigem;			
+			std::string paisorigem;			 
 
 		public:
-			
+			 
 			Exotico();
-			
-			Exotico(int _numibama, std::string _paisorigem);
 
+			 	
+			Exotico(std::string _numibama, std::string _paisorigem);
+
+			 
 			~Exotico();
 
+			 
 			std::string getpaisOrigem();
 
+			 
 			void setpaisOrigem(std::string _paisorigem);
 
 	};
+}
 
 #endif

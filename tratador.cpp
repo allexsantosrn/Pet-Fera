@@ -1,53 +1,40 @@
 #include "tratador.hpp"
 
-Tratador::Tratador() {}
 
-Tratador::Tratador(int _id, std::string _nome, std::string _cargo, std::string _cpf, std::string _nivelseguranca):
-					Funcionario(_id,_nome,_cargo,_cpf),
-					nivelseguranca(_nivelseguranca)   {}
+namespace PetFera {
 
-Tratador::~Tratador() {}
+	// Construtor padrao
+	Tratador::Tratador() {}
+
+	
+	Tratador::Tratador(int _id, std::string _nome, std::string _funcao, std::string _cpf, std::string _nivelseguranca):
+	Funcionario(_id, _nome, _funcao, _cpf),
+	nivelseguranca(_nivelseguranca)  {}
+
+	//	Destrutor padrao
+	Tratador::~Tratador() {}
 
 
-std::string
-Tratador::getnivelSeguranca () {
+	std::string
+	Tratador::getnivelSeguranca () {
 
 		return this->nivelseguranca;
-	}	
+	}
 
-void
-Tratador::setnivelSeguranca(std::string _nivelseguranca) {
+	void
+	Tratador::setnivelSeguranca(std::string _nivelseguranca) {
 
 		this->nivelseguranca = _nivelseguranca;
 	}	
 
-std::ostream& 
-operator<< (std::ostream &o, Tratador t){
-	o << "Id: " << t.getId() << std::endl;
-	o << "Nome: " << t.getNome() << std::endl;
-	o << "CPF: " << t.getCpf() << std::endl;
-	o << "Cargo: " << t.getCargo() << std::endl;
-	o << "Nível de Segurança: " <<t.getnivelSeguranca();
-	return o;
-}
-
-std::istream&
-operator>> (std::istream &i, Tratador &t){
-	i >> t.id >> t.nome >> t.cpf >> t.cargo >> t.nivelseguranca;
-	return i;
-}
-
-/*
-
-std::ostream& 
+	
+	std::ostream& 
 	Tratador::print(std::ostream &o) const {
-		o << "Identificador: " << id << endl;
-		o << "Nome: " << nome << endl;
-		o << "CPF: " << cpf << endl;
-		o << "Cargo: " << funcao << endl; 
-		o << "Nível de Segurança: " << nivelseguranca;
-	return o;
-	} */
-
-
-
+		o << "Identificador: " << id << std::endl;
+		o << "Nome: " << nome << std::endl;
+		o << "CPF: " << cpf << std::endl;
+		o << "Funcao: " << funcao << std::endl; 
+		o << "Nível de Segurança: " << nivelseguranca; 
+		return o;
+	}
+}

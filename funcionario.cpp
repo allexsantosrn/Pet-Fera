@@ -1,91 +1,77 @@
+
 #include "funcionario.hpp"
 
-Funcionario::Funcionario() {}
 
-Funcionario::Funcionario(int _id, std::string _nome, std::string _cargo, std::string _cpf) {
+namespace PetFera {
 
+	// Construtor padrao
+	Funcionario::Funcionario() {}
 
-	setId(_id);
-	setNome(_nome);
-	setCargo(_cargo);
-	setCpf(_cpf);
+	Funcionario::Funcionario(int _id, std::string _nome, std::string _funcao, std::string _cpf) {
 
+		setId(_id);
+		setNome(_nome);
+		setFuncao(_funcao);
+		setCpf(_cpf);
+		
 	}
 
+	//	Destrutor padrao
+	Funcionario::~Funcionario() {}
 
-Funcionario::~Funcionario() {}
-
-int 
-Funcionario::getId() {
-
+	 
+	int Funcionario::getId() {
 		return this->id;
 	}
 
-
-std::string
-Funcionario::getNome() {
-
+	 
+	std::string Funcionario::getNome() {
 		return this->nome;
 	}
 
-std::string 
-Funcionario::getCargo() {
-
-		return this->cargo;
+	 
+	std::string Funcionario::getFuncao() {
+		return this->funcao;
 	}
 
-std::string 
-Funcionario::getCpf() {
-
+	 
+	std::string Funcionario::getCpf() {
 		return this->cpf;
 	}
 
-void 
-Funcionario::setId(int _id) {
-
+	 
+	void Funcionario::setId(int _id) {
 		this->id = _id;
 	}
 
-	
-void 
-Funcionario::setNome(std::string _nome) {
-
+	 
+	void Funcionario::setNome(std::string _nome) {
 		this->nome = _nome;
 	}
 
-	
-void 
-Funcionario::setCargo(std::string _cargo) {
-
-		this->cargo = _cargo;
+	 
+	void Funcionario::setFuncao(std::string _funcao) {
+		this->funcao = _funcao;
 	}
 
-		
-void 
-Funcionario::setCpf(std::string _cpf) {
-	
+	 
+	void Funcionario::setCpf(std::string _cpf) {
 		this->cpf = _cpf;
 	}
 
-
-std::ostream& 
-operator<< (std::ostream &o, Funcionario f){
-	o << "Id: " << f.getId() << std::endl;
-	o << "Nome: " << f.getNome() << std::endl;
-	o << "CPF: " << f.getCpf() << std::endl;
-	o << "Cargo: " << f.getCargo();
-	return o;
-}
-
-
-std::istream&
-operator>> (std::istream &i, Funcionario &f){
-	i >> f.id >> f.nome >> f.cpf >> f.cargo;
-	return i;
-}
-
-/*std::ostream& operator<< (std::ostream &o, Funcionario const &f) {
+	 
+	std::ostream& operator<< (std::ostream &o, Funcionario const &f) {
 		return f.print(o);
-	}*/
+	}
 
+	 
+	bool Funcionario::operator==(const Funcionario &f) {
 
+		if(id == f.id) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+}

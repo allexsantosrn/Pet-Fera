@@ -1,27 +1,35 @@
 #ifndef _SILVESTRE_
 #define _SILVESTRE_
 
-#include <iostream>
+#include <string>
 
+
+namespace PetFera {
+	
+	
 	class Silvestre {
-		
-		protected:		
 
-			int numibama;
-						
-			 
+		protected:
+
+			std::string numibama;			 
+
 		public:
-
+			 
 			Silvestre();
-				
-			Silvestre(int _numibama);
 
+			 
+			Silvestre(std::string _numibama);
+
+			 
 			~Silvestre();
 
-			int getnumIbama();
+ 		
+			std::string getnumIbama();
+			
+			 
+			void setnumIbama(std::string _numibama);
 
-			void setnumIbama(int _id);			
-						
 	};
+}
 
 #endif

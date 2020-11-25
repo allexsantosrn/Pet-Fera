@@ -2,36 +2,90 @@
 #define _ANFIBIO_
 
 #include "animal.hpp"
+#include "nativo.hpp"
+#include "exotico.hpp"
+
+#include <ostream> 
 
 #include <string>
-#include <ostream>
-#include <istream>
 
+namespace PetFera {
+	
+	
 	class Anfibio : public Animal {
 
 		protected:
 
-			int qtdmudas;
-
+			int qtdmudas;			 
 
 		public:
-			
+			 
 			Anfibio();
 
-			Anfibio(int _id, std::string _classe, std::string _nome, std::string _nomecientifico, char _sexo, Veterinario _veterinario, Tratador _tratador, int _qtdmudas);
+			 	
+			Anfibio(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _qtdmudas);
 
+			 
 			~Anfibio();
 
+			 
+			int getqtdMudas();
+
+			 
 			void setqtdMudas(int _qtdmudas);
 
-			int getqtdMudas();
-			
-			friend std::ostream& operator<< (std::ostream &o, Anfibio a);
+		private:
 
-			friend std::istream& operator>> (std::istream &i, Anfibio &a);
-			
+			 
+			std::ostream& print(std::ostream&);
 
 	};
 
+	 
+	class AnfibioNativo : public Anfibio, public Nativo {
+
+		public:
+			 
+			AnfibioNativo();
+
+			 
+			AnfibioNativo(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _qtdmudas, 
+			std::string _ibama, std::string _regiaoorigem);
+
+			 
+			~AnfibioNativo();
+
+		private:
+
+			 
+			std::ostream& print(std::ostream&);
+
+
+	};
+ 
+	class AnfibioExotico : public Anfibio, public Exotico {
+
+		public:
+			 
+			AnfibioExotico();
+
+			 
+			AnfibioExotico(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _qtdmudas,
+			std::string _numibama, std::string _paisorigem);
+
+			 
+			~AnfibioExotico();
+
+		private:
+
+			 
+			std::ostream& print(std::ostream&);
+
+
+	};
+}
 
 #endif

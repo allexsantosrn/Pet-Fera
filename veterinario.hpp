@@ -3,38 +3,41 @@
 
 #include "funcionario.hpp"
 
-#include <string>
 #include <ostream>
-#include <istream>
+using std::ostream;
 
+#include <string>
+//using std::string;
+
+namespace PetFera {
+	
+	
 	class Veterinario : public Funcionario {
 
 		protected:
 
 			std::string crmv;
 
-
 		public:
+			
 			
 			Veterinario();
 
-			Veterinario(int _id, std::string _nome, std::string _cargo, std::string _cpf, std::string _crmv);
+				
+			Veterinario(int _id, std::string _nome, std::string _funcao, std::string _cpf, std::string _crmv);
 
+			
 			~Veterinario();
 
 			void setCrmv(std::string _crmv);
 
 			std::string getCrmv();
+
+		private:
 			
-			friend std::ostream& operator<< (std::ostream &o, Veterinario v);
-
-			friend std::istream& operator>> (std::istream &i, Veterinario &v);
-			
-		//private:
-
-			//std::ostream& print(std::ostream &o) const;
-
+		
+			std::ostream& print(std::ostream &o) const;
 	};
-
+}
 
 #endif
