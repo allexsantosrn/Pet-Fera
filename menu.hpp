@@ -34,6 +34,7 @@ namespace PetFera {
 	class Menu {
 
 		private:
+			
 			std::map<int, std::shared_ptr<Funcionario>> lista_funcionarios;		/**< Lista de funcionários */
 			std::map<int, std::shared_ptr<Animal>> lista_animais;			/**< Lista de animais */
 

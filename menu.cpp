@@ -320,12 +320,12 @@ namespace PetFera {
 
 
 
-					std::cout << "Digite a classe(Amphibia, Mammalia, Reptilia ou Aves): ";
+					std::cout << "Digite a classe(Anfibio, Mamífero, Reptil ou Aves): ";
 					std::cin.ignore();
 					std::getline(std::cin, classe);
 
 
-					if (classe == "Amphibia" || classe == "Aves" || classe == "Mammalia" || classe == "Reptilia") {
+					if (classe == "Anfibio" || classe == "Aves" || classe == "Mamífero" || classe == "Reptil") {
 
 
 						std::cout << "Digite a classificacao do animal se e Nativo, Exotico ou Domestico: ";
@@ -348,7 +348,7 @@ namespace PetFera {
 							std::getline(std::cin, habitat);
 							
 
-								if (classe == "Amphibia") {
+								if (classe == "Anfibio") {
 
 								int qtdmudas;								
 
@@ -551,7 +551,7 @@ namespace PetFera {
 
 								}
 
-								else if (classe == "Mammalia") {
+								else if (classe == "Mamífero") {
 
 
 									int tampelo;
@@ -654,7 +654,7 @@ namespace PetFera {
 								}
 
 
-								else if (classe == "Reptilia")   {
+								else if (classe == "Reptil")   {
 
 									std::string tipopele;
 									std::cout << "Informe o tipo de pele: ";
@@ -868,7 +868,7 @@ namespace PetFera {
 
 		std::map<int, std::shared_ptr<Animal>>::iterator it; 
 
-		std::cout << "Digite a classe de animais (Amphibia, Mammalia, Reptilia ou Aves): ";
+		std::cout << "Digite a classe de animais (Anfibio, Mamífero, Reptil ou Aves): ";
 		std::cin >> classe;
 
 		for(it = lista_animais.begin(); it != lista_animais.end(); ++it) {
