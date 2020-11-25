@@ -24,8 +24,8 @@ int main () {
 		std::cout << "(2) Remover Animal" << std::endl;
 		std::cout << "(3) Alterar Animal" << std::endl;
 		std::cout << "(4) Consultar Animal" << std::endl;
-		std::cout << "(5) Consultar Classe de Animais" << std::endl;
-		std::cout << "(6) Consultar Animais de Funcionario" << std::endl;
+		std::cout << "(5) Consultar Animais por Classe" << std::endl;
+		std::cout << "(6) Consultar Animais por Funcionario" << std::endl;
 		std::cout << "(7) Cadastrar Funcionário" << std::endl;
 		std::cout << "(8) Remover Funcionário" << std::endl;
 		std::cout << "(9) Alterar Funcionário" << std::endl;

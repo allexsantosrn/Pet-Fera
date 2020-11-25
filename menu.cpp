@@ -15,8 +15,6 @@
 #include <typeinfo>
 #include <map>
 
-//using std::pair;
-
 
 namespace PetFera {
 	
@@ -156,6 +154,7 @@ namespace PetFera {
 
 		std::map<int, std::shared_ptr<Funcionario>>::iterator it;
 
+
 		std::cout << "Deseja alterar dados de qual tipo de funcionário? (Escolha: V para Veterinário ou T para Tratador): ";
 		std::cin >> escolha;
 
@@ -169,7 +168,7 @@ namespace PetFera {
 				it = lista_funcionarios.find(id);	
 
 
-					if (it!= lista_funcionarios.end()) {
+					if (it != lista_funcionarios.end() && (it->second)->getFuncao() == "Veterinario") {
     
     					std::shared_ptr<Funcionario> funcionario = it->second;
 
@@ -215,7 +214,7 @@ namespace PetFera {
 		
 			it = lista_funcionarios.find(id);
 
-				if (it!= lista_funcionarios.end()) {
+				if (it != lista_funcionarios.end() && (it->second)->getFuncao() == "Tratador") {
     
     				std::shared_ptr<Funcionario> funcionario = it->second;
 
@@ -747,11 +746,7 @@ namespace PetFera {
 
 											}
 
-
-
 									}
-
-
 
 								}
 
@@ -868,7 +863,7 @@ namespace PetFera {
 
 		std::map<int, std::shared_ptr<Animal>>::iterator it; 
 
-		std::cout << "Digite a classe de animais (Anfibio, Mamífero, Reptil ou Aves): ";
+		std::cout << "Digite a classe de animais (Anfibio, Mamifero, Reptil ou Aves): ";
 		std::cin >> classe;
 
 		for(it = lista_animais.begin(); it != lista_animais.end(); ++it) {
@@ -916,10 +911,12 @@ namespace PetFera {
 			}
 
 			if(cont == 0) {
-				std::cout << std::endl << "Nao existem animais associados ao funcionario digitado" << std::endl << std::endl;
+
+				std::cout << std::endl << "Nao existem animais associados ao funcionario informado." << std::endl << std::endl;
+
 			}
 		}
-		//std::cout << std::endl << "Funcionario Inexistente" << std::endl << std::endl;
+		
 	}
 
 	void 
