@@ -1,3 +1,11 @@
+/** 
+ * @file	anfibio.hpp
+ * @brief	Definicao das classe Anfíbio.
+ * @author	Alexandre Dantas dos Santos.
+ * @since	12/11/2020
+ * @date 	24/11/2020
+ */	
+
 #ifndef _ANFIBIOEXOTICO_
 #define _ANFIBIOEXOTICO_
 
