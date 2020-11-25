@@ -308,9 +308,9 @@ namespace PetFera {
 		else {
 
 
-			std::cout << "Digite o identificador do Veterinario do animal: ";
+			std::cout << "Informe o identificador do Veterinario do animal: ";
 			std::cin >> idvet;
-			std::cout << "Digite o identificador do Tratador do animal: ";
+			std::cout << "Informe o identificador do Tratador do animal: ";
 			std::cin >> idtrat; 
 
 
@@ -319,7 +319,7 @@ namespace PetFera {
 
 
 
-					std::cout << "Digite a classe(Anfibio, Mamífero, Reptil ou Aves): ";
+					std::cout << "Informe a classe do animal(Anfibio, Mamífero, Reptil ou Aves): ";
 					std::cin.ignore();
 					std::getline(std::cin, classe);
 
@@ -334,15 +334,15 @@ namespace PetFera {
 						if (tipo == "Nativo" || tipo == "Exotico" || tipo == "Domestico")  {
 
 
-							std::cout << "Digite o nome: ";
+							std::cout << "Informe o nome do animal: ";
 							std::getline(std::cin, nome);
-							std::cout << "Digite o nome cientifico: ";
+							std::cout << "Informe o nome cientifico do animal: ";
 							std::getline(std::cin, cientifico);
-							std::cout << "Digite o sexo: ";
+							std::cout << "Informe o sexo do animal: ";
 							std::cin >> sexo;
-							std::cout << "Animal é venenoso? ";
+							std::cout << "O Animal é venenoso? (Informe 0 para não e 1 para sim)";
 							std::cin >> venenoso;
-							std::cout << "Digite o habitat: ";
+							std::cout << "Informe o habitat do animal: ";
 							std::cin.ignore();
 							std::getline(std::cin, habitat);
 							
@@ -351,7 +351,7 @@ namespace PetFera {
 
 								int qtdmudas;								
 
-								std::cout << "Digite a quantidade de mudas: ";
+								std::cout << "Informe a quantidade de mudas do anfíbio: ";
 								std::cin >> qtdmudas;
 								
 
