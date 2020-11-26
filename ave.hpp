@@ -50,7 +50,7 @@ namespace PetFera {
 
 		private:
 
-			/** @brief Método para imprimir os dados de um anfibio nativo*/ 
+			/** @brief Método para imprimir os dados de uma ave*/ 
 			std::ostream& print(std::ostream&);
 
 	};
