@@ -1,5 +1,5 @@
 /** 
- * @file	anfibio.hpp
+ * @file	anfibioexotico.hpp
  * @brief	Definicao da classe Anfibio Exotico.
  * @author	Esdras Israel Ferino dos Santos.
  * @since	12/11/2020

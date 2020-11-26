@@ -1,5 +1,5 @@
 /** 
- * @file	anfibio.hpp
+ * @file	anfibioexotico.hpp
  * @brief	Definicao da classe Anfibio Exotico.
  * @author	Esdras Israel Ferino dos Santos.
  * @since	12/11/2020
@@ -12,7 +12,7 @@
 namespace PetFera {
 
 
-	// Construtor padrao
+	/** @brief Construtor padrão */ 
 	AnfibioExotico::AnfibioExotico() {}
 
 	/**
@@ -36,7 +36,7 @@ namespace PetFera {
 									Anfibio(_id, _classe, _nome, _cientifico,_sexo,_veterinario,_tratador,_venenoso,_habitat,_qtdmudas),
 									Exotico(_numibama,_paisorigem) {}
 
-	// Destrutor padrao
+	/** @brief Destrutor padrão */ 
 	AnfibioExotico::~AnfibioExotico() {}
 
 	/** @return Método para stream de saída; */
