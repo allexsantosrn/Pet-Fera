@@ -1,5 +1,5 @@
 /** 
- * @file	anfibio.hpp
+ * @file	anfibio.cpp
  * @brief	Definicao das classe Anfíbio.
  * @author	Alexandre Dantas dos Santos.
  * @since	12/11/2020
