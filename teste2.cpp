@@ -1,30 +1,50 @@
 void 
-Menu::alterarFuncionario() {
+Menu::alterarAnimal() {
 
 
-		std::map<int, std::shared_ptr<Animal>>::iterator it;
-		std::map<int, std::shared_ptr<Funcionario>>::iterator it2;
-		std::map<int, std::shared_ptr<Funcionario>>::iterator it3; 
+		int id_atual;
+		map<int, shared_ptr<Animal>>::iterator it;
+
+		cout << "Digite o identificador ";
+		cin >> id_atual;
+
+		it = lista_animais.find(id_atual);
+
+		if(it != lista_animais.end()) {
+			
+			shared_ptr<Animal> animal = it->second;
+
+			int id, idvet, idtrat;
+			string classe, nome, cientifico, habitat, tipo;
+			bool venenoso;
+			char sexo;
+
+			shared_ptr<Tratador> trat = make_shared<Tratador>();
+			shared_ptr<Veterinario> vet = make_shared<Veterinario>();
+
+			map<int, shared_ptr<Animal>>::iterator it1;
+			map<int, shared_ptr<Funcionario>>::iterator it2;
+			map<int, shared_ptr<Funcionario>>::iterator it3; 
 
 
-		std::cout << "Informe a classe do animal(Anfibio, Mamífero, Reptil ou Aves): ";
-		std::cin >> classe;
 
+			std::cout << "Informe a classe do animal(Anfibio, Mamífero, Reptil ou Aves): ";
+			std::cin >> classe;
+		
 
-			if (classe == "Anfibio" || classe == "Aves" || classe == "Mamífero" || classe == "Reptil") {
+			if (classe == "Anfibio" || classe == "Aves" || classe == "Mamifero" || classe == "Reptil") {
 
 
 				std::cout << "Informe o novo nome do animal: ";
-				std::getline(std::cin, nome);
+				std::cin >> nome;
 				std::cout << "Informe o novo nome cientifico do animal: ";
-				std::getline(std::cin, cientifico);
+				std::cin >> cientifico;
 				std::cout << "Informe o novo sexo do animal: ";
 				std::cin >> sexo;
 				std::cout << "O Animal é venenoso? (Informe 0 para não e 1 para sim)";
 				std::cin >> venenoso;
 				std::cout << "Informe o novo habitat do animal: ";
-				std::cin.ignore();
-				std::getline(std::cin, habitat);
+				std::cin >> habitat;
 
 
 				std::cout << "Informe o identificador do novo Veterinario do animal: ";
@@ -32,21 +52,25 @@ Menu::alterarFuncionario() {
 				std::cout << "Informe o identificador do novo Tratador do animal: ";
 				std::cin >> idtrat; 
 
-				if (idvet >=0 && idtrat >=0)  {
+				if (idvet > 0 && idtrat > 0)  {
 
 
 					std::cout << "Informe a classificacao do animal (Nativo, Exotico ou Domestico): ";
+					std::cin.ignore();
 					std::getline(std::cin, tipo);
 
-						if (tipo == "Nativo" || tipo = "Exotico" || tipo = "Domestico")  {
+						if (tipo == "Nativo" || tipo == "Exotico" || tipo == "Domestico")  {
 
 
-							if (class = "Anfibio")  {
+							if (classe == "Anfibio")  {
 
 
 								if (tipo == "Nativo") {
 
+									int qtdmudas;
 									std::string numibama, regiaoorigem;
+									std::cout << "Digite a quantidade de mudas: ";
+									std::cin >> qtdmudas;
 									std::cout << "Digite o número do ibama: ";
 									std::cin >> numibama;
 									std::cout << "Digite a região de origem: ";
@@ -57,68 +81,66 @@ Menu::alterarFuncionario() {
 									std::cin >> id;
 
 
-										it = lista_animais.find(id);	
-										it2 = lista_funcionarios.find(idvet);
-										it3 = lista_funcionarios.find(idtrat);
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<AnfibioNativo> a = std::dynamic_pointer_cast<AnfibioNativo>(animal);
+
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->setqtdMudas(qtdmudas);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												a->setnumIbama(numibama);
+												a->setregiaoOrigem(regiaoorigem);
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
 
 
-										if (it != lista_animais.end() && (it->second)->getClasse() == "Anfibio") {
+										else  {
 
-
-											std::shared_ptr<Animal> animal = it->second;
-
-											std::shared_ptr<AnfibioNativo> an = std::dynamic_pointer_cast<AnfibioNativo>(animal);
-
-											an->setNome(nome);
-											an->setCientifico(cientifico);
-											an->setSexo(sexo);
-											an->setVenenoso(venenoso);
-											an->setClasse(classe);
-											an->setHabitat(habitat);
-											an->setVeterinario(*vet);
-											an->setTratador(*trat)
-
-
-
-											std::cout << "As informações do veterinário selecionado foram atualizadas com sucesso!" << std::endl << std::endl;
-
-
-
-										}
-
-
-										else {
-
-											std::cout << "Identificado de anfíbio nativo não localizado no banco de dados." << std::endl << std::endl;													
-
-										}	
-
-
+											std::cout << "Número de identificação inválido para animal da classe anfíbio.";
 
 										}
 
+									
 
 								}
 
-
-
-							else if (class = "Aves") {
+							}	
 
 
 
 
-							}
-
-							else if (class = "Mamífero") {
-
-
+							else if (classe == "Aves") {
+ 
+									std::cout << "Número de identificação inválido para animal da classe anfíbio.";
 
 
 
 							}
 
-							else if (class = "Reptil")  {
+							else if (classe == "Mamífero") {
 
+									std::cout << "Número de identificação inválido para animal da classe anfíbio.";
+
+
+
+							}
+
+							else if (classe == "Reptil")  {
+
+									std::cout << "Número de identificação inválido para animal da classe anfíbio.";
 
 
 
@@ -126,7 +148,7 @@ Menu::alterarFuncionario() {
 
 
 
-
+						}
 						
 
 
@@ -137,7 +159,7 @@ Menu::alterarFuncionario() {
 
 
 
-
+				}
 
 
 				
@@ -150,6 +172,7 @@ Menu::alterarFuncionario() {
 
 				}
 
+			}
 
 				
 			else {
@@ -157,4 +180,12 @@ Menu::alterarFuncionario() {
 
 				std::cout << "Classe de Animais inválida. Alteração não realizada.";
 
-			}			
+			}	
+
+			else {
+
+				std::cout << "Id não localizado".";
+
+			}
+	
+	}			

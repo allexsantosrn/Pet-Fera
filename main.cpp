@@ -47,7 +47,7 @@ int main () {
 
 
 			case 3:
-				//menu.alterarAnimal();
+				menu.alterarAnimal();
 				break;
 
 			case 4:

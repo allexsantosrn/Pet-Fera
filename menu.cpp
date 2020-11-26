@@ -291,7 +291,7 @@ namespace PetFera {
 		std::map<int, std::shared_ptr<Funcionario>>::iterator it3; 
 
 
-		std::cout << "Digite o identificador: ";
+		std::cout << "Informe o número de identificação do animal (ID) : ";
 		std::cin >> id;
 
 
@@ -315,19 +315,19 @@ namespace PetFera {
 
 
 
-			if (idvet >=0 && idtrat >=0)  {
+			if (idvet > 0 && idtrat > 0)  {
 
 
 
-					std::cout << "Informe a classe do animal(Anfibio, Mamífero, Reptil ou Aves): ";
+					std::cout << "Informe a classe do animal(Anfibio, Mamífero, Reptil ou Ave): ";
 					std::cin.ignore();
 					std::getline(std::cin, classe);
 
 
-					if (classe == "Anfibio" || classe == "Aves" || classe == "Mamífero" || classe == "Reptil") {
+					if (classe == "Anfibio" || classe == "Ave" || classe == "Mamífero" || classe == "Reptil") {
 
 
-						std::cout << "Digite a classificacao do animal se e Nativo, Exotico ou Domestico: ";
+						std::cout << "Informe a classificacao do animal (Nativo, Exotico ou Domestico): ";
 						std::getline(std::cin, tipo);
 
 						
@@ -375,7 +375,7 @@ namespace PetFera {
 												animal = std::make_shared<AnfibioNativo>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, regiaoorigem);
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "-----Animal cadastrado com sucesso!-----" << std::endl << std::endl;
 						
 											}
 
@@ -405,7 +405,7 @@ namespace PetFera {
 												animal = std::make_shared<AnfibioExotico>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, paisorigem);
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "-----Animal cadastrado com sucesso!-----" << std::endl << std::endl;
 						
 												}
 
@@ -447,7 +447,7 @@ namespace PetFera {
 								}
 
 
-								else if (classe == "Aves")  {
+								else if (classe == "Ave")  {
 
 
 									int tambico;
@@ -784,12 +784,877 @@ namespace PetFera {
 
 			}	
 
-
-
 			
 		}
 
 	} 
+
+	void Menu::alterarAnimal() {
+
+
+		int id;
+		std::map<int, std::shared_ptr<Animal>>::iterator it;
+
+		std::cout << "Digite o identificador ";
+		std::cin >> id;
+
+		it = lista_animais.find(id);
+
+		if (it != lista_animais.end()) {
+			
+			std::shared_ptr<Animal> animal = it->second;
+
+			int idvet, idtrat;
+			string classe, nome, cientifico, habitat, tipo;
+			bool venenoso;
+			char sexo;
+
+			shared_ptr<Tratador> trat = make_shared<Tratador>();
+			shared_ptr<Veterinario> vet = make_shared<Veterinario>();
+
+			std::map<int, std::shared_ptr<Animal>>::iterator it1;
+			std::map<int, std::shared_ptr<Funcionario>>::iterator it2;
+			std::map<int, std::shared_ptr<Funcionario>>::iterator it3; 
+
+
+
+			std::cout << "Informe a classe do animal(Anfibio, Mamífero, Reptil ou Ave): ";
+			std::cin >> classe;
+		
+
+			if (classe == "Anfibio" || classe == "Ave" || classe == "Mamifero" || classe == "Reptil") {
+
+
+				std::cout << "Informe o novo nome do animal: ";
+				std::cin >> nome;
+				std::cout << "Informe o novo nome cientifico do animal: ";
+				std::cin >> cientifico;
+				std::cout << "Informe o novo sexo do animal: ";
+				std::cin >> sexo;
+				std::cout << "O Animal é venenoso? (Informe 0 para não e 1 para sim)";
+				std::cin >> venenoso;
+				std::cout << "Informe o novo habitat do animal: ";
+				std::cin >> habitat;
+
+
+				std::cout << "Informe o identificador do novo Veterinario do animal: ";
+				std::cin >> idvet;
+				std::cout << "Informe o identificador do novo Tratador do animal: ";
+				std::cin >> idtrat; 
+
+				if (idvet > 0 && idtrat > 0)  {
+
+
+					std::cout << "Informe a classificacao do animal (Nativo, Exotico ou Domestico): ";
+					std::cin.ignore();
+					std::getline(std::cin, tipo);
+
+						if (tipo == "Nativo" || tipo == "Exotico" || tipo == "Domestico")  {
+
+
+							if (classe == "Anfibio")  {
+
+
+								if (tipo == "Nativo") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Anfibio") {
+
+											int qtdmudas;
+											std::string numibama, regiaoorigem;
+											std::cout << "Digite a quantidade de mudas: ";
+											std::cin >> qtdmudas;
+											std::cout << "Digite o número do ibama: ";
+											std::cin >> numibama;
+											std::cout << "Digite a região de origem: ";
+											std::cin >> regiaoorigem;
+									
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<AnfibioNativo> a = std::dynamic_pointer_cast<AnfibioNativo>(animal);
+
+												//a->setId(id);
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->setqtdMudas(qtdmudas);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												a->setnumIbama(numibama);
+												a->setregiaoOrigem(regiaoorigem);
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizados na base de dados.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl;
+
+									}
+
+										
+
+							}
+
+
+								else if (tipo == "Exotico") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Anfibio") {
+
+											int qtdmudas;
+											std::string numibama, paisorigem;
+											std::cout << "Digite a quantidade de mudas: ";
+											std::cin >> qtdmudas;
+											std::cout << "Digite o número do ibama: ";
+											std::cin >> numibama;
+											std::cout << "Digite o pais de origem: ";
+											std::cin >> paisorigem;
+									
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<AnfibioExotico> a = std::dynamic_pointer_cast<AnfibioExotico>(animal);
+
+												 
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->setqtdMudas(qtdmudas);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												a->setnumIbama(numibama);
+												a->setpaisOrigem(paisorigem);
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizado.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl;
+
+									}										
+
+									}	
+
+
+								else if (tipo == "Domestico") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Anfibio") {
+
+											int qtdmudas;
+											std::string numibama, paisorigem;
+											std::cout << "Digite a quantidade de mudas: ";
+											std::cin >> qtdmudas;																
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<Anfibio> a = std::dynamic_pointer_cast<Anfibio>(animal);
+
+												 
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->setqtdMudas(qtdmudas);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizado.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl;
+
+									}										
+
+								}							
+
+								
+
+							}
+
+
+
+
+							else if (classe == "Ave") {
+ 
+									if (tipo == "Nativo") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Ave") {
+
+											int tambico;
+											std::string numibama, regiaoorigem;
+											std::cout << "Informe o tamanho do bico: ";
+											std::cin >> tambico;
+											std::cout << "Digite o número do ibama: ";
+											std::cin >> numibama;
+											std::cout << "Digite a região de origem: ";
+											std::cin >> regiaoorigem;
+									
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<AveNativa> a = std::dynamic_pointer_cast<AveNativa>(animal);
+
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->settamBico(tambico);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												a->setnumIbama(numibama);
+												a->setregiaoOrigem(regiaoorigem);
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizados na base de dados.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl;
+
+									}
+
+										
+
+							}
+
+
+								else if (tipo == "Exotico") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Ave") {
+
+											int tambico;
+											std::string numibama, paisorigem;
+											std::cout << "Digite a quantidade de mudas: ";
+											std::cin >> tambico;
+											std::cout << "Digite o número do ibama: ";
+											std::cin >> numibama;
+											std::cout << "Digite o pais de origem: ";
+											std::cin >> paisorigem;
+									
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<AveExotica> a = std::dynamic_pointer_cast<AveExotica>(animal);
+
+												 
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->settamBico(tambico);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												a->setnumIbama(numibama);
+												a->setpaisOrigem(paisorigem);
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizado.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl;
+
+									}										
+
+							}
+
+
+								else if (tipo == "Domestico") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Ave") {
+
+											int tambico;
+											std::string numibama, paisorigem;
+											std::cout << "Digite a quantidade de mudas: ";
+											std::cin >> tambico;																
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<Ave> a = std::dynamic_pointer_cast<Ave>(animal);
+
+												 
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->settamBico(tambico);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizado.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl;
+
+									}										
+
+							}	
+
+
+
+							}
+
+							else if (classe == "Mamífero") {
+
+									if (tipo == "Nativo") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Mamifero") {
+
+											int tampelo;
+											std::string numibama, regiaoorigem;
+											std::cout << "Informe o tamanho do pelo do animal: ";
+											std::cin >> tampelo;
+											std::cout << "Digite o número do ibama: ";
+											std::cin >> numibama;
+											std::cout << "Digite a região de origem: ";
+											std::cin >> regiaoorigem;
+									
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<MamiferoNativo> a = std::dynamic_pointer_cast<MamiferoNativo>(animal);
+
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->settamPelo(tampelo);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												a->setnumIbama(numibama);
+												a->setregiaoOrigem(regiaoorigem);
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizados na base de dados.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero." << std::endl;
+
+									}
+
+										
+
+							}
+
+
+								else if (tipo == "Exotico") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Mamifero") {
+
+											int tampelo;
+											std::string numibama, paisorigem;
+											std::cout << "Informe o tamanho do pelo do animal: ";
+											std::cin >> tampelo;
+											std::cout << "Digite o número do ibama: ";
+											std::cin >> numibama;
+											std::cout << "Digite o pais de origem: ";
+											std::cin >> paisorigem;
+									
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<MamiferoExotico> a = std::dynamic_pointer_cast<MamiferoExotico>(animal);
+
+												 
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->settamPelo(tampelo);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												a->setnumIbama(numibama);
+												a->setpaisOrigem(paisorigem);
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizado.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero" << std::endl;
+
+									}										
+
+							}
+
+
+								else if (tipo == "Domestico") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Mamifero") {
+
+											int tampelo;
+											std::string numibama, paisorigem;
+											std::cout << "Informe o tamanho do pelo do animal: ";
+											std::cin >> tampelo;																
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<Mamifero> a = std::dynamic_pointer_cast<Mamifero>(animal);
+
+												 
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->settamPelo(tampelo);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizado.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero" << std::endl;
+
+									}										
+
+							}							
+
+
+
+							}
+
+							else if (classe == "Reptil")  {
+
+									
+									  if (tipo == "Nativo") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Reptil") {
+
+											std::string numibama, regiaoorigem, tipopele;
+											std::cout << "Informe o tipo de pele do animal: ";
+											std::cin >> tipopele;
+											std::cout << "Digite o número do ibama: ";
+											std::cin >> numibama;
+											std::cout << "Digite a região de origem: ";
+											std::cin >> regiaoorigem;
+									
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<ReptilNativo> a = std::dynamic_pointer_cast<ReptilNativo>(animal);
+
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->settipoPele(tipopele);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												a->setnumIbama(numibama);
+												a->setregiaoOrigem(regiaoorigem);
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizados na base de dados.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil." << std::endl;
+
+									}
+
+										
+
+							}
+
+
+								else if (tipo == "Exotico") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Reptil") {
+
+											std::string numibama, paisorigem, tipopele;
+											std::cout << "Informe o tipo de pele do animal: ";
+											std::cin >> tipopele;
+											std::cout << "Digite o número do ibama: ";
+											std::cin >> numibama;
+											std::cout << "Digite o pais de origem: ";
+											std::cin >> paisorigem;
+									
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<ReptilExotico> a = std::dynamic_pointer_cast<ReptilExotico>(animal);
+
+												 
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->settipoPele(tipopele);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												a->setnumIbama(numibama);
+												a->setpaisOrigem(paisorigem);
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizado.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil" << std::endl;
+
+									}										
+
+							}
+
+
+								else if (tipo == "Domestico") {
+										
+										it1 = lista_animais.find(id);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Reptil") {
+
+											std::string numibama, paisorigem, tipopele;
+											std::cout << "Informe o tipo de pele do animal: ";
+											std::cin >> tipopele;																
+
+								
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+												
+												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												shared_ptr<Reptil> a = std::dynamic_pointer_cast<Reptil>(animal);
+
+												 
+												a->setClasse(classe);
+												a->setNome(nome);
+												a->setCientifico(cientifico);
+												a->setSexo(sexo);
+												a->setVeterinario((*vet));
+												a->setTratador((*trat));
+												a->settipoPele(tipopele);
+												a->setVenenoso(venenoso);
+												a->setHabitat(habitat);
+												
+
+												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+
+												}
+
+
+												else  {
+
+													std::cout << "Número de tratador e/ou veterinário não localizado.";
+
+												}
+
+									}
+
+									else {
+
+
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil" << std::endl;
+
+									}										
+
+							}							
+
+
+
+							}
+
+
+
+						}
+						
+
+
+						else {
+
+							std::cout << "Classificação errônea. Alteração não realizada";
+						}
+
+
+
+				}
+
+
+				
+
+
+				else { 
+
+					std::cout << "Identificadores para funcionários inválidos. Alteração não realizada.";
+
+
+				}
+
+			}
+
+				
+			else {
+
+
+				std::cout << "Classe de Animais inválida. Alteração não realizada.";
+
+			}	
+
+		}
+
+		else {
+
+			std::cout << "Não foi localizado animais com o id especificado";
+
+		}
+	
+	}			
+
+
+	
 
 
 
@@ -863,7 +1728,7 @@ namespace PetFera {
 
 		std::map<int, std::shared_ptr<Animal>>::iterator it; 
 
-		std::cout << "Digite a classe de animais (Anfibio, Mamifero, Reptil ou Aves): ";
+		std::cout << "Digite a classe de animais (Anfibio, Mamifero, Reptil ou Ave): ";
 		std::cin >> classe;
 
 		for(it = lista_animais.begin(); it != lista_animais.end(); ++it) {

@@ -61,7 +61,7 @@ namespace PetFera {
 			void removerAnimal();
 
 			/** @brief Método para alterar os dados de um animal */
-			//void alterarAnimal();
+			void alterarAnimal();
 
 			/** @brief Método para consulta de um animal */
 			void consultarAnimal();
