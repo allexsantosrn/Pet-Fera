@@ -11,7 +11,7 @@
 
 namespace PetFera {
 
-	// Construtor padrao
+	/** @brief Construtor padrão */ 
 	Anfibio::Anfibio() {}
 
 	/**
@@ -23,7 +23,7 @@ namespace PetFera {
 	 * @param _veterinario Veterinario do animal
 	 * @param _tratador Tratador do animal
 	 * @param _venenoso Indica se o animal é venenoso
-	 * @param _habitar Indica o habitat do animal
+	 * @param _habitat Indica o habitat do animal
 	 * @param _qtdmudas Quantitativo total de mudas do anfibio
 	 */		
 	Anfibio::Anfibio(int _id, std::string _classe, std::string _nome, std::string _cientifico,
@@ -32,7 +32,7 @@ namespace PetFera {
 						setqtdMudas(_qtdmudas);
 	}
 
-	// Destrutor padrão
+	/** @brief Destrutor padrão */ 
 	Anfibio::~Anfibio() {}
 
 	/** @return Retorna o quantitativo total de mudas do anfíbio; */

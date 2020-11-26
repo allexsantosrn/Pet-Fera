@@ -1,7 +1,7 @@
 /** 
  * @file	animal.hpp
  * @brief	Definicao da classe Animal.
- * @author	Esdras Israel Ferino dos Santos.
+ * @author	Alexandre Dantas dos Santos.
  * @since	12/11/2020
  * @date 	24/11/2020
  */
