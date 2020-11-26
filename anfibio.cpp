@@ -45,7 +45,7 @@ namespace PetFera {
 		this->qtdmudas = _qtdmudas;
 	}
 
-	/** @return Método para stream de saída; */
+	/** @return Método para stream de saida; */
 	std::ostream& 
 	Anfibio::print(std::ostream &o) {
 		o << "Identificador: " << id << std::endl;

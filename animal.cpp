@@ -131,7 +131,7 @@ namespace PetFera {
 		this->habitat = _habitat;
 	}
 
-	/** @return Método para stream de saida; */
+	/** @return Método para stream de saida */
 	std::ostream& operator<< (std::ostream &o, Animal &a) {
 		return a.print(o);
 	}
