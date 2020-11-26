@@ -4,10 +4,8 @@
 #include "funcionario.hpp"
 
 #include <ostream>
-using std::ostream;
-
 #include <string>
-//using std::string;
+
 
 namespace PetFera {
 	

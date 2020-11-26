@@ -1,6 +1,6 @@
 /** 
  * @file	menu.cpp
- * @brief	Implementacao da classe que identifica os métodos utilizados pelas funcionalidades do sistema.
+ * @brief	Implementacção da classe que identifica os métodos utilizados pelas funcionalidades do sistema.
  * @author	Alexandre Dantas dos Santos (allexkid@ufrn.br)
  * @since	14/11/2020
  * @date 	24/11/2020
@@ -25,8 +25,7 @@ namespace PetFera {
 	Menu::~Menu() {}
 
 
-	// Método para cadastrar um novo funcionário (Tratador ou Veterinário)
-
+	// Método para cadastrar um novo funcionário (Tratador ou Veterinário).
 	void 
 	Menu::cadastrarFuncionario() {
 		
@@ -44,7 +43,7 @@ namespace PetFera {
 
 			if (it != lista_funcionarios.end()) {
 
-				std::cout << "Erro de cadastro. Já existe um funcionário registrado com o número de identificação(ID) informado." << std::endl;
+				std::cout << std::endl << "Erro de cadastro. Já existe um funcionário registrado com o número de identificação(ID) informado." << std::endl << std::endl;
 				
 			}
 
@@ -57,7 +56,7 @@ namespace PetFera {
 				std::cout << "Informe o cpf do funcionário: ";
 				std::getline(std::cin, cpf);
 		
-				std::cout << "Informe o funcao do funcionário(Veterinario ou Tratador): ";
+				std::cout << "Informe a função do funcionário (Veterinario ou Tratador): ";
 				std::cin >> funcao;
 
 
@@ -72,7 +71,7 @@ namespace PetFera {
 						lista_funcionarios[id] = funcs;
 
 					
-						std::cout << "Veterinário cadastrado com sucesso!" << std::endl;
+						std::cout << std::endl << "Veterinário cadastrado com sucesso!" << std::endl << std::endl;
 
 					}
 
@@ -89,14 +88,14 @@ namespace PetFera {
 
 							 	lista_funcionarios[id] = funcs;
 
-							 	std::cout << "Tratador cadastrado com sucesso!" << std::endl; 
+							 	 std::cout << std::endl << "Tratador cadastrado com sucesso!" << std::endl << std::endl; 
 
 							}
 
 
 							else {
 
-								std::cout << "Nível de segurança inválido. Funcionário não cadastrado." <<std::endl;
+								std::cout << std::endl <<  "Nível de segurança inválido. Funcionário não cadastrado." << std::endl << std::endl;
 
 
 							}
@@ -106,7 +105,7 @@ namespace PetFera {
 
 					else {
 
-						std::cout << "Função inválida. Funcionário não cadastrado." << std::endl;
+						std::cout << std::endl <<  "Função inválida. Funcionário não cadastrado." << std::endl << std::endl;
 
 
 					}				
@@ -114,6 +113,7 @@ namespace PetFera {
 		
 				}					
 	}
+	
 
 	// Método para remoção de um funconário
 	
@@ -133,18 +133,21 @@ namespace PetFera {
 
 				lista_funcionarios.erase(it);
 
-				std::cout <<"Funcionário removido com sucesso." << std::endl;
+				std::cout << std::endl <<"Funcionário removido com sucesso." << std::endl << std::endl;
 			
 			}
 
 
 			else { 
 
-					std::cout << "Funcionário inexistente. Remoção não realizada." << std::endl;
+					std::cout << std::endl << "Funcionário inexistente. Remoção não realizada." << std::endl << std::endl;
 
 			}
 
 	}
+
+
+	// Método para alteração de um funcionário
 
 	void 
 	Menu::alterarFuncionario() {
@@ -191,14 +194,14 @@ namespace PetFera {
 						v->setCpf(cpf);
 						v->setCrmv(crmv);
 
-						std::cout << "As informações do veterinário selecionado foram atualizadas com sucesso!" << std::endl << std::endl;
+						std::cout << std::endl << "As informações do veterinário selecionado foram atualizadas com sucesso!" << std::endl << std::endl;
 
 					}
 
 					else {
 
 
-						std::cout << "Veterinário não foi localizado na base de dados." << std::endl << std::endl;
+						std::cout << std::endl <<  "Veterinário não foi localizado na base de dados." << std::endl << std::endl;
 
 
 					}
@@ -239,13 +242,13 @@ namespace PetFera {
 							t->setCpf(cpf);
 							t->setnivelSeguranca(nivelseguranca);
 
-							std::cout << "As informações do tratador selecionado foram atualizadas com sucesso!" << std::endl << std::endl;
+							std::cout << std::endl << "As informações do tratador selecionado foram atualizadas com sucesso!" << std::endl << std::endl;
 
 						}
 
 						else {
 
-							std::cout << "Nível de segurança inválido. Tratador não foi atualizado." << std::endl << std::endl;
+							std::cout << std::endl << "Nível de segurança inválido. Tratador não foi atualizado." << std::endl << std::endl;
 
 						}
 
@@ -254,7 +257,7 @@ namespace PetFera {
 
 				else {
 
-					std::cout << "Tratador não foi localizado na base de dados." << std::endl << std::endl;
+					std::cout << std::endl << "Tratador não foi localizado na base de dados." << std::endl << std::endl;
 			
 				}	
 
@@ -263,7 +266,7 @@ namespace PetFera {
 
 			else {
 
-				std::cout << "Opção inválida. Alteração não realizada." << std::endl << std::endl;					
+				std::cout << std::endl << "Opção inválida. Alteração não realizada." << std::endl << std::endl;					
 	
 			}
 
@@ -273,6 +276,7 @@ namespace PetFera {
 	}
 
 
+	//Método para cadastrar um novo animal
 
 	void Menu::cadastrarAnimal() {
 
@@ -300,8 +304,7 @@ namespace PetFera {
 
 		if(it1 != lista_animais.end()) {
 
-			std::cout << std::endl << "Erro no cadastramento." << std::endl;
-			std::cout << "O Animal ja foi cadastrado." << std::endl << std::endl;
+			std::cout << std::endl << "O Animal ja cadastrado. Cadastro não realizado." << std::endl << std::endl;
 			
 		}
 
@@ -319,12 +322,12 @@ namespace PetFera {
 
 
 
-					std::cout << "Informe a classe do animal(Anfibio, Mamífero, Reptil ou Ave): ";
+					std::cout << "Informe a classe do animal(Anfibio, Mamifero, Reptil ou Ave): ";
 					std::cin.ignore();
 					std::getline(std::cin, classe);
 
 
-					if (classe == "Anfibio" || classe == "Ave" || classe == "Mamífero" || classe == "Reptil") {
+					if (classe == "Anfibio" || classe == "Ave" || classe == "Mamifero" || classe == "Reptil") {
 
 
 						std::cout << "Informe a classificacao do animal (Nativo, Exotico ou Domestico): ";
@@ -340,7 +343,7 @@ namespace PetFera {
 							std::getline(std::cin, cientifico);
 							std::cout << "Informe o sexo do animal: ";
 							std::cin >> sexo;
-							std::cout << "O Animal é venenoso? (Informe 0 para não e 1 para sim)";
+							std::cout << "O Animal é venenoso? (Informe 0 para não e 1 para sim): ";
 							std::cin >> venenoso;
 							std::cout << "Informe o habitat do animal: ";
 							std::cin.ignore();
@@ -352,6 +355,7 @@ namespace PetFera {
 								int qtdmudas;								
 
 								std::cout << "Informe a quantidade de mudas do anfíbio: ";
+								std::cin.ignore();
 								std::cin >> qtdmudas;
 								
 
@@ -359,10 +363,11 @@ namespace PetFera {
 
 
 										std::string numibama, regiaoorigem;
-										std::cout << "Digite o número do ibama: ";
-										std::cin >> numibama;
-										std::cout << "Digite a região de origem: ";
-										std::cin >> regiaoorigem;
+										std::cout << "informe o número do ibama: ";
+										std::cin.ignore();
+										std::getline(std::cin, numibama);
+										std::cout << "Informe a região de origem: ";
+										std::getline(std::cin, regiaoorigem);
 									
 
 										it2 = lista_funcionarios.find(idvet);
@@ -375,13 +380,13 @@ namespace PetFera {
 												animal = std::make_shared<AnfibioNativo>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, regiaoorigem);
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado com sucesso!-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 											}
 
 											else { 
 
-											std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+											std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 											}
 
@@ -390,10 +395,11 @@ namespace PetFera {
 									else if (tipo == "Exotico") {
 
 										std::string numibama, paisorigem;
-										std::cout << "Digite o número do ibama: ";
-										std::cin >> numibama;
-										std::cout << "Digite o pais de origem: ";
-										std::cin >> paisorigem;
+										std::cin.ignore();
+										std::cout << "informe o número do ibama: ";
+										std::getline(std::cin, numibama);
+										std::cout << "Informe o país de origem: ";
+										std::getline(std::cin, paisorigem);
 
 										it2 = lista_funcionarios.find(idvet);
 										it3 = lista_funcionarios.find(idtrat);
@@ -405,13 +411,13 @@ namespace PetFera {
 												animal = std::make_shared<AnfibioExotico>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, paisorigem);
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado com sucesso!-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 												}
 
 											else { 
 
-												std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+												std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 												}
 
@@ -430,13 +436,13 @@ namespace PetFera {
 												animal = std::make_shared<Anfibio>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas);
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 											}
 
 											else { 
 
-											std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+											std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 											}
 
@@ -452,7 +458,7 @@ namespace PetFera {
 
 									int tambico;
 
-									std::cout << "Digite o tamanho do bico: ";
+									std::cout << "Informe o tamanho do bico: ";
 									std::cin >> tambico;
 									
 
@@ -460,10 +466,11 @@ namespace PetFera {
 
 
 										std::string numibama, regiaoorigem;
-										std::cout << "Digite o número do ibama: ";
-										std::cin >> numibama;
-										std::cout << "Digite a região de origem: ";
-										std::cin >> regiaoorigem;
+										std::cout << "informe o número do ibama: ";
+										std::cin.ignore();
+										std::getline(std::cin, numibama);
+										std::cout << "Informe a região de origem: ";
+										std::getline(std::cin, regiaoorigem);
 
 
 										it2 = lista_funcionarios.find(idvet);
@@ -477,13 +484,13 @@ namespace PetFera {
 
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 											}
 
 											else { 
 
-											std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+											std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 											}
 
@@ -492,10 +499,11 @@ namespace PetFera {
 									else if (tipo == "Exotico") {
 
 										std::string numibama, paisorigem;
-										std::cout << "Digite o número do ibama: ";
-										std::cin >> numibama;
-										std::cout << "Digite o pais de origem: ";
-										std::cin >> paisorigem;
+										std::cout << "informe o número do ibama: ";
+										std::cin.ignore();
+										std::getline(std::cin, numibama);
+										std::cout << "Informe o país de origem: ";
+										std::getline(std::cin, paisorigem);
 
 										it2 = lista_funcionarios.find(idvet);
 										it3 = lista_funcionarios.find(idtrat);
@@ -508,13 +516,13 @@ namespace PetFera {
 
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 												}
 
 											else { 
 
-												std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+												std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 												}
 
@@ -533,13 +541,13 @@ namespace PetFera {
 												animal = std::make_shared<Ave>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico);
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 											}
 
 											else { 
 
-											std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+											std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 											}
 
@@ -550,11 +558,11 @@ namespace PetFera {
 
 								}
 
-								else if (classe == "Mamífero") {
+								else if (classe == "Mamifero") {
 
 
 									int tampelo;
-									std::cout << "Digite o tamanho do pelo: ";
+									std::cout << "Informe o tamanho do pelo: ";
 									std::cin >> tampelo;
 
 									it2 = lista_funcionarios.find(idvet);
@@ -564,10 +572,11 @@ namespace PetFera {
 
 
 										std::string numibama, regiaoorigem;
-										std::cout << "Digite o número do ibama: ";
-										std::cin >> numibama;
-										std::cout << "Digite a região de origem: ";
-										std::cin >> regiaoorigem;
+										std::cout << "informe o número do ibama: ";
+										std::cin.ignore();
+										std::getline(std::cin, numibama);
+										std::cout << "Informe a região de origem: ";
+										std::getline(std::cin, regiaoorigem);
 
 
 										it2 = lista_funcionarios.find(idvet);
@@ -580,13 +589,13 @@ namespace PetFera {
 												animal = std::make_shared<MamiferoNativo>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo, numibama, regiaoorigem);
 												lista_animais[id] = animal;
 												
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 											}
 
 											else { 
 
-											std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+											std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 											}
 
@@ -595,10 +604,11 @@ namespace PetFera {
 									else if (tipo == "Exotico") {
 
 										std::string numibama, paisorigem;
-										std::cout << "Digite o número do ibama: ";
-										std::cin >> numibama;
-										std::cout << "Digite o pais de origem: ";
-										std::cin >> paisorigem;
+										std::cout << "informe o número do ibama: ";
+										std::cin.ignore();
+										std::getline(std::cin, numibama);
+										std::cout << "Informe o país de origem: ";
+										std::getline(std::cin, paisorigem);
 
 										it2 = lista_funcionarios.find(idvet);
 										it3 = lista_funcionarios.find(idtrat);
@@ -610,13 +620,13 @@ namespace PetFera {
 												animal = std::make_shared<MamiferoExotico>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo, numibama, paisorigem);
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 												}
 
 											else { 
 
-												std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+												std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 												}
 
@@ -635,13 +645,13 @@ namespace PetFera {
 												animal = std::make_shared<Mamifero>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo);
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 											}
 
 											else { 
 
-											std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+											std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 											}
 
@@ -657,17 +667,19 @@ namespace PetFera {
 
 									std::string tipopele;
 									std::cout << "Informe o tipo de pele: ";
-									std::cin >> tipopele;
+									std::getline(std::cin, tipopele);
+									
 									
 
 									if (tipo == "Nativo") {
 
 
 										std::string numibama, regiaoorigem;
-										std::cout << "Digite o número do ibama: ";
-										std::cin >> numibama;
-										std::cout << "Digite a região de origem: ";
-										std::cin >> regiaoorigem;
+										std::cout << "informe o número do ibama: ";
+										std::cin.ignore();
+										std::getline(std::cin, numibama);
+										std::cout << "Informe a região de origem: ";
+										std::getline(std::cin, regiaoorigem);
 
 
 										it2 = lista_funcionarios.find(idvet);
@@ -681,13 +693,13 @@ namespace PetFera {
 												animal = std::make_shared<ReptilNativo>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele, numibama, regiaoorigem);											
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 											}
 
 											else { 
 
-											std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+											std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 											}
 
@@ -696,10 +708,11 @@ namespace PetFera {
 									else if (tipo == "Exotico") {
 
 										std::string numibama, paisorigem;
-										std::cout << "Digite o número do ibama: ";
-										std::cin >> numibama;
-										std::cout << "Digite o pais de origem: ";
-										std::cin >> paisorigem;
+										std::cout << "informe o número do ibama: ";
+										std::cin.ignore();
+										std::getline(std::cin, numibama);
+										std::cout << "Informe o país de origem: ";
+										std::getline(std::cin, paisorigem);
 
 										it2 = lista_funcionarios.find(idvet);
 										it3 = lista_funcionarios.find(idtrat);
@@ -711,13 +724,13 @@ namespace PetFera {
 												animal = std::make_shared<ReptilExotico>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele, numibama, paisorigem);
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 												}
 
 											else { 
 
-												std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+												std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 												}
 
@@ -736,13 +749,13 @@ namespace PetFera {
 												animal = std::make_shared<Reptil>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele);												
 												lista_animais[id] = animal;
 
-												std::cout << std::endl << "-----Animal cadastrado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 						
 											}
 
 											else { 
 
-											std::cout << std::endl << "Erro, veterinario ou/e tratador nao encontrado." << std::endl << std::endl;
+											std::cout << std::endl << "Cadastro não realizado. Veterinário ou/e tratador não localizado na base de dados." << std::endl << std::endl;
 
 											}
 
@@ -758,7 +771,7 @@ namespace PetFera {
 						else {
 
 
-							std::cout << "Classificação errônea. Cadastro não realizado.";
+							std::cout << std::endl << "Classificação errônea. Cadastro não realizado." << std::endl << std::endl;
 						
 						}	
 
@@ -769,8 +782,7 @@ namespace PetFera {
 					else {
 
 
-							std::cout << "Classe de Animais inválida. Cadastro não realizado.";
-
+							std::cout << std::endl << "Classe de Animais inválida. Cadastro não realizado." << std::endl << std::endl;
 					}
 
 
@@ -780,8 +792,7 @@ namespace PetFera {
 			else {
 
 
-				std::cout << "Identificadores para funcionários inválidos. Cadastro não realizado.";
-
+				std::cout << std::endl << "Identificadores para funcionários inválidos. Cadastro não realizado." << std::endl << std::endl;
 			}	
 
 			
@@ -789,13 +800,16 @@ namespace PetFera {
 
 	} 
 
+
+	//Método para alteração de um animal
+
 	void Menu::alterarAnimal() {
 
 
 		int id;
 		std::map<int, std::shared_ptr<Animal>>::iterator it;
 
-		std::cout << "Digite o identificador ";
+		std::cout << "Informe o identificador do animal (ID): ";
 		std::cin >> id;
 
 		it = lista_animais.find(id);
@@ -818,24 +832,25 @@ namespace PetFera {
 
 
 
-			std::cout << "Informe a classe do animal(Anfibio, Mamífero, Reptil ou Ave): ";
-			std::cin >> classe;
+			std::cout << "Informe a classe do animal(Anfibio, Mamifero, Reptil ou Ave): ";
+			std::cin.ignore();
+			std::getline(std::cin, classe);
 		
 
 			if (classe == "Anfibio" || classe == "Ave" || classe == "Mamifero" || classe == "Reptil") {
 
 
 				std::cout << "Informe o novo nome do animal: ";
-				std::cin >> nome;
+				std::getline(std::cin, nome);
 				std::cout << "Informe o novo nome cientifico do animal: ";
-				std::cin >> cientifico;
+				std::getline(std::cin, cientifico);
 				std::cout << "Informe o novo sexo do animal: ";
 				std::cin >> sexo;
-				std::cout << "O Animal é venenoso? (Informe 0 para não e 1 para sim)";
+				std::cout << "O Animal é venenoso? (Informe 0 para não e 1 para sim): ";
 				std::cin >> venenoso;
 				std::cout << "Informe o novo habitat do animal: ";
-				std::cin >> habitat;
-
+				std::cin.ignore();
+				std::getline(std::cin, habitat);
 
 				std::cout << "Informe o identificador do novo Veterinario do animal: ";
 				std::cin >> idvet;
@@ -845,7 +860,7 @@ namespace PetFera {
 				if (idvet > 0 && idtrat > 0)  {
 
 
-					std::cout << "Informe a classificacao do animal (Nativo, Exotico ou Domestico): ";
+					std::cout << "Informe a classificação do animal (Nativo, Exotico ou Domestico): ";
 					std::cin.ignore();
 					std::getline(std::cin, tipo);
 
@@ -863,12 +878,13 @@ namespace PetFera {
 
 											int qtdmudas;
 											std::string numibama, regiaoorigem;
-											std::cout << "Digite a quantidade de mudas: ";
+											std::cout << "Informe a quantidade de mudas: ";
 											std::cin >> qtdmudas;
-											std::cout << "Digite o número do ibama: ";
-											std::cin >> numibama;
-											std::cout << "Digite a região de origem: ";
-											std::cin >> regiaoorigem;
+											std::cout << "informe o número do ibama: ";
+											std::cin.ignore();
+											std::getline(std::cin, numibama);
+											std::cout << "Informe a região de origem: ";
+											std::getline(std::cin, regiaoorigem);
 									
 
 								
@@ -881,7 +897,6 @@ namespace PetFera {
 												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 												shared_ptr<AnfibioNativo> a = std::dynamic_pointer_cast<AnfibioNativo>(animal);
 
-												//a->setId(id);
 												a->setClasse(classe);
 												a->setNome(nome);
 												a->setCientifico(cientifico);
@@ -894,14 +909,14 @@ namespace PetFera {
 												a->setnumIbama(numibama);
 												a->setregiaoOrigem(regiaoorigem);
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizados na base de dados.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizados na base de dados." << std::endl << std::endl;
 
 												}
 
@@ -910,7 +925,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl << std::endl;
 
 									}
 
@@ -927,12 +942,13 @@ namespace PetFera {
 
 											int qtdmudas;
 											std::string numibama, paisorigem;
-											std::cout << "Digite a quantidade de mudas: ";
+											std::cout << "Informe a quantidade de mudas: ";
 											std::cin >> qtdmudas;
-											std::cout << "Digite o número do ibama: ";
-											std::cin >> numibama;
-											std::cout << "Digite o pais de origem: ";
-											std::cin >> paisorigem;
+											std::cout << "informe o número do ibama: ";
+											std::cin.ignore();											
+											std::getline(std::cin, numibama);
+											std::cout << "Informe o país de origem: ";
+											std::getline(std::cin, paisorigem);
 									
 
 								
@@ -959,14 +975,14 @@ namespace PetFera {
 												a->setnumIbama(numibama);
 												a->setpaisOrigem(paisorigem);
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizado.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizado." << std::endl << std::endl;
 
 												}
 
@@ -975,7 +991,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl << std::endl;
 
 									}										
 
@@ -988,9 +1004,8 @@ namespace PetFera {
 
 										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Anfibio") {
 
-											int qtdmudas;
-											std::string numibama, paisorigem;
-											std::cout << "Digite a quantidade de mudas: ";
+											int qtdmudas;											
+											std::cout << "Informe a quantidade de mudas: ";
 											std::cin >> qtdmudas;																
 
 								
@@ -1016,14 +1031,14 @@ namespace PetFera {
 												a->setHabitat(habitat);
 												
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizado.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizado." << std::endl << std::endl;
 
 												}
 
@@ -1032,7 +1047,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl << std::endl;
 
 									}										
 
@@ -1057,10 +1072,11 @@ namespace PetFera {
 											std::string numibama, regiaoorigem;
 											std::cout << "Informe o tamanho do bico: ";
 											std::cin >> tambico;
-											std::cout << "Digite o número do ibama: ";
-											std::cin >> numibama;
-											std::cout << "Digite a região de origem: ";
-											std::cin >> regiaoorigem;
+											std::cout << "informe o número do ibama: ";
+											std::cin.ignore();
+											std::getline(std::cin, numibama);
+											std::cout << "Informe a região de origem: ";
+											std::getline(std::cin, regiaoorigem);
 									
 
 								
@@ -1085,14 +1101,14 @@ namespace PetFera {
 												a->setnumIbama(numibama);
 												a->setregiaoOrigem(regiaoorigem);
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizados na base de dados.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizados na base de dados." << std::endl << std::endl;
 
 												}
 
@@ -1101,7 +1117,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl << std::endl;
 
 									}
 
@@ -1118,12 +1134,13 @@ namespace PetFera {
 
 											int tambico;
 											std::string numibama, paisorigem;
-											std::cout << "Digite a quantidade de mudas: ";
+											std::cout << "Informe a quantidade de mudas: ";
 											std::cin >> tambico;
-											std::cout << "Digite o número do ibama: ";
-											std::cin >> numibama;
-											std::cout << "Digite o pais de origem: ";
-											std::cin >> paisorigem;
+											std::cout << "informe o número do ibama: ";
+											std::cin.ignore();
+											std::getline(std::cin, numibama);
+											std::cout << "Informe o país de origem: ";
+											std::getline(std::cin, paisorigem);
 									
 
 								
@@ -1150,14 +1167,15 @@ namespace PetFera {
 												a->setnumIbama(numibama);
 												a->setpaisOrigem(paisorigem);
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizado.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizado." << std::endl << std::endl;
+
 
 												}
 
@@ -1166,7 +1184,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl << std::endl;
 
 									}										
 
@@ -1179,9 +1197,8 @@ namespace PetFera {
 
 										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Ave") {
 
-											int tambico;
-											std::string numibama, paisorigem;
-											std::cout << "Digite a quantidade de mudas: ";
+											int tambico;											
+											std::cout << "Informe a quantidade de mudas: ";
 											std::cin >> tambico;																
 
 								
@@ -1207,14 +1224,14 @@ namespace PetFera {
 												a->setHabitat(habitat);
 												
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizado.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizado." << std::endl << std::endl;;
 
 												}
 
@@ -1223,7 +1240,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl << std::endl;
 
 									}										
 
@@ -1233,7 +1250,7 @@ namespace PetFera {
 
 							}
 
-							else if (classe == "Mamífero") {
+							else if (classe == "Mamifero") {
 
 									if (tipo == "Nativo") {
 										
@@ -1245,10 +1262,11 @@ namespace PetFera {
 											std::string numibama, regiaoorigem;
 											std::cout << "Informe o tamanho do pelo do animal: ";
 											std::cin >> tampelo;
-											std::cout << "Digite o número do ibama: ";
-											std::cin >> numibama;
-											std::cout << "Digite a região de origem: ";
-											std::cin >> regiaoorigem;
+											std::cout << "informe o número do ibama: ";
+											std::cin.ignore();
+											std::getline(std::cin, numibama);
+											std::cout << "Informe a região de origem: ";
+											std::getline(std::cin, regiaoorigem);
 									
 
 								
@@ -1273,14 +1291,14 @@ namespace PetFera {
 												a->setnumIbama(numibama);
 												a->setregiaoOrigem(regiaoorigem);
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizados na base de dados.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizados na base de dados." << std::endl << std::endl;
 
 												}
 
@@ -1289,7 +1307,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero." << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero." << std::endl << std::endl;
 
 									}
 
@@ -1308,10 +1326,11 @@ namespace PetFera {
 											std::string numibama, paisorigem;
 											std::cout << "Informe o tamanho do pelo do animal: ";
 											std::cin >> tampelo;
-											std::cout << "Digite o número do ibama: ";
-											std::cin >> numibama;
-											std::cout << "Digite o pais de origem: ";
-											std::cin >> paisorigem;
+											std::cout << "informe o número do ibama: ";
+											std::cin.ignore();
+											std::getline(std::cin, numibama);
+											std::cout << "Informe o país de origem: ";
+											std::getline(std::cin, paisorigem);
 									
 
 								
@@ -1338,14 +1357,14 @@ namespace PetFera {
 												a->setnumIbama(numibama);
 												a->setpaisOrigem(paisorigem);
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizado.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizado." << std::endl << std::endl;
 
 												}
 
@@ -1354,7 +1373,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero" << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero" << std::endl << std::endl;
 
 									}										
 
@@ -1367,8 +1386,7 @@ namespace PetFera {
 
 										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Mamifero") {
 
-											int tampelo;
-											std::string numibama, paisorigem;
+											int tampelo;								
 											std::cout << "Informe o tamanho do pelo do animal: ";
 											std::cin >> tampelo;																
 
@@ -1395,14 +1413,14 @@ namespace PetFera {
 												a->setHabitat(habitat);
 												
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizado.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizado." << std::endl << std::endl;
 
 												}
 
@@ -1411,7 +1429,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero" << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero" << std::endl << std::endl;
 
 									}										
 
@@ -1432,11 +1450,11 @@ namespace PetFera {
 
 											std::string numibama, regiaoorigem, tipopele;
 											std::cout << "Informe o tipo de pele do animal: ";
-											std::cin >> tipopele;
-											std::cout << "Digite o número do ibama: ";
-											std::cin >> numibama;
-											std::cout << "Digite a região de origem: ";
-											std::cin >> regiaoorigem;
+											std::getline(std::cin, tipopele);
+											std::cout << "informe o número do ibama: ";																			
+											std::getline(std::cin, numibama);
+											std::cout << "Informe a região de origem: ";
+											std::getline(std::cin, regiaoorigem);
 									
 
 								
@@ -1461,14 +1479,14 @@ namespace PetFera {
 												a->setnumIbama(numibama);
 												a->setregiaoOrigem(regiaoorigem);
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizados na base de dados.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizados na base de dados." << std::endl << std::endl;
 
 												}
 
@@ -1477,7 +1495,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil." << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil." << std::endl << std::endl;
 
 									}
 
@@ -1494,11 +1512,12 @@ namespace PetFera {
 
 											std::string numibama, paisorigem, tipopele;
 											std::cout << "Informe o tipo de pele do animal: ";
-											std::cin >> tipopele;
-											std::cout << "Digite o número do ibama: ";
-											std::cin >> numibama;
-											std::cout << "Digite o pais de origem: ";
-											std::cin >> paisorigem;
+											std::getline(std::cin, tipopele);
+											std::cout << "informe o número do ibama: ";
+											std::cin.ignore();
+											std::getline(std::cin, numibama);
+											std::cout << "Informe o país de origem: ";
+											std::getline(std::cin, paisorigem);
 									
 
 								
@@ -1525,14 +1544,14 @@ namespace PetFera {
 												a->setnumIbama(numibama);
 												a->setpaisOrigem(paisorigem);
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizado.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizado." << std::endl << std::endl;
 
 												}
 
@@ -1541,7 +1560,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil" << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil" << std::endl << std::endl;
 
 									}										
 
@@ -1554,7 +1573,7 @@ namespace PetFera {
 
 										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Reptil") {
 
-											std::string numibama, paisorigem, tipopele;
+											std::string tipopele;
 											std::cout << "Informe o tipo de pele do animal: ";
 											std::cin >> tipopele;																
 
@@ -1581,14 +1600,15 @@ namespace PetFera {
 												a->setHabitat(habitat);
 												
 
-												std::cout << std::endl << "-----Animal Alterado-----" << std::endl << std::endl;
+												std::cout << std::endl << "Animal alterado com sucesso!" << std::endl << std::endl;
 
 												}
 
 
 												else  {
 
-													std::cout << "Número de tratador e/ou veterinário não localizado.";
+													std::cout << std::endl << "Número de tratador e/ou veterinário não localizado." << std::endl << std::endl;
+
 
 												}
 
@@ -1597,7 +1617,8 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil" << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil" << std::endl << std::endl;
+
 
 									}										
 
@@ -1615,7 +1636,8 @@ namespace PetFera {
 
 						else {
 
-							std::cout << "Classificação errônea. Alteração não realizada";
+							std::cout << std::endl << "Classificação errônea. Alteração não realizada" << std::endl << std::endl;
+
 						}
 
 
@@ -1628,7 +1650,7 @@ namespace PetFera {
 
 				else { 
 
-					std::cout << "Identificadores para funcionários inválidos. Alteração não realizada.";
+					std::cout << std::endl << "Identificadores para funcionários inválidos. Alteração não realizada." << std::endl << std::endl;
 
 
 				}
@@ -1639,7 +1661,7 @@ namespace PetFera {
 			else {
 
 
-				std::cout << "Classe de Animais inválida. Alteração não realizada.";
+				std::cout << std::endl << "Classe de Animais inválida. Alteração não realizada." << std::endl << std::endl;
 
 			}	
 
@@ -1647,20 +1669,14 @@ namespace PetFera {
 
 		else {
 
-			std::cout << "Não foi localizado animais com o id especificado";
+			std::cout << "Não foi localizado animais com o id especificado" << std::endl << std::endl;
 
 		}
 	
 	}			
-
-
-	
-
-
-
-
-
 		
+
+	//Método para remoção de um animal	
 	
 	void
 	Menu::removerAnimal() {	
@@ -1678,20 +1694,21 @@ namespace PetFera {
 
 			lista_animais.erase(it);
 
-			std::cout <<"Animal removido com sucesso." << std::endl;
+			std::cout << std::endl << "Animal removido com sucesso." << std::endl << std::endl;
 			
 			}
 
 
 		else { 
 
-			std::cout << "Animal inexistente. Remoção não realizada." << std::endl;
+			std::cout << std::endl << "Animal inexistente. Remoção não realizada." << std::endl << std::endl;
 
 		}
 
-} 
+	} 
 
 	
+	//Método para consulta de um animal
 
 	void 
 	Menu::consultarAnimal() {
@@ -1714,11 +1731,14 @@ namespace PetFera {
 
 		else {
 
-			std::cout << "Animal inexistente na base de dados." << std::endl;
+			std::cout << std::endl << "Animal inexistente na base de dados." << std::endl << std::endl;
 		
 		}
 
 	}
+
+
+	//Método para consulta por classe de animais
 
 	void 
 	Menu::consultarporClasse() {
@@ -1728,7 +1748,7 @@ namespace PetFera {
 
 		std::map<int, std::shared_ptr<Animal>>::iterator it; 
 
-		std::cout << "Digite a classe de animais (Anfibio, Mamifero, Reptil ou Ave): ";
+		std::cout << "Informe a classe de animais (Anfibio, Mamifero, Reptil ou Ave): ";
 		std::cin >> classe;
 
 		for(it = lista_animais.begin(); it != lista_animais.end(); ++it) {
@@ -1750,13 +1770,16 @@ namespace PetFera {
 		}
 	}
 
+
+	//Método para consulta por classe de animais
+
 	void Menu::consultarporFuncionario() {
 
 		int id;
 		int cont = 0;
 		std::map<int, std::shared_ptr<Animal>>::iterator it;
 		std::map<int, std::shared_ptr<Funcionario>>::iterator it2; 
-		std::cout << "Digite o identificador do funcionário(ID): ";
+		std::cout << "Informe o identificador do funcionário(ID): ";
 		std::cin >> id;
 
 		it2 = lista_funcionarios.find(id);
@@ -1777,12 +1800,14 @@ namespace PetFera {
 
 			if(cont == 0) {
 
-				std::cout << std::endl << "Nao existem animais associados ao funcionario informado." << std::endl << std::endl;
+				std::cout << std::endl << "Não existem animais associados ao funcionário informado." << std::endl << std::endl;
 
 			}
 		}
 		
 	}
+
+	//Método para consulta de funcionário
 
 	void 
 	Menu::consultarFuncionario() {
@@ -1803,8 +1828,7 @@ namespace PetFera {
 
 			else {
 
-				std::cout << "Funcionário inexistente na base de dados." << std::endl;
-		
+				std::cout << std::endl << "Funcionário inexistente na base de dados." << std::endl << std::endl;		
 			}
 
 	}

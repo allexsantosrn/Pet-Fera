@@ -136,13 +136,17 @@ namespace PetFera {
 		return a.print(o);
 	}
 
+	/** @return Método para impressão de saída */
 	std::ostream& 
 	Animal::print(std::ostream &o) {
 		o << "Identificador: " << id << std::endl;
 		return o;
 	}
 
-	
+	/** 
+ 	 * @param a Referencia para um objeto Animal
+  	 * @return true ou false 
+ 	 */
 	bool Animal::operator==(const Animal &a) {
 		if(id == a.id) {
 			return true;

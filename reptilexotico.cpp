@@ -49,7 +49,7 @@ namespace PetFera {
 		o << "Habitat: " << habitat << std::endl;
 		o << "Identificador do veterinario: " << veterinario.getId() << std::endl;
 		o << "Identificador do tratador: " << tratador.getId() << std::endl;
-		o << "Tipo de Pele: " << tipopele; 
+		o << "Tipo de Pele: " << tipopele << std::endl;
 		o << "Número do ibama: " << numibama << std::endl;
 		o << "Pais de origem: " << paisorigem << std::endl; 
 		return o;

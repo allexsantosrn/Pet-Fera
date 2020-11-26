@@ -1,5 +1,5 @@
 /** 
- * @file	anfibionativo.hpp
+ * @file	anfibionativo.cpp
  * @brief	Definicao da classe Anfibio Nativo.
  * @author	Alexandre Dantas dos Santos e Esdras Israel Ferino dos Santos.
  * @since	12/11/2020
@@ -26,7 +26,7 @@ namespace PetFera {
 	 * @param _venenoso Indica se o animal é venenoso
 	 * @param _habitat Indica o habitat do animal
 	 * @param _qtdmudas Quantitativo total de mudas do anfibio
-	 * @param _numibama Numero referente ao Ibama
+	 * @param _numibama Numero referente ao registro no Ibama
 	 * @param _regiaoorigem Regiao de origem do animal
 	 */	
 	
