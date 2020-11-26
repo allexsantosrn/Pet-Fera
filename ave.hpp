@@ -29,7 +29,7 @@ namespace PetFera {
 
 		protected:
 
-			int tambico;			 
+			int tambico; /**< Tamanho do bico de uma ave*/		 
 
 		public:
 			/** @brief Construtor padrão */ 
