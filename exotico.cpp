@@ -15,7 +15,7 @@ namespace PetFera {
 
 	/**
 	 * @param _numibama Numero referente ao Ibama
-	 * @param _regiaoorigem Pais de origem do animal
+	 * @param _paisorigem Pais de origem do animal
 	 */	
 	
 	Exotico::Exotico(std::string _numibama, std::string _paisorigem): Silvestre(_numibama) {

@@ -16,7 +16,6 @@ using std::shared_ptr;
 using std::make_shared;
 
 #include <map>
-//using std::map;
 
 #include <string>
 using std::string;
@@ -28,7 +27,7 @@ namespace PetFera {
 	/**
  	 * @class 	Menu menu.hpp
   	 * @brief	Classe que representa o menu.
- 	 * @details Os atributos da classe menu são: 
+ 	 * @details Os atributos da classe são: 
  	 *			lista_funcionarios e lista_animais  
  	 */
 	class Menu {

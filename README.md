@@ -35,9 +35,10 @@ A tarefa central da Parte I do Projeto de Programação é desenvolver um progra
 
 ## Compilação
 
-Executar o seguinte comando no terminal: g++ -std=c++11 -Wall main.cpp menu.cpp funcionario.cpp tratador.cpp veterinario.cpp animal.cpp anfibio.cpp ave.cpp reptil.cpp silvestre.cpp exotico.cpp nativo.cpp mamifero.cpp anfibioexotico.cpp aveexotica.cpp mamiferoexotico.cpp reptilexotico.cpp mamiferonativo.cpp avenativa.cpp reptilnativo.cpp anfibionativo.cpp -o prog
+Digitar 'sudo make' na pasta principal do projeto;
 
-Caso queira testar os construtores do animal, veterinario e tratador, executar: g++ -Wall teste.cpp funcionario.cpp tratador.cpp veterinario.cpp animal.cpp anfibio.cpp ave.cpp reptil.cpp silvestre.cpp exotico.cpp nativo.cpp mamifero.cpp anfibioexotico.cpp aveexotica.cpp mamiferoexotico.cpp reptilexotico.cpp mamiferonativo.cpp avenativa.cpp reptilnativo.cpp anfibionativo.cpp -o prog
+Digitar 'sudo make install' na pasta principal do projeto.
 
-Em seguida para compilar: ./prog
+## Execução
 
+Informar: ./bin/petfera_boys

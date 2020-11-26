@@ -1,6 +1,6 @@
 /** 
  * @file	main.cpp
- * @brief	Implementacao da classe que representa o meu de seleção do usuário.
+ * @brief	Implementacao da classe que representa o menu de seleção do usuário.
  * @author	Alexandre Dantas dos Santos(allexkid@ufrn.edu.br)
  * @since	19/11/2020
  * @date 	24/11/2020
@@ -18,7 +18,9 @@ int main () {
 
 	while (true) {
 
-		std::cout << "**********Loja Pet Fera**********" << std::endl;
+		//Painel de seleção do usuário
+
+		std::cout << std::endl << "**********Loja Pet Fera**********" << std::endl << std::endl;
 		std::cout << "Escolha uma das opções abaixo:" << std::endl;
 		std::cout << "(1) Cadastrar Animal" << std::endl;
 		std::cout << "(2) Remover Animal" << std::endl;

@@ -112,10 +112,10 @@ namespace PetFera {
 			/** @brief Método set que informa o habitat do animal.*/
 			void setHabitat(std::string _habitat);
 
-			
+			/** @brief Sobrecarga do operador de insercao*/			
 			friend std::ostream& operator<< (std::ostream &o, Animal &a);
 
-			
+			/** @brief Sobrecarga do operador de comparacao */
 			bool operator==(const Animal &a);
  
 		private:

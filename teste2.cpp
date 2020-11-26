@@ -81,6 +81,10 @@ Menu::alterarAnimal() {
 									std::cin >> id;
 
 
+									it1 = lista_animais.find(id_atual);	
+
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Anfibio"){
+
 											it2 = lista_funcionarios.find(idvet);
 											it3 = lista_funcionarios.find(idtrat);
 

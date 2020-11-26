@@ -1,5 +1,5 @@
 /** 
- * @file	anfibioexotico.hpp
+ * @file	anfibioexotico.cpp
  * @brief	Definicao da classe Anfibio Exotico.
  * @author	Alexandre Dantas dos Santos e Esdras Israel Ferino dos Santos.
  * @since	12/11/2020
