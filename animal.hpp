@@ -20,9 +20,9 @@ namespace PetFera {
 
 	/**
  	 * @class 	animal.hpp
-  	 * @brief	Classe que representa um Animal
+  	 * @brief	Classe que representa um Animal.
   	 * @details Os atributos de um animal são: id, classe,
-  	 *			nome, cientifico, sexo, veterinario, tratador, 
+  	 *			nome, nome cientifico, sexo, veterinario, tratador, 
   	 *			venenoso e habitat.
  	 */
 	

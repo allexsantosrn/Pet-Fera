@@ -23,7 +23,7 @@ namespace PetFera {
   	 * @brief	Classe que representa um Reptil
   	 * @details Os atributos de um anfibio são: id, classe,
   	 *			nome, cientifico, sexo, veterinario, tratador, 
-  	 *			venenoso, habitat e tipopele.
+  	 *			venenoso, habitat e tipo de pele.
  	 */
 	
 
@@ -45,7 +45,7 @@ namespace PetFera {
 
 		private:
 
-			/** @brief Método para imprimir os dados de um Reptil nativo*/  
+			/** @brief Método para imprimir os dados de um Reptil nativo */  
 			std::ostream& print(std::ostream&);
 
 

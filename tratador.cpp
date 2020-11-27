@@ -1,7 +1,7 @@
 /** 
  * @file	tratador.cpp
  * @brief	Definicao da classe tratador.
- * @author	Alexandre Dantas dos Santos e Irineu Anacleto de Lira Neto
+ * @author	Alexandre Dantas dos Santos e Irineu Anacleto de Lira Neto.
  * @since	12/11/2020
  * @date 	24/11/2020
  */
@@ -31,14 +31,14 @@ namespace PetFera {
 	/** @brief Destrutor padrão */ 
 	Tratador::~Tratador() {}
 
-	/** @return Retorna o nivel de segurança do tratador*/
+	/** @return Retorna o nivel de segurança do tratador */
 	std::string
 	Tratador::getnivelSeguranca () {
 
 		return this->nivelseguranca;
 	}
 
-	/** @return Atualiza o nivel de segurança do tratador*/
+	/** @return Atualiza o nivel de segurança do tratador */
 	void
 	Tratador::setnivelSeguranca(std::string _nivelseguranca) {
 

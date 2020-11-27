@@ -39,17 +39,17 @@ namespace PetFera {
 	/** @brief Destrutor padrão */ 
 	Mamifero::~Mamifero() {}
 
-	/** @return Retorna o tamanho de pelo do mamífero ; */
+	/** @return Retorna o tamanho de pelo do mamífero */
 	int Mamifero::gettamPelo() {
 		return this->tampelo;
 	}
 
-	/** @return Atualiza o tamanho de pelo do mamífero; */
+	/** @return Atualiza o tamanho de pelo do mamífero */
 	void Mamifero::settamPelo(int _tampelo) {
 		this->tampelo = _tampelo;
 	}
 
-	/** @return Método para stream de saida; */
+	/** @return Método para stream de saida */
 	std::ostream& 
 	Mamifero::print(std::ostream &o) {
 		o << "Identificador: " << id << std::endl;

@@ -39,7 +39,7 @@ namespace PetFera {
 	/** @brief Destrutor padrão */ 
 	MamiferoNativo::~MamiferoNativo() {}
 
-	/** @return Método para stream de saída; */
+	/** @return Método para stream de saída */
 	std::ostream& 
 	MamiferoNativo::print(std::ostream &o) {
 		o << "Identificador: " << id << std::endl;

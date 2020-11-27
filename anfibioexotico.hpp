@@ -18,7 +18,7 @@
 namespace PetFera {
 	/**
  	 * @class 	anfibioexotico.hpp
-  	 * @brief	Classe que representa um Anfibio Exotico
+  	 * @brief	Classe que representa um Anfibio Exotico.
   	 * @details Os atributos de um anfibio exotico são: id, classe,
   	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat, qtdmudas, numero ibama e pais de origem.

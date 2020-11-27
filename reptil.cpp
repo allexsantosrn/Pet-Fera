@@ -37,16 +37,16 @@ namespace PetFera {
 	// Destrutor padrao
 	Reptil::~Reptil() {}
 
-	/** @return Retorna o tipo da pele do Reptil; */
+	/** @return Retorna o tipo da pele do Reptil */
 	std::string Reptil::gettipoPele() {
 		return this->tipopele;
 	}
-	/** @return Atualiza o o tipo da pele do Reptil; */
+	/** @return Atualiza o o tipo da pele do Reptil */
 	void Reptil::settipoPele(std::string _tipopele) {
 		this->tipopele = _tipopele;
 	}
 
-	/** @return Método para stream de saída; */
+	/** @return Método para stream de saída */
 	std::ostream& 
 	Reptil::print(std::ostream &o) {
 		o << "Identificador: " << id << std::endl;

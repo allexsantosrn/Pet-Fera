@@ -1,5 +1,5 @@
 /** 
- * @file	animal.hpp
+ * @file	animal.cpp
  * @brief	Definicao da classe Animal.
  * @author	Alexandre Dantas dos Santos.
  * @since	12/11/2020
@@ -81,52 +81,52 @@ namespace PetFera {
 	bool Animal::getVenenoso() {
 		return this->venenoso;
 	}
-	/** @return Retorna o habitat do animal*/
+	/** @return Retorna o habitat do animal */
 	std::string Animal::getHabitat() {
 		return this->habitat;
 
 	}
 
-	/** @return Atualiza o id do animal*/
+	/** @return Atualiza o id do animal */
 	void Animal::setId(int _id) {
 		this->id = _id;
 	}
 
-	/** @return Atualiza a classe do animal*/
+	/** @return Atualiza a classe do animal */
 	void Animal::setClasse(std::string _classe) {
 		this->classe = _classe;
 	}
 
-	/** @return Atualiza o nome do animal*/
+	/** @return Atualiza o nome do animal */
 	void Animal::setNome(std::string _nome) {
 		this->nome = _nome;
 	}
 
-	/** @return Atualiza o nome cientifico do animal*/
+	/** @return Atualiza o nome cientifico do animal */
 	void Animal::setCientifico(std::string _cientifico) {
 		this->cientifico = _cientifico;
 	}
 
-	/** @return Atualiza o sexo do animal*/
+	/** @return Atualiza o sexo do animal */
 	void Animal::setSexo(char _sexo) {
 		this->sexo = _sexo;
 	}
 	 
-	/** @return Atualiza o veterinario do animal*/
+	/** @return Atualiza o veterinario do animal */
 	void Animal::setVeterinario(Veterinario _veterinario) {
 		this->veterinario = _veterinario;
 	}
 	
-	/** @return Atualiza o tratador do animal*/ 
+	/** @return Atualiza o tratador do animal */ 
 	void Animal::setTratador(Tratador _tratador) {
 		this->tratador = _tratador;
 	}
 
-	/** @return Atualiza se o animal e venenoso*/
+	/** @return Atualiza se o animal e venenoso */
 	void Animal::setVenenoso(bool _venenoso) {
 		this->venenoso = _venenoso;
 	}
-	/** @return Atualiza o habitat do animal*/
+	/** @return Atualiza o habitat do animal */
 	void Animal::setHabitat(std::string _habitat) {
 		this->habitat = _habitat;
 	}

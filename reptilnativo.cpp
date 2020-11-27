@@ -25,7 +25,7 @@ namespace PetFera {
 	 * @param _veterinario Veterinario do animal
 	 * @param _tratador Tratador do animal
 	 * @param _venenoso Indica se o animal é venenoso
-	 * @param _habitar Indica o habitat do animal
+	 * @param _habitat Indica o habitat do animal
 	 * @param _tipopele Tipo de pele do animal
 	 * @param _numibama Numero referente ao Ibama
 	 * @param _regiaoorigem Regiao de origem do animal
@@ -40,7 +40,7 @@ namespace PetFera {
 	/** @brief Destrutor padrão */ 
 	ReptilNativo::~ReptilNativo() {}
 
-	/** @return Método para stream de saída; */
+	/** @return Método para stream de saída */
 	std::ostream& 
 	ReptilNativo::print(std::ostream &o) {
 		o << "Identificador: " << id << std::endl;

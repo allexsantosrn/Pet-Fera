@@ -22,7 +22,7 @@ namespace PetFera {
 	
 	/**
  	 * @class 	reptilexotico.hpp
-  	 * @brief	Classe que representa um reptil exotico
+  	 * @brief	Classe que representa um reptil exotico.
   	 * @details Os atributos de um reptil exotico são: id, classe,
   	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat, tipopele, numero ibama e país de origem.
@@ -46,7 +46,7 @@ namespace PetFera {
 
 		private:
 
-			/** @brief Método para imprimir os dados de um Reptil exotico*/  
+			/** @brief Método para imprimir os dados de um Reptil exótico */  
 			std::ostream& print(std::ostream&);
 
 

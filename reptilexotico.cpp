@@ -37,7 +37,7 @@ namespace PetFera {
 	/** @brief Destrutor padrão */ 
 	ReptilExotico::~ReptilExotico() {}
 
-	/** @return Método para stream de saída; */
+	/** @return Método para stream de saída */
 	std::ostream& 
 	ReptilExotico::print(std::ostream &o) {
 		o << "Identificador: " << id << std::endl;

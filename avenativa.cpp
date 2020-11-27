@@ -1,5 +1,5 @@
 /** 
- * @file	aveenativa.cpp
+ * @file	avenativa.cpp
  * @brief	Definicao da classe Ave Nativa.
  * @author	Alexandre Dantas dos Santos e Esdras Israel Ferino dos Santos.
  * @since	12/11/2020

@@ -77,7 +77,10 @@ namespace PetFera {
 		return f.print(o);
 	}
 
-	 
+	/** 
+ 	 * @param f Referencia para um objeto Funcionario
+  	 * @return true ou false 
+ 	 */	 
 	bool Funcionario::operator==(const Funcionario &f) {
 
 		if(id == f.id) {

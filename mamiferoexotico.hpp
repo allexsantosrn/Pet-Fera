@@ -18,7 +18,7 @@
 
 namespace PetFera {
 
-		/**
+	/**
  	 * @class 	mamiferoexotico.hpp
   	 * @brief	Classe que representa um Mamifero Exotico
   	 * @details Os atributos de um Mamifero exotico são: id, classe,
@@ -44,7 +44,7 @@ namespace PetFera {
 
 		private:
 
-			/** @brief Método para imprimir os dados de um Mamídero exotico*/  
+			/** @brief Método para imprimir os dados de um Mamídero exotico */  
 			std::ostream& print(std::ostream&);
 
 

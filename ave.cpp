@@ -36,11 +36,11 @@ namespace PetFera {
 	/** @brief Destrutor padrão */ 
 	Ave::~Ave() {}
 
-	/** @return Retorna o tamanho do bico da ave*/
+	/** @return Retorna o tamanho do bico da ave */
 	int Ave::gettamBico() {
 		return this->tambico;
 	}
-	/** @return Atualiza o tamanho do bico da ave*/
+	/** @return Atualiza o tamanho do bico da ave */
 	void Ave::settamBico(int _tambico) {
 		this->tambico = _tambico;
 	}

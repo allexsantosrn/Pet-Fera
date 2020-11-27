@@ -6,7 +6,7 @@
  * @date 	24/11/2020
  */
 
- #ifndef _SILVESTRE_
+#ifndef _SILVESTRE_
 #define _SILVESTRE_
 
 #include <string>
@@ -17,8 +17,8 @@ namespace PetFera {
 	
 
 	/**
- 	 * @class 	slvestre.hpp
-  	 * @brief	Classe que representa um Animal Silvestre
+ 	 * @class 	silvestre.hpp
+  	 * @brief	Classe que representa um Animal Silvestre.
   	 * @details Os atributos de um animal nativo são: numero ibama.
  	 */
 
@@ -27,12 +27,11 @@ namespace PetFera {
 
 		protected:
 
-			std::string numibama;			 
+			std::string numibama;				/**< Número de registro no Ibama de um animal silvestre */	 
 
 		public:
 			 
-			/** @brief Construtor padrão */  
-
+			/** @brief Construtor padrão */
 			Silvestre();
 
 			/** @brief Construtor parametrizado */  
@@ -41,10 +40,10 @@ namespace PetFera {
 			/** @brief Destrutor padrão */   
 			~Silvestre();
 
- 			/** @brief Método get que retorna o número de registro do animal no Ibama*/
+ 			/** @brief Método get que retorna o número de registro do animal no Ibama */
 			std::string getnumIbama();
 			
-			/** @brief Método set que informa o número de registro do animal no Ibama*/ 
+			/** @brief Método set que informa o número de registro do animal no Ibama */ 
 			void setnumIbama(std::string _numibama);
 
 	};

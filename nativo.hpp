@@ -20,7 +20,7 @@ namespace PetFera {
 
 	/**
  	 * @class 	nativo.hpp
-  	 * @brief	Classe que representa um Animal Nativo
+  	 * @brief	Classe que representa um Animal Nativo.
   	 * @details Os atributos de um animal nativo são: numero ibama e região de origem.
  	 */
 
@@ -29,7 +29,7 @@ namespace PetFera {
 
 		protected:
 
-			std::string regiaoorigem;			/**< Região de origem de um animal*/		 
+			std::string regiaoorigem;			/**< Região de origem de um animal */		 
 			 		 
 
 		public:
@@ -44,10 +44,10 @@ namespace PetFera {
 			/** @brief Destrutor padrão */ 
 			~Nativo();
 
-			 /** @brief Método get que retorna o pais de origem do animal*/
+			 /** @brief Método get que retorna o pais de origem do animal */
 			std::string getregiaoOrigem();		 
 			
-			/** @brief Método set que informa o pais de origem do animal*/  
+			/** @brief Método set que informa o pais de origem do animal */  
 			void setregiaoOrigem(std::string _regiaoorigem);
 
 			 

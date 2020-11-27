@@ -115,8 +115,7 @@ namespace PetFera {
 	}
 	
 
-	// Método para remoção de um funconário
-	
+	// Método para remoção de um funcionário.	
 	void
 	Menu::removerFuncionario() {	
 
@@ -147,8 +146,7 @@ namespace PetFera {
 	}
 
 
-	// Método para alteração de um funcionário
-
+	// Método para alteração de um funcionário.
 	void 
 	Menu::alterarFuncionario() {
 		
@@ -276,8 +274,7 @@ namespace PetFera {
 	}
 
 
-	//Método para cadastrar um novo animal
-
+	//Método para cadastrar um novo animal. 
 	void Menu::cadastrarAnimal() {
 
 		int id, idvet, idtrat;
@@ -295,7 +292,7 @@ namespace PetFera {
 		std::map<int, std::shared_ptr<Funcionario>>::iterator it3; 
 
 
-		std::cout << "Informe o número de identificação do animal (ID) : ";
+		std::cout << "Informe o número de identificação do animal(ID): ";
 		std::cin >> id;
 
 
@@ -311,9 +308,9 @@ namespace PetFera {
 		else {
 
 
-			std::cout << "Informe o identificador do Veterinario do animal: ";
+			std::cout << "Informe o número de identificação do Veterinario do animal: ";
 			std::cin >> idvet;
-			std::cout << "Informe o identificador do Tratador do animal: ";
+			std::cout << "Informe o número de identificação do Tratador do animal: ";
 			std::cin >> idtrat; 
 
 
@@ -801,8 +798,7 @@ namespace PetFera {
 	} 
 
 
-	//Método para alteração de um animal
-
+	//Método para alteração de um animal. 
 	void Menu::alterarAnimal() {
 
 
@@ -1676,15 +1672,14 @@ namespace PetFera {
 	}			
 		
 
-	//Método para remoção de um animal	
-	
+	//Método para remoção de um animal. 	
 	void
 	Menu::removerAnimal() {	
 
 		int id;
 		std::map<int, std::shared_ptr<Animal>>::iterator it; 
 
-		std::cout << "Informe o número de identificação do animal(ID):";
+		std::cout << "Informe o número de identificação do animal(ID): ";
 		std::cin >> id;
 		
 		it = lista_animais.find(id);
@@ -1708,15 +1703,14 @@ namespace PetFera {
 	} 
 
 	
-	//Método para consulta de um animal
-
+	//Método para consulta de um animal.
 	void 
 	Menu::consultarAnimal() {
 
 	int id;
 	std::map<int, std::shared_ptr<Animal>>::iterator it; 
 	
-	std::cout << "Informe o número de identificação do animal(ID):";
+	std::cout << "Informe o número de identificação do animal(ID): ";
 	std::cin >> id;
 
 	it = lista_animais.find(id);
@@ -1724,6 +1718,7 @@ namespace PetFera {
 
 		if (it != lista_animais.end()) {
 
+			std::cout << "\n";
 			std::cout << *(it->second) << std::endl;
 			
 			}
@@ -1738,8 +1733,7 @@ namespace PetFera {
 	}
 
 
-	//Método para consulta por classe de animais
-
+	//Método para consulta por classe de animais.
 	void 
 	Menu::consultarporClasse() {
 
@@ -1771,8 +1765,7 @@ namespace PetFera {
 	}
 
 
-	//Método para consulta por classe de animais
-
+	//Método para consulta por classe de animais.
 	void Menu::consultarporFuncionario() {
 
 		int id;
@@ -1807,8 +1800,7 @@ namespace PetFera {
 		
 	}
 
-	//Método para consulta de funcionário
-
+	//Método para consulta de funcionário.
 	void 
 	Menu::consultarFuncionario() {
 
@@ -1822,6 +1814,7 @@ namespace PetFera {
 
 			if(it != lista_funcionarios.end()) {
 
+				std::cout << "\n";
 				std::cout << *(it->second) << std::endl;
 
 			}

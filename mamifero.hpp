@@ -22,7 +22,7 @@ namespace PetFera {
   	 * @brief	Classe que representa um mamifero
   	 * @details Os atributos de um mamifero são: id, classe,
   	 *			nome, cientifico, sexo, veterinario, tratador, 
-  	 *			venenoso, habitat e tampelo.
+  	 *			venenoso, habitat e tamanho do pelo.
  	 */
 	
 	

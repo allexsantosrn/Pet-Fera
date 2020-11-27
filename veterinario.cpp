@@ -29,13 +29,13 @@ namespace PetFera {
 	/** @brief Destrutor padrão */ 
 	Veterinario::~Veterinario() {}
 
-	/** @return Retorna o CRMV do veterinario*/
+	/** @return Retorna o CRMV do veterinario */
 	std::string
 	Veterinario::getCrmv () {
 
 		return this->crmv;
 	}
-	/** @return Atualiza o CRMV  do funcionario*/
+	/** @return Atualiza o CRMV  do funcionario */
 	void
 	Veterinario::setCrmv(std::string _crmv) {
 

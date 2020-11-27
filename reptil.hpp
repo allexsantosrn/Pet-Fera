@@ -17,7 +17,7 @@
 
 namespace PetFera {
 
-		/**
+	/**
  	 * @class 	reptil.hpp
   	 * @brief	Classe que representa um Reptil
   	 * @details Os atributos de um reptil são: id, classe,
@@ -44,15 +44,15 @@ namespace PetFera {
 			/** @brief Destrutor padrão */  
 			~Reptil();
 
-			/** @brief Método get que retorna o tipo de pele do Reptil.*/  
+			/** @brief Método get que retorna o tipo de pele do Reptil */  
 			std::string gettipoPele();
 
-			/** @brief Método set que informa o tipo de pele de um Reptil .*/
+			/** @brief Método set que informa o tipo de pele de um Reptil */
 			void settipoPele(std::string _tipopele);
 
 		private:
 
-			/** @brief Método para imprimir os dados de um Reptil*/ 
+			/** @brief Método para imprimir os dados de um Reptil */ 
 			std::ostream& print(std::ostream&);
 
 	};	 

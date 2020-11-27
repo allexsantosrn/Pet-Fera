@@ -1,7 +1,7 @@
 /** 
  * @file	tratador.hpp
  * @brief	Definicao da classe tratador.
- * @author	Alexandre Dantas dos Santos e Irineu Anacleto de Lira Neto
+ * @author	Alexandre Dantas dos Santos e Irineu Anacleto de Lira Neto.
  * @date 	24/11/2020
  */
 
@@ -17,7 +17,7 @@ namespace PetFera {
 	
 	/**
  	 * @class 	tratador.hpp
-  	 * @brief	Classe que representa um tratador
+  	 * @brief	Classe que representa um tratador.
   	 * @details Os atributos de um tratador são: id, nome, funçao,cpf e nível de segurança.
  	 */
 	
@@ -39,15 +39,15 @@ namespace PetFera {
 			/** @brief Destrutor padrão */ 
 			~Tratador();
 
-			/** @brief Método set que informa o Nivel de segurança do tratador.*/
+			/** @brief Método set que informa o Nivel de segurança do tratador */
 			void setnivelSeguranca(std::string _nivelseguranca);
 
-			/** @brief Método get que retorna o Nivel de segurança do tratador .*/
+			/** @brief Método get que retorna o Nivel de segurança do tratador */
 			std::string getnivelSeguranca();
 
 		private:
 			
-			/** @brief Método para imprimir os dados de um veterinario.*/
+			/** @brief Método para imprimir os dados de um veterinario */
 			std::ostream& print(std::ostream &o) const;
 	};
 }

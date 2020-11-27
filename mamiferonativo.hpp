@@ -44,7 +44,7 @@ namespace PetFera {
 
 		private:
 
-			/** @brief Método para imprimir os dados de um mamífero nativo*/  
+			/** @brief Método para imprimir os dados de um mamífero nativo */  
 			std::ostream& print(std::ostream&);
 
 

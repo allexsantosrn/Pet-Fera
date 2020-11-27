@@ -30,7 +30,7 @@ namespace PetFera {
 
 		protected:
 
-			int qtdmudas;	/**< Quantitativo final de mudas de um anfíbio. */
+			int qtdmudas;	/**< Quantitativo total de mudas de um anfíbio. */
 
 		public:
 			 

@@ -18,8 +18,8 @@ namespace PetFera {
 
 	/**
  	 * @class 	veterinario.hpp
-  	 * @brief	Classe que representa um veterinario
-  	 * @details Os atributos de um veterinario são: id, nome, funçao,cpf e crmv.
+  	 * @brief	Classe que representa um veterinario.
+  	 * @details Os atributos de um veterinario são: id, nome, funçao, cpf e crmv.
  	 */
 	
 	
@@ -41,15 +41,15 @@ namespace PetFera {
 			/** @brief Destrutor padrão */ 
 			~Veterinario();
 
-			/** @brief Método set que informa o CRMV do veterinario.*/ 
+			/** @brief Método set que informa o CRMV do veterinario */ 
 			void setCrmv(std::string _crmv);
 
-			/** @brief Método get que retorna o CRMV do veterinario.*/ 
+			/** @brief Método get que retorna o CRMV do veterinario */ 
 			std::string getCrmv();
 
 		private:
 			
-			/** @brief Método para imprimir os dados de um veterinario.*/
+			/** @brief Método para imprimir os dados de um veterinario */
 			std::ostream& print(std::ostream &o) const;
 	};
 }
