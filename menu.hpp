@@ -55,6 +55,9 @@ namespace PetFera {
 			/** @brief Método para alterar os dados de um funcionario */
 			void alterarFuncionario();
 
+			/** @brief Método para consulta de um funcionário */
+			void consultarFuncionario();
+
 			/** @brief Método para cadastrar um animal */
 			void cadastrarAnimal();
 
@@ -73,8 +76,7 @@ namespace PetFera {
 			/** @brief Método para consultar animais por funcionário */
 			void consultarporFuncionario();
 
-			/** @brief Método para consulta de um funcionário */
-			void consultarFuncionario();
+			
 	};
 }
 
