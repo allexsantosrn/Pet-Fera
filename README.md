@@ -5,8 +5,8 @@
 **Componentes:**
 
 - Alexandre Dantas dos Santos
-- Esdras Israel
-- Irineu Anacleto
+- Esdras Israel Ferino dos Santos
+- Irineu Anacleto de Lira Neto
 
 **Professor:**
 	
@@ -18,7 +18,7 @@ O objetivo deste trabalho é implementar um programa de cadastro de animais para
 
 ## Tarefa
 
-A tarefa central da Parte I do Projeto de Programação é desenvolver um programa em C++ para controlar o cadastro de animais silvestres da Pet Fera, segundo as características descritas anteriormente. Para resolver o problema, você deverá implementar um modelo de classes que reflita a situação descrita. 
+A tarefa central da Parte I do Projeto de Programação é desenvolver um programa em C++ para controlar o cadastro de animais silvestres da Pet Fera, segundo as características descritas no projeto. Para resolver o problema, foi implementado um modelo de classes que reflete a situação descrita. 
 
 ## Operações suportadas
 
@@ -41,4 +41,8 @@ Digitar 'sudo make install' na pasta principal do projeto.
 
 ## Execução
 
-Informar: ./bin/petfera_boys
+Digitar: ./bin/petfera_boys
+
+## Documentação
+
+A documentação do projeto está localizada na pasta: Doxygen, presente na pasta raiz do projeto. O arquivo principal é o index.html.
