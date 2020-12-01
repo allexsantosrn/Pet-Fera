@@ -1,8 +1,0 @@
-var searchData=
-[
-  ['removeranimal_254',['removerAnimal',['../classPetFera_1_1Menu.html#ac465309521264fa9ad247800d437b815',1,'PetFera::Menu']]],
-  ['removerfuncionario_255',['removerFuncionario',['../classPetFera_1_1Menu.html#a8e8b60f1e73ce5bfb54fbeebfbf0fbbb',1,'PetFera::Menu']]],
-  ['reptil_256',['Reptil',['../classPetFera_1_1Reptil.html#ad0bd674b0c4fcce77efe29651ea4d64d',1,'PetFera::Reptil::Reptil()'],['../classPetFera_1_1Reptil.html#af804c2439f58ef4fb8493af5ecdb8b67',1,'PetFera::Reptil::Reptil(int _id, std::string _classe, std::string _nome, std::string _cientifico, char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, std::string _tipopele)']]],
-  ['reptilexotico_257',['ReptilExotico',['../classPetFera_1_1ReptilExotico.html#a0d6bb679e170e071994df642e39c0d6c',1,'PetFera::ReptilExotico::ReptilExotico()'],['../classPetFera_1_1ReptilExotico.html#aab2f75a00505b77780a5296256d34bfe',1,'PetFera::ReptilExotico::ReptilExotico(int _id, std::string _classe, std::string _nome, std::string _cientifico, char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, std::string _tipopele, std::string _numibama, std::string _paisorigem)']]],
-  ['reptilnativo_258',['ReptilNativo',['../classPetFera_1_1ReptilNativo.html#ad60924d37bcb965f6278104ee0b93b5e',1,'PetFera::ReptilNativo::ReptilNativo()'],['../classPetFera_1_1ReptilNativo.html#a350a49730baa05cb738e75ebef9f8cda',1,'PetFera::ReptilNativo::ReptilNativo(int _id, std::string _classe, std::string _nome, std::string _cientifico, char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, std::string _tipopele, std::string _ibama, std::string _regiaoorigem)']]]
-];
