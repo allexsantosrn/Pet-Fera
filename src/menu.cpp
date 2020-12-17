@@ -404,7 +404,6 @@ namespace PetFera {
 								int qtdmudas;								
 
 								std::cout << "Informe a quantidade de mudas do anfíbio: ";
-								std::cin.ignore();
 								std::cin >> qtdmudas;
 								
 
@@ -432,7 +431,7 @@ namespace PetFera {
 
 														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-														animal = std::make_shared<AnfibioNativo>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, regiaoorigem);
+														animal = std::make_shared<AnfibioNativo>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, regiaoorigem);
 														lista_animais[id] = animal;
 
 														std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
@@ -485,7 +484,7 @@ namespace PetFera {
 
 														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-														animal = std::make_shared<AnfibioExotico>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, paisorigem);
+														animal = std::make_shared<AnfibioExotico>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, paisorigem);
 														lista_animais[id] = animal;
 
 														std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
@@ -532,7 +531,7 @@ namespace PetFera {
 
 														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-														animal = std::make_shared<Anfibio>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas);
+														animal = std::make_shared<Anfibio>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas);
 														lista_animais[id] = animal;
 
 														std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
@@ -597,7 +596,7 @@ namespace PetFera {
 
 													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 													trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-													animal = std::make_shared<AveNativa>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico, numibama, regiaoorigem);
+													animal = std::make_shared<AveNativa>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico, numibama, regiaoorigem);
 													lista_animais[id] = animal;
 
 													std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
@@ -640,7 +639,7 @@ namespace PetFera {
 
 													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 													trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-													animal = std::make_shared<AveNativa>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico, numibama, paisorigem);
+													animal = std::make_shared<AveNativa>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico, numibama, paisorigem);
 													lista_animais[id] = animal;
 
 													std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
@@ -676,7 +675,7 @@ namespace PetFera {
 
 													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 													trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-													animal = std::make_shared<Ave>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico);
+													animal = std::make_shared<Ave>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico);
 													lista_animais[id] = animal;
 
 													std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
@@ -738,7 +737,7 @@ namespace PetFera {
 
 														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-														animal = std::make_shared<MamiferoNativo>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo, numibama, regiaoorigem);
+														animal = std::make_shared<MamiferoNativo>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo, numibama, regiaoorigem);
 														lista_animais[id] = animal;
 
 														std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
@@ -789,7 +788,7 @@ namespace PetFera {
 
 														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-                                                        animal = std::make_shared<MamiferoExotico>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo, numibama, paisorigem);
+                                                        animal = std::make_shared<MamiferoExotico>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo, numibama, paisorigem);
 														lista_animais[id] = animal;
 
 														std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
@@ -833,7 +832,7 @@ namespace PetFera {
 
 														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-                                                        animal = std::make_shared<Mamifero>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo);
+                                                        animal = std::make_shared<Mamifero>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo);
 														lista_animais[id] = animal;
 
 														std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
@@ -900,7 +899,7 @@ namespace PetFera {
 
 														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-												        animal = std::make_shared<ReptilNativo>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele, numibama, regiaoorigem);											
+												        animal = std::make_shared<ReptilNativo>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele, numibama, regiaoorigem);											
 
 														lista_animais[id] = animal;
 
@@ -952,7 +951,7 @@ namespace PetFera {
 
 														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-                                                        animal = std::make_shared<ReptilExotico>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele, numibama, paisorigem);											
+                                                        animal = std::make_shared<ReptilExotico>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele, numibama, paisorigem);											
 
 														lista_animais[id] = animal;
 
@@ -998,7 +997,7 @@ namespace PetFera {
 
 														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-                                                        animal = std::make_shared<Reptil>(id, classe, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele);
+                                                        animal = std::make_shared<Reptil>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele);
 
 														lista_animais[id] = animal;
 
@@ -1144,7 +1143,7 @@ namespace PetFera {
 										
 										it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Anfibio") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Anfibio" && (it1->second)->getTipo() == "Nativo") {
 
 											int qtdmudas;
 											std::string numibama, regiaoorigem;
@@ -1212,7 +1211,7 @@ namespace PetFera {
 										else {
 
 
-											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl << std::endl;
+											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio nativo." << std::endl << std::endl;
 
 										}
 
@@ -1228,7 +1227,7 @@ namespace PetFera {
 										
 										it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Anfibio") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Anfibio" && (it1->second)->getTipo() == "Exotico") {
 
 											int qtdmudas;
 											std::string numibama, paisorigem;
@@ -1295,7 +1294,7 @@ namespace PetFera {
 										else {
 
 
-											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl << std::endl;
+											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio exótico." << std::endl << std::endl;
 
 										}
 
@@ -1306,7 +1305,7 @@ namespace PetFera {
 										
 										it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Anfibio") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Anfibio" && (it1->second)->getTipo() == "Domestico") {
 
 											int qtdmudas;											
 											std::cout << "Informe a quantidade de mudas: ";
@@ -1365,17 +1364,12 @@ namespace PetFera {
 										else {
 
 
-											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl << std::endl;
+											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio doméstico" << std::endl << std::endl;
 
 										}
 									}
 
-								else {
-
-
-									std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe anfíbio" << std::endl << std::endl;
-
-								}					
+								
 													
 
 								
@@ -1391,7 +1385,7 @@ namespace PetFera {
 										
 										it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Ave") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Ave" && (it1->second)->getTipo() == "Nativo") {
 
 											int tambico;
 											std::string numibama, regiaoorigem;
@@ -1450,7 +1444,7 @@ namespace PetFera {
 										else {
 
 
-											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl << std::endl;
+											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave nativa." << std::endl << std::endl;
 
 										}
 
@@ -1463,7 +1457,7 @@ namespace PetFera {
 										
 										it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Ave") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Ave" && (it1->second)->getTipo() == "Exotico") {
 
 											int tambico;
 											std::string numibama, paisorigem;
@@ -1523,7 +1517,7 @@ namespace PetFera {
 										else {
 
 
-											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl << std::endl;
+											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave exótica." << std::endl << std::endl;
 
 										}										
 
@@ -1534,7 +1528,7 @@ namespace PetFera {
 										
 										it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Ave") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Ave" && (it1->second)->getTipo() == "Domestico") {
 
 											int tambico;											
 											std::cout << "Informe a quantidade de mudas: ";
@@ -1586,7 +1580,7 @@ namespace PetFera {
 										else {
 
 
-											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave" << std::endl << std::endl;
+											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe ave doméstica." << std::endl << std::endl;
 
 										}										
 
@@ -1604,7 +1598,7 @@ namespace PetFera {
 										
 										it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Mamifero") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Mamifero" && (it1->second)->getTipo() == "Nativo") {
 
 											int tampelo;
 											std::string numibama, regiaoorigem;
@@ -1674,7 +1668,7 @@ namespace PetFera {
 										else {
 
 
-											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero." << std::endl << std::endl;
+											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero nativo." << std::endl << std::endl;
 
 										}
 
@@ -1687,7 +1681,7 @@ namespace PetFera {
 										
 										it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Mamifero") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Mamifero" && (it1->second)->getTipo() == "Exotico") {
 
 											int tampelo;
 											std::string numibama, paisorigem;
@@ -1739,7 +1733,7 @@ namespace PetFera {
 
 													else  {
 
-														std::cout << std::endl << "Tratadores com nível de segurança: Verde não podem tratar de animais da classe mamífero. " << std::endl << std::endl;
+														std::cout << std::endl << "Tratadores com nível de segurança: Verde não podem tratar de animais da classe mamífero exótico. " << std::endl << std::endl;
 
 													}
 							
@@ -1767,7 +1761,7 @@ namespace PetFera {
 										
 										it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Mamifero") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Mamifero" && (it1->second)->getTipo() == "Domestico") {
 
 											int tampelo;								
 											std::cout << "Informe o tamanho do pelo do animal: ";
@@ -1824,7 +1818,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero" << std::endl << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Mamifero doméstico." << std::endl << std::endl;
 
 									}										
 
@@ -1843,7 +1837,7 @@ namespace PetFera {
 										
 									it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Reptil") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Reptil" && (it1->second)->getTipo() == "Nativo") {
 
 											std::string numibama, regiaoorigem, tipopele;
 											std::cout << "Informe o tipo de pele do animal: ";
@@ -1911,7 +1905,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil." << std::endl << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil nativo." << std::endl << std::endl;
 
 									}
 
@@ -1924,7 +1918,7 @@ namespace PetFera {
 										
 										it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Reptil") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Reptil" && (it1->second)->getTipo() == "Exotico") {
 
 											std::string numibama, paisorigem, tipopele;
 											std::cout << "Informe o tipo de pele do animal: ";
@@ -1996,7 +1990,7 @@ namespace PetFera {
 										else {
 
 
-											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil" << std::endl << std::endl;
+											std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil exótico." << std::endl << std::endl;
 
 										}										
 
@@ -2007,7 +2001,7 @@ namespace PetFera {
 										
 										it1 = lista_animais.find(id);	
 
-										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Reptil") {
+										if (it1 != lista_animais.end() && (it1->second)->getClasse() == "Reptil" && (it1->second)->getTipo() == "Exotico") {
 
 											std::string tipopele;
 											std::cout << "Informe o tipo de pele do animal: ";
@@ -2070,7 +2064,7 @@ namespace PetFera {
 									else {
 
 
-										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil" << std::endl << std::endl;
+										std::cout << std::endl << "O número de identificação informado não corresponde a uma animal da classe Reptil doméstico." << std::endl << std::endl;
 
 
 									}	
@@ -2283,9 +2277,531 @@ namespace PetFera {
 		
 	} 
 
+
+	void Menu::importar_dados_funcionarios( std::ifstream& dados_funcionarios_importar ) {
+
+	std::shared_ptr<Veterinario> funcs;
+ 	std::shared_ptr<Tratador> funcs2;
+ 	
+ 	std::string idx, nome, funcao, cpf, crmv, nivelseguranca;
+
+ 	int id;
+
+  	while(dados_funcionarios_importar.peek()!=EOF) {
+
+    getline(dados_funcionarios_importar, idx, ';');
+    getline(dados_funcionarios_importar, nome, ';');
+    getline(dados_funcionarios_importar, funcao, ';');
+    getline(dados_funcionarios_importar, cpf, ';');
+    getline(dados_funcionarios_importar, crmv, ';');
+    getline(dados_funcionarios_importar, nivelseguranca, '\n');
+
+
+    id = std::stoi(idx);
+
+    if (funcao == "Veterinario") {
+
+    funcs = std::make_shared<Veterinario>(id, nome, funcao, cpf, crmv);
+
+    lista_veterinarios[id] = funcs;
+
+	}
+
+	else {
+
+    funcs2 = std::make_shared<Tratador>(id, nome, funcao, cpf, nivelseguranca);
+
+    lista_tratadores[id] = funcs2;
+
+	}
+
+    
+  	}
+
+  	dados_funcionarios_importar.close();
+
+	}
+
+	//Método para exportação dos veterinários para csv.
+
+	void Menu::exportar_dados_funcionarios( std::ofstream& dados_funcionarios_exportar ) 
+
+	{
+
+	
+	for ( auto it = lista_veterinarios.begin(); it != lista_veterinarios.end(); ++it )
+
+	{
+	
+	dados_funcionarios_exportar << (to_string(it->second->getId())) << ";" << (it->second->getNome()) << ";" << (it->second->getFuncao()) << ";" << (it->second->getCpf()) <<  ";" << it->second->getCrmv() << ";" << "-" << std::endl;
+
+	}
+
+	for ( auto it = lista_tratadores.begin(); it != lista_tratadores.end(); ++it )
+	{
+	
+	dados_funcionarios_exportar << (to_string(it->second->getId())) << ";" << (it->second->getNome()) << ";" << (it->second->getFuncao()) << ";" << (it->second->getCpf()) <<  ";" << "-" <<  ";" << it->second->getnivelSeguranca() << std::endl;
+
+	}
+
+	dados_funcionarios_exportar.close();
+
+	}
+
+	
+	void Menu::importar_dados_animais( std::ifstream& dados_animais_importar ) {
+
+
+	std::map<int, std::shared_ptr<Animal>>::iterator it;
+	std::map<int, std::shared_ptr<Veterinario>>::iterator it2;
+	std::map<int, std::shared_ptr<Tratador>>::iterator it3; 
+
+	std::shared_ptr<Animal> animal;
+
+	std::shared_ptr<Tratador> trat = std::make_shared<Tratador>();
+	std::shared_ptr<Veterinario> vet = std::make_shared<Veterinario>();
+
+	std::string idx, classe, tipo, nome, cientifico, sexox, veterinariox, tratadorx, venenosox, habitat, qtdmudasx, numibama, regiaoorigem, paisorigem, tambicox, tampelox, tipopele;
+
+ 	int id, veterinario, tratador, qtdmudas, tambico, tampelo;
+
+ 	char sexo;
+
+ 	bool venenoso;
+
+  	while(dados_animais_importar.peek()!=EOF) {
+
+    getline(dados_animais_importar, idx, ';');
+    getline(dados_animais_importar, classe, ';');
+    getline(dados_animais_importar, tipo, ';');
+    getline(dados_animais_importar, nome, ';');
+    getline(dados_animais_importar, cientifico, ';');
+    getline(dados_animais_importar, sexox, ';');
+    getline(dados_animais_importar, veterinariox, ';');
+    getline(dados_animais_importar, tratadorx, ';');
+    getline(dados_animais_importar, venenosox, ';');
+    getline(dados_animais_importar, habitat, ';');
+    getline(dados_animais_importar, qtdmudasx, ';');
+    getline(dados_animais_importar, tambicox, ';');
+    getline(dados_animais_importar, tampelox, ';');
+    getline(dados_animais_importar, tipopele, ';');
+    getline(dados_animais_importar, numibama, ';');
+    getline(dados_animais_importar, regiaoorigem, ';');
+    getline(dados_animais_importar, paisorigem, '\n');
+
+
+    id = std::stoi(idx);
+    sexo = 'F';
+    veterinario = std::stoi(veterinariox);
+    tratador = std::stoi(tratadorx);
+    std::istringstream(venenosox) >> venenoso;
+    
+   
+    if (sexox == "F") {
+
+    	sexo = 'F';	
+
+
+	} 
+
+   	else  {
+
+   		sexo = 'M';
+   	}	
+    
+    
+
+
+    if (classe == "Anfibio") {
+    	
+    	
+
+    	it2 = lista_veterinarios.find(veterinario);
+		it3 = lista_tratadores.find(tratador);
+
+		qtdmudas = std::stoi(qtdmudasx);
+
+
+	    	if (tipo == "Nativo") {
+
+	    		vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<AnfibioNativo>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, regiaoorigem);
+				lista_animais[id] = animal;
+    		}
+
+    		else if (tipo == "Exotico") {
+
+    			vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<AnfibioExotico>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, paisorigem);
+				lista_animais[id] = animal;
+
+    		}
+
+    		else {
+
+    			vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<Anfibio>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas);
+				lista_animais[id] = animal;
+
+    		}
+
+
+    		
+
+    }	
+
+    
+    if (classe == "Ave") {
+    	
+
+    	
+    	it2 = lista_veterinarios.find(veterinario);
+		it3 = lista_tratadores.find(tratador);
+
+		tambico = std::stoi(tambicox);
+
+
+	    	if (tipo == "Nativo") {
+
+	    		vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<AveNativa>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico, numibama, regiaoorigem);
+				lista_animais[id] = animal;
+    		}
+
+    		else if (tipo == "Exotico") {
+
+    			vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<AveExotica>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico, numibama, paisorigem);
+				lista_animais[id] = animal;
+
+    		}
+
+    		else {
+
+    			vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<Ave>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico);
+				lista_animais[id] = animal;
+
+    		}
+
+
+    	}
+
+
+
+    if (classe == "Mamifero") {
+    	
+    	
+    	it2 = lista_veterinarios.find(veterinario);
+		it3 = lista_tratadores.find(tratador);
+
+		tampelo = std::stoi(tampelox);
+
+
+	    	if (tipo == "Nativo") {
+
+	    		vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<MamiferoNativo>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo, numibama, regiaoorigem);
+				lista_animais[id] = animal;
+    		}
+
+    		else if (tipo == "Exotico") {
+
+    			vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<MamiferoExotico>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo, numibama, paisorigem);
+				lista_animais[id] = animal;
+
+    		}
+
+    		else {
+
+    			vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<Mamifero>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo);
+				lista_animais[id] = animal;
+
+    		}
+
+
+	} 
+    		
+    if (classe == "Reptil") {
+    	
+
+    	it2 = lista_veterinarios.find(veterinario);
+		it3 = lista_tratadores.find(tratador);
+
+		
+	    	if (tipo == "Nativo") {
+
+	    		vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<ReptilNativo>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele, numibama, regiaoorigem);
+				lista_animais[id] = animal;
+    		}
+
+    		else if (tipo == "Exotico") {
+
+    			vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<ReptilExotico>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele, numibama, paisorigem);
+				lista_animais[id] = animal;
+
+    		}
+
+    		else {
+
+    			vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+	            animal = std::make_shared<Reptil>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele);
+				lista_animais[id] = animal;
+
+    		}
+    	}	
+
+
+
+}
+
+} 
+
+
+void Menu::exportar_dados_animais( std::ofstream& dados_animais_exportar )
+
+	{
+
+
+	//std::map<int, std::shared_ptr<Animal>>::iterator it;
+	
+	
+	for ( auto it = lista_animais.begin(); it != lista_animais.end(); ++it) {
+	
+	std::shared_ptr<Animal> animal = it->second;		
+
+
+ 	if (it->second->getClasse() == "Anfibio") {
+
+
+ 		if (it->second->getTipo() == "Nativo") {
+
+
+ 			shared_ptr<AnfibioNativo> a = std::dynamic_pointer_cast<AnfibioNativo>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << (a->getqtdMudas()) << ";" << "-" <<  ";" 
+ 			<< "-" <<  ";" << "-" <<  ";" << (a->getnumIbama()) <<  ";" << (a->getregiaoOrigem()) <<  ";" << "-" << std::endl;
+
+ 		}
+
+ 		else if (it->second->getTipo() == "Exotico") {
+
+ 			shared_ptr<AnfibioExotico> a = std::dynamic_pointer_cast<AnfibioExotico>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << (a->getqtdMudas()) << ";" << "-" <<  ";" 
+ 			<< "-" <<  ";" << "-" <<  ";" << (a->getnumIbama()) <<  ";" << "-" <<  ";" << (a->getpaisOrigem()) << std::endl;
+
+ 		}
+
+ 		else {
+
+ 			shared_ptr<Anfibio> a = std::dynamic_pointer_cast<Anfibio>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << (a->getqtdMudas()) << ";" << "-" <<  ";" 
+ 			<< "-" <<  ";" << "-" <<  ";" << "-" <<  ";" << "-" <<  ";" << "-" << std::endl;
+
+		}
+
+	}
+	
+	if (it->second->getClasse() == "Ave") {
+
+
+ 		if (it->second->getTipo() == "Nativo") {
+
+
+ 			shared_ptr<AveNativa> a = std::dynamic_pointer_cast<AveNativa>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << "-" << ";" << (a->gettamBico()) <<  ";" 
+ 			<< "-" <<  ";" << "-" <<  ";" << (a->getnumIbama()) <<  ";" << (a->getregiaoOrigem()) <<  ";" << "-" << std::endl;
+
+ 		}
+
+ 		else if (it->second->getTipo() == "Exotico") {
+
+ 			shared_ptr<AveExotica> a = std::dynamic_pointer_cast<AveExotica>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << "-" << ";" << (a->gettamBico()) <<  ";" 
+ 			<< "-" <<  ";" << "-" <<  ";" << (a->getnumIbama()) <<  ";" << "-" <<  ";" << (a->getpaisOrigem()) << std::endl;
+
+ 		}
+
+ 		else {
+
+ 			shared_ptr<Ave> a = std::dynamic_pointer_cast<Ave>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << "-" << ";" << (a->gettamBico()) <<  ";" 
+ 			<< "-" <<  ";" << "-" <<  ";" << "-" <<  ";" << "-" <<  ";" << "-" << std::endl;
+
+		}
+
+	}		
+ 		
+ 	if (it->second->getClasse() == "Mamifero") {
+
+
+ 		if (it->second->getTipo() == "Nativo") {
+
+
+ 			shared_ptr<MamiferoNativo> a = std::dynamic_pointer_cast<MamiferoNativo>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << "-" << ";" << "-" <<  ";" 
+ 			<< (a->gettamPelo())  <<  ";" << "-" <<  ";" << (a->getnumIbama()) <<  ";" << (a->getregiaoOrigem()) <<  ";" << "-" << std::endl;
+
+ 		}
+
+ 		else if (it->second->getTipo() == "Exotico") {
+
+ 			shared_ptr<MamiferoExotico> a = std::dynamic_pointer_cast<MamiferoExotico>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << "-" << ";" << "-" <<  ";" 
+ 			<< (a->gettamPelo()) <<  ";" << "-" <<  ";" << (a->getnumIbama()) <<  ";" << "-" <<  ";" << (a->getpaisOrigem()) << std::endl;
+
+ 		}
+
+ 		else {
+
+ 			shared_ptr<Mamifero> a = std::dynamic_pointer_cast<Mamifero>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << "-" << ";" << "-" <<  ";" 
+ 			<< (a->gettamPelo()) <<  ";" << "-" <<  ";" << "-" <<  ";" << "-" <<  ";" << "-" << std::endl;
+
+		}
+
+	}
+
+	if (it->second->getClasse() == "Reptil") {
+
+
+ 		if (it->second->getTipo() == "Nativo") {
+
+
+ 			shared_ptr<ReptilNativo> a = std::dynamic_pointer_cast<ReptilNativo>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << "-" << ";" << "-" <<  ";" 
+ 			<< "-" <<  ";" << (a->gettipoPele()) <<  ";" << (a->getnumIbama()) <<  ";" << (a->getregiaoOrigem()) <<  ";" << "-" << std::endl;
+
+ 		}
+
+ 		else if (it->second->getTipo() == "Exotico") {
+
+ 			shared_ptr<ReptilExotico> a = std::dynamic_pointer_cast<ReptilExotico>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << "-" << ";" << "-" <<  ";" 
+ 			<< "-" <<  ";" << (a->gettipoPele()) <<  ";" << (a->getnumIbama()) <<  ";" << "-" <<  ";" << (a->getpaisOrigem()) << std::endl;
+
+ 		}
+
+ 		else {
+
+ 			shared_ptr<Reptil> a = std::dynamic_pointer_cast<Reptil>(animal);
+    	
+			std::string s; 
+			s = it->second->getSexo();	
+
+			dados_animais_exportar << (to_string(it->second->getId())) << ";" << (it->second->getClasse()) << ";" << (it->second->getTipo()) << ";" << (it->second->getNome()) <<  ";" << (it->second->getCientifico()) << ";" 
+ 			<< s <<  ";" << (it->second->getVeterinario().getId()) << ";" <<  (it->second->getTratador().getId()) << ";" <<  (to_string(it->second->getVenenoso())) << ";" << (it->second->getHabitat()) <<  ";" << "-" << ";" << "-" <<  ";" 
+ 			<< "-" <<  ";" << (a->gettipoPele()) <<  ";" << "-" <<  ";" << "-" <<  ";" << "-" << std::endl;
+
+		}
+
+	}		 	
+
+
+	}
+
+
+	dados_animais_exportar.close();
+
+}
+
+/*
+void Menu::teste() {
+
+	std::map<int, std::shared_ptr<Animal>>::iterator it;
+
+	for ( auto it = lista_animais.begin(); it != lista_animais.end(); ++it ) {
+
+	std::shared_ptr<Animal> animal;
+
+	shared_ptr<ReptilNativo> a = std::dynamic_pointer_cast<ReptilNativo>(animal);
+
+	std::cout << a->gettipoPele();
+
+	}
+
+} */
+
+}
+
+
+
+
+
+
+
 	
 
  
 
 
-}

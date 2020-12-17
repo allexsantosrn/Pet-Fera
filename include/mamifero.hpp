@@ -38,7 +38,7 @@ namespace PetFera {
 			Mamifero();
 
 			/** @brief Construtor parametrizado */ 	
-			Mamifero(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			Mamifero(int _id, std::string _classe, std::string _tipo, std::string _nome, std::string _cientifico,
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tampelo);
 
 			/** @brief Destrutor padrão */  

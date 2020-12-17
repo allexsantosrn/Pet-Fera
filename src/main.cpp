@@ -11,12 +11,30 @@
 
 #include <iostream>
 
+
 int main () {
 
 	PetFera::Menu menu;
 	int selecao;
 
-	while (true) {
+
+	std::ifstream dados_funcionarios_importar("data/dados_funcionarios.csv");
+	 	if(!dados_funcionarios_importar.is_open()) {
+ 		std::cout << "Erro na leitura da planilha dos funcionários." << '\n';
+ 		return 0;
+ 	}	
+	menu.importar_dados_funcionarios( dados_funcionarios_importar );	
+    	
+	std::ifstream dados_animais_importar("data/dados_animais.csv");
+ 	if(!dados_animais_importar.is_open()) {
+ 	std::cout << "Erro na leitura da planilha dos animais." << '\n';
+ 	return 0;
+ 	}	
+	menu.importar_dados_animais( dados_animais_importar );	
+
+
+	
+	do {
 
 		//Painel de seleção do usuário
 
@@ -80,17 +98,38 @@ int main () {
 				menu.consultarFuncionario();
 				break;
 
-			case 0:
-				std::cout << "Programa encerrado. Volte sempre." << std::endl;
-				return 0;
+				
+			//case 0:
+
+
+				//return 0;
 
 			default:
+
+				if (selecao < 0 || selecao > 10) {
 				std::cout << "Opção inválida. Selecione uma opção entre 1 a 10." << std::endl;
 				break;
 
-		}
+				}
 
-}
+		}	
+
+
+	}
+
+	while (selecao != 0);
+
+				std::ofstream dados_funcionarios_exportar;
+				dados_funcionarios_exportar.open ("data/dados_funcionarios.csv");
+				menu.exportar_dados_funcionarios( dados_funcionarios_exportar );
+				
+								
+				std::ofstream dados_animais_exportar;
+				dados_animais_exportar.open ("data/dados_animais.csv");
+				menu.exportar_dados_animais( dados_animais_exportar );
+				
+
+				std::cout << "Programa encerrado. Volte sempre." << std::endl;
 
 return 0;
 

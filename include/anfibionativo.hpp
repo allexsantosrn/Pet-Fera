@@ -33,7 +33,7 @@ namespace PetFera {
 			AnfibioNativo();
 
 			/** @brief Construtor parametrizado */
-			AnfibioNativo(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			AnfibioNativo(int _id, std::string _classe, std::string _tipo, std::string _nome, std::string _cientifico,
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _qtdmudas, 
 			std::string _ibama, std::string _regiaoorigem);
 

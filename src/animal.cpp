@@ -26,10 +26,11 @@ namespace PetFera {
 	 * @param _habitat Indica o habitat do animal
 	 */	
 
-	Animal::Animal(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+	Animal::Animal(int _id, std::string _classe, std::string _tipo, std::string _nome, std::string _cientifico,
 	char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat) {
 		setId(_id);
 		setClasse(_classe);
+		setTipo(_tipo);
 		setNome(_nome);
 		setCientifico(_cientifico);
 		setSexo(_sexo);	
@@ -50,6 +51,11 @@ namespace PetFera {
 	/** @return Retorna a classe do animal */
 	std::string Animal::getClasse() {
 		return this->classe;
+	}
+
+	/** @return Retorna o tipo do animal */
+	std::string Animal::getTipo() {
+		return this->tipo;
 	}
 
 	/** @return Retorna o nome */
@@ -95,6 +101,11 @@ namespace PetFera {
 	/** @return Atualiza a classe do animal */
 	void Animal::setClasse(std::string _classe) {
 		this->classe = _classe;
+	}
+
+	/** @return Atualiza o tipo do animal */
+	void Animal::setTipo(std::string _tipo) {
+		this->tipo = _tipo;
 	}
 
 	/** @return Atualiza o nome do animal */

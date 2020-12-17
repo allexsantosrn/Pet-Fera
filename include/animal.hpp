@@ -31,7 +31,8 @@ namespace PetFera {
 		protected:		
 
 			int id;								
-			std::string classe;						
+			std::string classe;	
+			std::string tipo;					
 			std::string nome;						
 			std::string cientifico;					
 			char sexo;							
@@ -46,7 +47,7 @@ namespace PetFera {
 			Animal();
 
 			/** @brief Construtor parametrizado */
-			Animal(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			Animal(int _id, std::string _classe, std::string _tipo, std::string _nome, std::string _cientifico,
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat);
 
 			/** @brief Destrutor padrão */ 
@@ -57,6 +58,9 @@ namespace PetFera {
 
 			/** @brief Método get que retorna a classe do animal.*/ 
 			std::string getClasse();
+
+			/** @brief Método get que retorna o tipo do animal.*/ 
+			std::string getTipo();
 
 			/** @brief Método get que retorna o nome do animal.*/ 
 			std::string getNome();
@@ -84,6 +88,9 @@ namespace PetFera {
 
 			/** @brief Método set que informa a classe do animal.*/
 			void setClasse(std::string _classe);
+
+			/** @brief Método set que informa o tipo do animal.*/
+			void setTipo(std::string _tipo);
 
 			/** @brief Método set que informa o nome do animal.*/
 			void setNome(std::string _nome);

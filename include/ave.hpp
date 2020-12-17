@@ -36,7 +36,7 @@ namespace PetFera {
 			Ave();
 
 			/** @brief Construtor parametrizado */
-			Ave(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			Ave(int _id, std::string _classe, std::string _tipo, std::string _nome, std::string _cientifico,
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tambico);
 
 			/** @brief Destrutor padrão */ 

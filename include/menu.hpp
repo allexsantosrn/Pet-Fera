@@ -19,6 +19,11 @@ using std::make_shared;
 
 #include <string>
 using std::string;
+using std::to_string;
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 
 
@@ -76,6 +81,15 @@ namespace PetFera {
 			/** @brief Método para consultar animais por funcionário */
 			void consultarporFuncionario();
 
+			void exportar_dados_funcionarios( std::ofstream& dados_funcionarios_exportar );
+
+			void importar_dados_funcionarios( std::ifstream& dados_funcionarios_importar );
+
+			void exportar_dados_animais( std::ofstream& dados_animais_exportar );
+
+			void importar_dados_animais( std::ifstream& dados_animais_importar );
+
+			
 			
 	};
 }

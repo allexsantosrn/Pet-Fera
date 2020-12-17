@@ -36,7 +36,7 @@ namespace PetFera {
 			ReptilNativo();
 
 			/** @brief Construtor parametrizado */ 
-			ReptilNativo(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+			ReptilNativo(int _id, std::string _classe, std::string _tipo, std::string _nome, std::string _cientifico,
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, std::string _tipopele, 
 			std::string _ibama, std::string _regiaoorigem);
 

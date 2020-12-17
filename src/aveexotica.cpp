@@ -30,10 +30,10 @@ namespace PetFera {
 	 * @param _paisorigem Pais de origem do animal
 	 */	
 
-	AveExotica::AveExotica(int _id, std::string _classe, std::string _nome, std::string _cientifico,
+	AveExotica::AveExotica(int _id, std::string _classe, std::string _tipo, std::string _nome, std::string _cientifico,
 									char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tambico, 
 									std::string _numibama, std::string _paisorigem) :
-									Ave(_id, _classe, _nome, _cientifico,_sexo,_veterinario,_tratador,_venenoso,_habitat,_tambico),
+									Ave(_id, _classe, _tipo, _nome, _cientifico,_sexo,_veterinario,_tratador,_venenoso,_habitat,_tambico),
 									Exotico(_numibama,_paisorigem) {}
 
 	/** @brief Destrutor padrão */ 
@@ -44,6 +44,7 @@ namespace PetFera {
 	AveExotica::print(std::ostream &o) {
 		o << "Identificador: " << id << std::endl;
 		o << "Classe: " << classe << std::endl; 
+		o << "Tipo: " << tipo << std::endl; 		
 		o << "Nome: " << nome << std::endl;
 		o << "Nome cientifico: " << cientifico << std::endl;
 		o << "Sexo: " << sexo << std::endl;

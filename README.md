@@ -35,9 +35,11 @@ A tarefa central da Parte I do Projeto de Programação é desenvolver um progra
 
 ## Compilação
 
-Digitar 'sudo make' na pasta principal do projeto;
+Digite 'sudo make' na pasta principal do projeto;
 
-Digitar 'sudo make install' na pasta principal do projeto.
+Digite 'sudo make install' para instalar as bibliotecas no sistema.
+
+Digite 'sudo make uninstall' para desinstalar as bibliotecas do sistema.
 
 ## Execução
 
