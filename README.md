@@ -18,7 +18,16 @@ O objetivo deste trabalho é implementar um programa de cadastro de animais para
 
 ## Tarefa
 
-A tarefa central da Parte I do Projeto de Programação é desenvolver um programa em C++ para controlar o cadastro de animais silvestres da Pet Fera, segundo as características descritas no projeto. Para resolver o problema, foi implementado um modelo de classes que reflete a situação descrita. 
+A tarefa central da Parte I do Projeto de Programação foi desenvolver um programa em C++ para controlar o cadastro de animais silvestres da Pet Fera, segundo as características descritas no projeto. Para resolver o problema, foi implementado um modelo de classes que refletia a situação descrita. Este modelo consistia em cadastros de funcionários e animais, com opções também de consulta, alteração e remoção.
+
+Na segunda fase do projeto, foi implementado o modelo de gravação dos arquivos em formato: .csv. Para isso, as rotinas de importação e exportação das planilhas com a listagem de funcionários e animais foram criadas. As planilhas estão salvas no diretório "data", presente na pasta raiz do projeto. Além disso, foi utilizado também o modelo com possibilidade de instalação e desinstalação das bibliotecas do projeto, de nome: petfera.so. 
+Ainda nesta fase 2, foram corrigidos também alguns problemas sugeridos pelo professor Silvio, entre esses problemas, a unificação das listas de veterinário e tratador em uma só, de nome Funcionário; A correção na declaração de métodos destrutores como virtuais, entre outros pequenos problemas.
+
+Dentro do documento: relatorio.pdf, temos alguns detalhes mais específicos do desenvolvimento do sistema.
+
+## Dificuldades
+
+A primeira fase do projeto levou uma maior dificuldade em virtude da sua dimensão e construção das classes. A principal dificuldade foi na utilização dos ponteiros inteligentes e da entidade map. A distância em virtude do isolamento social, também trouxe um pouco de dificuldade na comunicação dos membros do projeto.
 
 ## Operações suportadas
 
