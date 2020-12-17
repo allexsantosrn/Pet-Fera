@@ -20,7 +20,7 @@ namespace PetFera {
 	/**
  	 * @class 	reptil.hpp
   	 * @brief	Classe que representa um Reptil
-  	 * @details Os atributos de um reptil são: id, classe,
+  	 * @details Os atributos de um reptil são: id, classe,tipo,
   	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat e tipopele.
  	 */

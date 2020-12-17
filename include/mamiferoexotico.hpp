@@ -21,7 +21,7 @@ namespace PetFera {
 	/**
  	 * @class 	mamiferoexotico.hpp
   	 * @brief	Classe que representa um Mamifero Exotico
-  	 * @details Os atributos de um Mamifero exotico são: id, classe,
+  	 * @details Os atributos de um Mamifero exotico são: id, classe,tipo,
   	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat, tampelo, numero ibama e pais de origem.
  	 */
