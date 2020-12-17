@@ -41,8 +41,9 @@ namespace PetFera {
 			
 		
 			std::map<int, std::shared_ptr<Animal>> lista_animais;			/**< Lista de animais */
-			std::map<int, std::shared_ptr<Veterinario>> lista_veterinarios;   			/**< Lista de veterinários */
-			std::map<int, std::shared_ptr<Tratador>> lista_tratadores;				/**< Lista de tratadores */
+			//std::map<int, std::shared_ptr<Veterinario>> lista_veterinarios;   			/**< Lista de veterinários */
+			//std::map<int, std::shared_ptr<Tratador>> lista_tratadores;				/**< Lista de tratadores */
+			std::map<int, std::shared_ptr<Funcionario>> lista_funcionarios;	
 
 		public:
 			/** @brief Construtor padrao */

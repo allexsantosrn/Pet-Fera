@@ -36,7 +36,7 @@ namespace PetFera {
 			Funcionario(int _id, std::string _nome, std::string _funcao, std::string _cpf);
 
 			/** @brief Destrutor padrão */ 
-			~Funcionario();
+			virtual ~Funcionario();
 
  			/** @brief Método get que retorna o id do funcionario */ 
 			int getId();

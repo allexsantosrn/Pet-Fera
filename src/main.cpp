@@ -17,13 +17,14 @@ int main () {
 	PetFera::Menu menu;
 	int selecao;
 
-
+	
 	std::ifstream dados_funcionarios_importar("data/dados_funcionarios.csv");
 	 	if(!dados_funcionarios_importar.is_open()) {
  		std::cout << "Erro na leitura da planilha dos funcionários." << '\n';
  		return 0;
  	}	
 	menu.importar_dados_funcionarios( dados_funcionarios_importar );	
+    
     	
 	std::ifstream dados_animais_importar("data/dados_animais.csv");
  	if(!dados_animais_importar.is_open()) {
@@ -32,7 +33,7 @@ int main () {
  	}	
 	menu.importar_dados_animais( dados_animais_importar );	
 
-
+	
 	
 	do {
 
@@ -118,7 +119,7 @@ int main () {
 	}
 
 	while (selecao != 0);
-
+				
 				std::ofstream dados_funcionarios_exportar;
 				dados_funcionarios_exportar.open ("data/dados_funcionarios.csv");
 				menu.exportar_dados_funcionarios( dados_funcionarios_exportar );
@@ -130,6 +131,8 @@ int main () {
 				
 
 				std::cout << "Programa encerrado. Volte sempre." << std::endl;
+
+				
 
 return 0;
 

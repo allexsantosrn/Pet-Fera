@@ -32,20 +32,19 @@ namespace PetFera {
 		int id;
 		std::string funcao, nome, cpf, crmv, nivelseguranca;
 
-		std::shared_ptr<Veterinario> funcs;
-		std::shared_ptr<Tratador> funcs1;
-
-		std::map<int, std::shared_ptr<Veterinario>>::iterator it;
-		std::map<int, std::shared_ptr<Tratador>>::iterator it1;
+		std::shared_ptr<Funcionario> funcs;
+		
+		std::map<int, std::shared_ptr<Funcionario>>::iterator it;
+		
 
 
 		std::cout << "Informe o número de identificação do funcionário(ID): ";
 		std::cin >> id;	  
 
-		it = lista_veterinarios.find(id);
-		it1 = lista_tratadores.find(id);
+		it = lista_funcionarios.find(id);
+		
 
-			if (it != lista_veterinarios.end()||it1 != lista_tratadores.end()) {
+			if (it != lista_funcionarios.end()) {
 
 				std::cout << std::endl << "Erro de cadastro. Já existe um funcionário registrado com o número de identificação(ID) informado." << std::endl << std::endl;
 				
@@ -72,7 +71,7 @@ namespace PetFera {
 
 						funcs = std::make_shared<Veterinario>(id, nome, funcao, cpf, crmv);
 
-						lista_veterinarios[id] = funcs;
+						lista_funcionarios[id] = funcs;
 
 					
 						std::cout << std::endl << "Veterinário cadastrado com sucesso!" << std::endl << std::endl;
@@ -88,9 +87,9 @@ namespace PetFera {
 							if (nivelseguranca == "Verde" ||  nivelseguranca == "Vermelho" || nivelseguranca == "Azul") {
 
 
-								funcs1 = std::make_shared<Tratador>(id, nome, funcao, cpf, nivelseguranca);
+								funcs = std::make_shared<Tratador>(id, nome, funcao, cpf, nivelseguranca);
 
-							 	lista_tratadores[id] = funcs1;
+							 	lista_funcionarios[id] = funcs;
 
 							 	 std::cout << std::endl << "Tratador cadastrado com sucesso!" << std::endl << std::endl; 
 
@@ -117,40 +116,29 @@ namespace PetFera {
 				}					
 	}
 	
-
+	
 	// Método para remoção de um funcionário.	
 	void
 	Menu::removerFuncionario() {	
 
 		int id;
-		std::map<int, std::shared_ptr<Veterinario>>::iterator it;
-		std::map<int, std::shared_ptr<Tratador>>::iterator it1;
-
+		std::map<int, std::shared_ptr<Funcionario>>::iterator it;
+		
 		std::cout << "Informe o número de identificação do funcionário(ID):  ";
 		std::cin >> id;
 		
-		it = lista_veterinarios.find(id);
-		it1 = lista_tratadores.find(id);
-		
+		it = lista_funcionarios.find(id);
+			
 	
-			if (it != lista_veterinarios.end()) {
+			if (it != lista_funcionarios.end()) {
 
-				lista_veterinarios.erase(it);
+				lista_funcionarios.erase(it);
 				
-				std::cout << std::endl <<"Veterinário removido com sucesso." << std::endl << std::endl;
+				std::cout << std::endl <<"Funcionário removido com sucesso." << std::endl << std::endl;
 			
 			}
 
-			else if (it1 != lista_tratadores.end()) {
-
-				lista_tratadores.erase(it1);
-
-				std::cout << std::endl <<"Tratador removido com sucesso." << std::endl << std::endl;
-
-
-			}
-
-
+			
 			else { 
 
 					std::cout << std::endl << "Funcionário inexistente. Remoção não realizada." << std::endl << std::endl;
@@ -160,16 +148,15 @@ namespace PetFera {
 	}
 
 
-
-	// Método para alteração de um funcionário.
+	
+	//Método para alteração de um funcionário.
 	void 
 	Menu::alterarFuncionario() {
 		
 		int id; 
 		char escolha;
 
-		std::map<int, std::shared_ptr<Veterinario>>::iterator it;
-		std::map<int, std::shared_ptr<Tratador>>::iterator it1;
+		std::map<int, std::shared_ptr<Funcionario>>::iterator it;	
 
 
 		std::cout << "Deseja alterar dados de qual tipo de funcionário? (Escolha: V para Veterinário ou T para Tratador): ";
@@ -182,12 +169,12 @@ namespace PetFera {
 				std::cin >> id;
 
 
-				it = lista_veterinarios.find(id);						
+				it = lista_funcionarios.find(id);						
 
 
-					if (it != lista_veterinarios.end()) {
+					if (it != lista_funcionarios.end() && (it->second)->getFuncao() == "Veterinario") {
     
-    					std::shared_ptr<Veterinario> veterinario = it->second;
+    					std::shared_ptr<Funcionario> funcionario = it->second;
 
 						std::string nome, cpf, crmv;
 
@@ -202,7 +189,7 @@ namespace PetFera {
 						std::cout << "Informe o novo crmv do veterinario: "; 
 						std::cin >> crmv;
 
-						std::shared_ptr<Veterinario> v = std::dynamic_pointer_cast<Veterinario>(veterinario);
+						std::shared_ptr<Veterinario> v = std::dynamic_pointer_cast<Veterinario>(funcionario);
 
 						v->setNome(nome);
 						v->setCpf(cpf);
@@ -230,11 +217,11 @@ namespace PetFera {
 			std::cout << "Informe o número de identificação do tratador(ID): ";
 			std::cin >> id;
 		
-			it1 = lista_tratadores.find(id);
+			it = lista_funcionarios.find(id);
 
-				if (it1 != lista_tratadores.end()) {
+				if (it != lista_funcionarios.end() && (it->second)->getFuncao() == "Tratador") {
     
-    				std::shared_ptr<Tratador> tratador = it1->second;
+    				std::shared_ptr<Funcionario> funcionario = it->second;
 
 					std::string nome, cpf, nivelseguranca;
 
@@ -251,7 +238,7 @@ namespace PetFera {
 
 						if (nivelseguranca == "Verde" ||  nivelseguranca == "Vermelho" || nivelseguranca == "Azul") {
 
-							std::shared_ptr<Tratador> t = std::dynamic_pointer_cast<Tratador>(tratador);
+							std::shared_ptr<Tratador> t = std::dynamic_pointer_cast<Tratador>(funcionario);
 							
 							t->setNome(nome);
 							t->setCpf(cpf);
@@ -287,32 +274,24 @@ namespace PetFera {
 
 	}
 
-
+	
 	//Método para consulta de funcionário.
 	void 
 	Menu::consultarFuncionario() {
 
 		int id;
-		std::map<int, std::shared_ptr<Veterinario>>::iterator it;
-		std::map<int, std::shared_ptr<Tratador>>::iterator it1;
-	
+		std::map<int, std::shared_ptr<Funcionario>>::iterator it;
+			
 		std::cout << "Informe o número de identificação do funcionário(ID): ";
 		std::cin >> id;
 
-		it = lista_veterinarios.find(id);
-		it1 = lista_tratadores.find(id);
+		it = lista_funcionarios.find(id);
+		
 
-			if(it != lista_veterinarios.end()) {
+			if(it != lista_funcionarios.end()) {
 
 				std::cout << "\n";
 				std::cout << *(it->second) << std::endl;				
-
-			}
-
-			else if (it1 != lista_tratadores.end()) {
-				
-				std::cout << "\n";
-				std::cout << *(it1->second) << std::endl;
 
 			}
 
@@ -325,7 +304,7 @@ namespace PetFera {
 
 	
 
-
+	
 	//Método para cadastrar um novo animal. 
 	void Menu::cadastrarAnimal() {
 
@@ -336,13 +315,16 @@ namespace PetFera {
 
 
 		std::shared_ptr<Animal> animal;
+		std::shared_ptr<Funcionario> funcionario;
+
 		std::shared_ptr<Tratador> trat = std::make_shared<Tratador>();
 		std::shared_ptr<Veterinario> vet = std::make_shared<Veterinario>();
 
 		std::map<int, std::shared_ptr<Animal>>::iterator it1;
-		std::map<int, std::shared_ptr<Veterinario>>::iterator it2;
-		std::map<int, std::shared_ptr<Tratador>>::iterator it3; 
+		std::map<int, std::shared_ptr<Funcionario>>::iterator it2;
+		std::map<int, std::shared_ptr<Funcionario>>::iterator it3; 
 
+		
 
 		std::cout << "Informe o número de identificação do animal(ID): ";
 		std::cin >> id;
@@ -417,20 +399,21 @@ namespace PetFera {
 										std::cout << "Informe a região de origem: ";
 										std::getline(std::cin, regiaoorigem);
 										
+										it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);
 
-										it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);
+										
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {
 
+													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+													trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+											
+													if(trat->getnivelSeguranca() != "Azul") {
 
-												if((it3->second)->getnivelSeguranca() != "Azul") {
+													if ((trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))){ 
 
-													if (((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
-
-
-														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+														
 														animal = std::make_shared<AnfibioNativo>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, regiaoorigem);
 														lista_animais[id] = animal;
 
@@ -459,7 +442,7 @@ namespace PetFera {
 
 											}
 
-									}
+									} 
 
 									else if (tipo == "Exotico") {
 
@@ -470,20 +453,22 @@ namespace PetFera {
 										std::cout << "Informe o país de origem: ";
 										std::getline(std::cin, paisorigem);
 
-										it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);		
+										it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);	
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
 
-
-												if((it3->second)->getnivelSeguranca() != "Azul") {
-
-
-													if (((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
 
-														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+												if(trat->getnivelSeguranca() != "Azul") {
+
+
+													if ((trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))){ 
+
+
+														
 														animal = std::make_shared<AnfibioExotico>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, paisorigem);
 														lista_animais[id] = animal;
 
@@ -518,19 +503,19 @@ namespace PetFera {
 									else {
 
 
-										it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);
+										it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {
 
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-												if((it3->second)->getnivelSeguranca() != "Azul") {
+												if(trat->getnivelSeguranca() != "Azul") {
 
-													if (((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+													if ((trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))){ 
 
-
-														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+													
 														animal = std::make_shared<Anfibio>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas);
 														lista_animais[id] = animal;
 
@@ -585,17 +570,17 @@ namespace PetFera {
 										std::getline(std::cin, regiaoorigem);
 
 
-										it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);
+										it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
-												
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {
+											
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);	
 
-												if (((it3->second)->getnivelSeguranca() == "Azul") || ((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+												if ((trat->getnivelSeguranca() == "Azul") || (trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))){ 
 
 
-													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-													trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 													animal = std::make_shared<AveNativa>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico, numibama, regiaoorigem);
 													lista_animais[id] = animal;
 
@@ -628,28 +613,30 @@ namespace PetFera {
 										std::cout << "Informe o país de origem: ";
 										std::getline(std::cin, paisorigem);
 										
-										it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);
+										it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
 												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-												if (((it3->second)->getnivelSeguranca() == "Azul") || ((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+												if ((trat->getnivelSeguranca() == "Azul") || (trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))){ 
 
 
-													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-													trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-													animal = std::make_shared<AveNativa>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico, numibama, paisorigem);
+													
+													animal = std::make_shared<AveExotica>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico, numibama, paisorigem);
 													lista_animais[id] = animal;
 
 													std::cout << std::endl << "Animal cadastrado com sucesso!" << std::endl << std::endl;
 												}
 												
 
-												else {
+												    else {
 
 													std::cout << std::endl << "Apenas animais venenosos podem ser tratados por tratadores da cor: Vermelha." << std::endl << std::endl;
-												}	
+												   
+												   }	
 
 						
 											}
@@ -664,17 +651,17 @@ namespace PetFera {
 									else {
 
 
-										it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);
+										it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {
 												
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-												if (((it3->second)->getnivelSeguranca() == "Azul") || ((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+												if ((trat->getnivelSeguranca() == "Azul") || (trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))){ 
 
-
-													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-													trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+													
 													animal = std::make_shared<Ave>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tambico);
 													lista_animais[id] = animal;
 
@@ -711,8 +698,8 @@ namespace PetFera {
 									std::cout << "Informe o tamanho do pelo: ";
 									std::cin >> tampelo;
 
-									it2 = lista_veterinarios.find(idvet);
-									it3 = lista_tratadores.find(idtrat);
+									it2 = lista_funcionarios.find(idvet);
+									it3 = lista_funcionarios.find(idtrat);
 
 									if (tipo == "Nativo") {
 
@@ -725,18 +712,20 @@ namespace PetFera {
 										std::getline(std::cin, regiaoorigem);
 
 
-										it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);
+										it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {
 
-												if((it3->second)->getnivelSeguranca() != "Verde") {
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-													if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+												if(trat->getnivelSeguranca() != "Verde") {
+
+													if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))){ 
 
 
-														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+														
 														animal = std::make_shared<MamiferoNativo>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo, numibama, regiaoorigem);
 														lista_animais[id] = animal;
 
@@ -776,18 +765,18 @@ namespace PetFera {
 										std::cout << "Informe o país de origem: ";
 										std::getline(std::cin, paisorigem);
 
-										it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);
+										it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {
 
-												if((it3->second)->getnivelSeguranca() != "Verde") {
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-													if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+												if(trat->getnivelSeguranca() != "Verde") {
 
-
-														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+													if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) {
+														
                                                         animal = std::make_shared<MamiferoExotico>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo, numibama, paisorigem);
 														lista_animais[id] = animal;
 
@@ -820,18 +809,18 @@ namespace PetFera {
 									else {
 
 
-										it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);
+										it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
 
-												if((it3->second)->getnivelSeguranca() != "Verde") {
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-													if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+												if(trat->getnivelSeguranca() != "Verde") {
 
-
-														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+													if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
+														
                                                         animal = std::make_shared<Mamifero>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tampelo);
 														lista_animais[id] = animal;
 
@@ -842,7 +831,8 @@ namespace PetFera {
 													else {
 
 														std::cout << std::endl << "Apenas animais venenosos podem ser tratados por tratadores da cor: Vermelha." << std::endl << std::endl;
-													}	
+												
+												    }
 
 												}
 
@@ -887,18 +877,19 @@ namespace PetFera {
 										std::getline(std::cin, regiaoorigem);
 
 
-										                                        it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);
+										it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
 
-												if((it3->second)->getnivelSeguranca() != "Verde") {
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+													
+												if(trat->getnivelSeguranca() != "Verde") {
 
-													if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+													if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
 
-
-														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+													
 												        animal = std::make_shared<ReptilNativo>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele, numibama, regiaoorigem);											
 
 														lista_animais[id] = animal;
@@ -920,7 +911,7 @@ namespace PetFera {
 
 												}
 						
-											}
+												}
 
 											else { 
 
@@ -939,18 +930,19 @@ namespace PetFera {
 										std::cout << "Informe o país de origem: ";
 										std::getline(std::cin, paisorigem);
 
-										it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);
+										it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
 
-												if((it3->second)->getnivelSeguranca() != "Verde") {
+												vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-													if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+												 if(trat->getnivelSeguranca() != "Verde") {
 
+													if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
 
-														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+													
                                                         animal = std::make_shared<ReptilExotico>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele, numibama, paisorigem);											
 
 														lista_animais[id] = animal;
@@ -972,7 +964,7 @@ namespace PetFera {
 
 												}
 						
-											}
+										 	}
 
 											else { 
 
@@ -985,18 +977,20 @@ namespace PetFera {
 									else  {
 
 
-									    it2 = lista_veterinarios.find(idvet);
-										it3 = lista_tratadores.find(idtrat);
+									    it2 = lista_funcionarios.find(idvet);
+										it3 = lista_funcionarios.find(idtrat);
 
-											if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
 
-												if((it3->second)->getnivelSeguranca() != "Verde") {
+												 vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												 trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-													if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+												 if(trat->getnivelSeguranca() != "Verde") {
+
+													if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))){ 
 
 
-														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-														trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+													
                                                         animal = std::make_shared<Reptil>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, tipopele);
 
 														lista_animais[id] = animal;
@@ -1028,11 +1022,13 @@ namespace PetFera {
 
 									}
 
-								}
+								} 
 
-
+						
 
 						}
+
+
 						
 
 						else {
@@ -1096,8 +1092,8 @@ namespace PetFera {
 			shared_ptr<Veterinario> vet = make_shared<Veterinario>();
 
 			std::map<int, std::shared_ptr<Animal>>::iterator it1;
-			std::map<int, std::shared_ptr<Veterinario>>::iterator it2;
-			std::map<int, std::shared_ptr<Tratador>>::iterator it3; 
+			std::map<int, std::shared_ptr<Funcionario>>::iterator it2;	
+			std::map<int, std::shared_ptr<Funcionario>>::iterator it3;		
 
 
 
@@ -1156,19 +1152,19 @@ namespace PetFera {
 											std::getline(std::cin, regiaoorigem);
 									
 
-									      	it2 = lista_veterinarios.find(idvet);
-											it3 = lista_tratadores.find(idtrat);
+									      	it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
+											
+											if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {
 
-												if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+													trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-													if((it3->second)->getnivelSeguranca() != "Azul") {
+													if(trat->getnivelSeguranca() != "Azul") {
 
-														if (((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")) { 
+														if ((trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
 
-
-																vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-													            trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
-													            shared_ptr<AnfibioNativo> a = std::dynamic_pointer_cast<AnfibioNativo>(animal);
+																shared_ptr<AnfibioNativo> a = std::dynamic_pointer_cast<AnfibioNativo>(animal);
 
 													            a->setClasse(classe);
 													            a->setNome(nome);
@@ -1239,17 +1235,19 @@ namespace PetFera {
 											std::cout << "Informe o país de origem: ";
 											std::getline(std::cin, paisorigem);
 									
-
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
 								
-											    if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											    if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {
 
-													if((it3->second)->getnivelSeguranca() != "Azul") {
+											    	vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+													trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-														if (((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")) { 
+													if(trat->getnivelSeguranca() != "Azul") {
 
+														if ((trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
 
-																vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-													            trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+															
 												                shared_ptr<AnfibioExotico> a = std::dynamic_pointer_cast<AnfibioExotico>(animal);
 
 
@@ -1311,16 +1309,19 @@ namespace PetFera {
 											std::cout << "Informe a quantidade de mudas: ";
 											std::cin >> qtdmudas;																
 
-								
-											     if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
 
-													if((it3->second)->getnivelSeguranca() != "Azul") {
+											     if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {
 
-														if (((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")) { 
+											     	vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												    trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
+													if(trat->getnivelSeguranca() != "Azul") {
 
-															vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-												            trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+														if ((trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
+
+														
 											                shared_ptr<Anfibio> a = std::dynamic_pointer_cast<Anfibio>(animal);
 
 
@@ -1376,7 +1377,7 @@ namespace PetFera {
 
 							}
 
-
+							
 							
 
 							else if (classe == "Ave") {
@@ -1397,16 +1398,17 @@ namespace PetFera {
 											std::cout << "Informe a região de origem: ";
 											std::getline(std::cin, regiaoorigem);								
 											
-											it2 = lista_veterinarios.find(idvet);
-											it3 = lista_tratadores.find(idtrat);
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
 
-												if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {													
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {													
 
-													if (((it3->second)->getnivelSeguranca() == "Azul") || ((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+											        trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
+													if ((trat->getnivelSeguranca() == "Azul") || (trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))){ 
 
-														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-											            trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+													
 											            shared_ptr<AveNativa> a = std::dynamic_pointer_cast<AveNativa>(animal);
 
 											            a->setClasse(classe);
@@ -1470,15 +1472,17 @@ namespace PetFera {
 											std::getline(std::cin, paisorigem);
 									
 
-											it2 = lista_veterinarios.find(idvet);
-											it3 = lista_tratadores.find(idtrat);
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
 
-												if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {													
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {		
 
-													if (((it3->second)->getnivelSeguranca() == "Azul") || ((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
+													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+											        trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);											
 
-														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-											            trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+													if ((trat->getnivelSeguranca() == "Azul") || (trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))){ 
+
+													
 											            shared_ptr<AveExotica> a = std::dynamic_pointer_cast<AveExotica>(animal);
 
 											            a->setClasse(classe);
@@ -1535,15 +1539,17 @@ namespace PetFera {
 											std::cin >> tambico;																
 
 								
-											it2 = lista_veterinarios.find(idvet);
-											it3 = lista_tratadores.find(idtrat);
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
 
-												if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {													
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {	
 
-													if (((it3->second)->getnivelSeguranca() == "Azul") || ((it3->second)->getnivelSeguranca() == "Verde") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")){ 
 
 														vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-											            trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+											            trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);												
+
+													if ((trat->getnivelSeguranca() == "Azul") || (trat->getnivelSeguranca() == "Verde") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
+
 											            shared_ptr<Ave> a = std::dynamic_pointer_cast<Ave>(animal);
 
 											            a->setClasse(classe);
@@ -1612,17 +1618,19 @@ namespace PetFera {
 									
 
 								
-											it2 = lista_veterinarios.find(idvet);
-											it3 = lista_tratadores.find(idtrat);
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
 
-												if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
+													
+													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												    trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-													if((it3->second)->getnivelSeguranca() != "Verde") {
+													if(trat->getnivelSeguranca() != "Verde") {
 
-														if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")) { 
+														if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
 
-															vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-												            trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+															
 												            shared_ptr<MamiferoNativo> a = std::dynamic_pointer_cast<MamiferoNativo>(animal);
 
 												            a->setClasse(classe);
@@ -1695,18 +1703,19 @@ namespace PetFera {
 									
 
 								
-											it2 = lista_veterinarios.find(idvet);
-											it3 = lista_tratadores.find(idtrat);
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
 
-												if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
 
-													if((it3->second)->getnivelSeguranca() != "Verde") {
+													vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+											        trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-														if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")) { 
+													if(trat->getnivelSeguranca() != "Verde") {
 
+														if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
 
-															vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-											                trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+															
 												            shared_ptr<MamiferoExotico> a = std::dynamic_pointer_cast<MamiferoExotico>(animal);
 												             
 												            a->setClasse(classe);
@@ -1767,17 +1776,18 @@ namespace PetFera {
 											std::cout << "Informe o tamanho do pelo do animal: ";
 											std::cin >> tampelo;																
 
-											it2 = lista_veterinarios.find(idvet);
-											it3 = lista_tratadores.find(idtrat);
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
 
-												if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {
 
-													if((it3->second)->getnivelSeguranca() != "Verde") {
+                                                    vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												    trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-														if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")) { 
+													if(trat->getnivelSeguranca() != "Verde") {
 
-                                                            vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-												            trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+														if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
+
 												            shared_ptr<Mamifero> a = std::dynamic_pointer_cast<Mamifero>(animal);
 												             
 												            a->setClasse(classe);
@@ -1848,17 +1858,19 @@ namespace PetFera {
 											std::getline(std::cin, regiaoorigem);
 									
 
-											it2 = lista_veterinarios.find(idvet);
-											it3 = lista_tratadores.find(idtrat);
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
 
-												if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador")  {
 
-													if((it3->second)->getnivelSeguranca() != "Verde") {
+													  vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+										              trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-														if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")) { 
+													if(trat->getnivelSeguranca() != "Verde") {
 
-                                                            vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-										                    trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+														if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
+
+                                                          
 										                    shared_ptr<ReptilNativo> a = std::dynamic_pointer_cast<ReptilNativo>(animal);
 
 										                    a->setClasse(classe);
@@ -1932,17 +1944,19 @@ namespace PetFera {
 
 								
 											
-									      	it2 = lista_veterinarios.find(idvet);
-											it3 = lista_tratadores.find(idtrat);
+									      	it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
 
-												if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
 
-													if((it3->second)->getnivelSeguranca() != "Verde") {
+													 vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+											         trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-														if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")) { 
+													if(trat->getnivelSeguranca() != "Verde") {
 
-                                                            vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-											                trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+														if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
+
+                                                           
 											                shared_ptr<ReptilExotico> a = std::dynamic_pointer_cast<ReptilExotico>(animal);
 
 											                 
@@ -2008,17 +2022,19 @@ namespace PetFera {
 											std::cin >> tipopele;																
 
 								
-											it2 = lista_veterinarios.find(idvet);
-											it3 = lista_tratadores.find(idtrat);
+											it2 = lista_funcionarios.find(idvet);
+											it3 = lista_funcionarios.find(idtrat);
 
-												if(it2 != lista_veterinarios.end() && it3 != lista_tratadores.end()) {
+												if(it2 != lista_funcionarios.end() && (it2->second)->getFuncao() == "Veterinario" && it3 != lista_funcionarios.end() && (it3->second)->getFuncao() == "Tratador") {
 
-													if((it3->second)->getnivelSeguranca() != "Verde") {
+													 vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
+												     trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
 
-														if (((it3->second)->getnivelSeguranca() == "Azul") || (venenoso == 1 && (it3->second)->getnivelSeguranca() == "Vermelho")) { 
+													if(trat->getnivelSeguranca() != "Verde") {
 
-                                                            vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
-												            trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+														if ((trat->getnivelSeguranca() == "Azul") || (venenoso == 1 && (trat->getnivelSeguranca() == "Vermelho"))) { 
+
+                                                           
 											                shared_ptr<Reptil> a = std::dynamic_pointer_cast<Reptil>(animal);
 												 
 												            a->setClasse(classe);
@@ -2070,13 +2086,12 @@ namespace PetFera {
 									}	
 
 
-
+							
 							}							
-
-
+							
+							
 
 							}
-						
 						
 						
 
@@ -2130,6 +2145,7 @@ namespace PetFera {
 	}			
 		
 	
+
 	//Método para remoção de um animal. 	
 	void
 	Menu::removerAnimal() {	
@@ -2161,6 +2177,7 @@ namespace PetFera {
 	} 
 
 	
+
 	//Método para consulta de um animal.
 	void 
 	Menu::consultarAnimal() {
@@ -2190,7 +2207,7 @@ namespace PetFera {
 
 	}
 
-
+	
 	//Método para consulta de animais por classe.
 	void 
 	Menu::consultarporClasse() {
@@ -2217,10 +2234,12 @@ namespace PetFera {
 
 		if(cont == 0) {
 
-			std::cout << std::endl << "Nao existem animais associados a classe informada." << std::endl << std::endl;
+			std::cout << std::endl << "Não existem animais associados a classe informada." << std::endl << std::endl;
 
 		}
 	}
+
+	
 
 	
 	//Método para consulta de animais por funcionário.
@@ -2229,42 +2248,28 @@ namespace PetFera {
 		int id;
 		int cont = 0;
 		std::map<int, std::shared_ptr<Animal>>::iterator it;
-		std::map<int, std::shared_ptr<Veterinario>>::iterator it1;
-		std::map<int, std::shared_ptr<Tratador>>::iterator it2;
+		std::map<int, std::shared_ptr<Funcionario>>::iterator it1;
+		
 
 		std::cout << "Informe o número de identificação do funcionário(ID): ";
 		std::cin >> id;
 
-		it1 = lista_veterinarios.find(id);
-		it2 = lista_tratadores.find(id);
+		it1 = lista_funcionarios.find(id);
+		
 
-
-		if (it1 != lista_veterinarios.end()) {
+		if (it1 != lista_funcionarios.end()) {
 
 			for(it = lista_animais.begin(); it != lista_animais.end(); ++it) {
 
-				if((it->second)->getVeterinario().getId() == id) {
+				if((((it->second)->getVeterinario().getId() == id || (it->second)->getTratador().getId() == id))) {
+
 					std::cout << "--------------------------------------" << std::endl;
 					std::cout << std::endl << *(it->second) << std::endl << std::endl;
 					std::cout << "--------------------------------------" << std::endl;
 					cont++;
 				}
 			}
-		}	
-
-		else if (it2 != lista_tratadores.end()) {
-
-			for(it = lista_animais.begin(); it != lista_animais.end(); ++it) {
-
-				if((it->second)->getTratador().getId() == id) {
-					std::cout << "--------------------------------------" << std::endl;
-					std::cout << std::endl << *(it->second) << std::endl << std::endl;
-					std::cout << "--------------------------------------" << std::endl;
-					cont++;
-				}
-
-			}
-		}	
+		}			
 			
 
 		else {
@@ -2277,12 +2282,11 @@ namespace PetFera {
 		
 	} 
 
-
+	
 	void Menu::importar_dados_funcionarios( std::ifstream& dados_funcionarios_importar ) {
 
-	std::shared_ptr<Veterinario> funcs;
- 	std::shared_ptr<Tratador> funcs2;
- 	
+	std::shared_ptr<Funcionario> funcs;
+ 		
  	std::string idx, nome, funcao, cpf, crmv, nivelseguranca;
 
  	int id;
@@ -2303,15 +2307,15 @@ namespace PetFera {
 
     funcs = std::make_shared<Veterinario>(id, nome, funcao, cpf, crmv);
 
-    lista_veterinarios[id] = funcs;
+    lista_funcionarios[id] = funcs;
 
 	}
 
 	else {
 
-    funcs2 = std::make_shared<Tratador>(id, nome, funcao, cpf, nivelseguranca);
+    funcs = std::make_shared<Tratador>(id, nome, funcao, cpf, nivelseguranca);
 
-    lista_tratadores[id] = funcs2;
+    lista_funcionarios[id] = funcs;
 
 	}
 
@@ -2322,25 +2326,38 @@ namespace PetFera {
 
 	}
 
+	
+
 	//Método para exportação dos veterinários para csv.
 
-	void Menu::exportar_dados_funcionarios( std::ofstream& dados_funcionarios_exportar ) 
-
-	{
+	void Menu::exportar_dados_funcionarios( std::ofstream& dados_funcionarios_exportar ) {
 
 	
-	for ( auto it = lista_veterinarios.begin(); it != lista_veterinarios.end(); ++it )
-
-	{
 	
-	dados_funcionarios_exportar << (to_string(it->second->getId())) << ";" << (it->second->getNome()) << ";" << (it->second->getFuncao()) << ";" << (it->second->getCpf()) <<  ";" << it->second->getCrmv() << ";" << "-" << std::endl;
+	
+	for ( auto it = lista_funcionarios.begin(); it != lista_funcionarios.end(); ++it )
+
+	
+	{
+
+	std::shared_ptr<Funcionario> funcionario = it->second;
+
+	if (it->second->getFuncao() == "Veterinario") {
+
+	shared_ptr<Veterinario> v = std::dynamic_pointer_cast<Veterinario>(funcionario);	
+	
+	dados_funcionarios_exportar << (to_string(it->second->getId())) << ";" << (it->second->getNome()) << ";" << (it->second->getFuncao()) << ";" << (it->second->getCpf()) <<  ";" << (v->getCrmv()) << ";" << "-" << std::endl;
 
 	}
 
-	for ( auto it = lista_tratadores.begin(); it != lista_tratadores.end(); ++it )
-	{
+
+	else {
+
+	shared_ptr<Tratador> t = std::dynamic_pointer_cast<Tratador>(funcionario);		
 	
-	dados_funcionarios_exportar << (to_string(it->second->getId())) << ";" << (it->second->getNome()) << ";" << (it->second->getFuncao()) << ";" << (it->second->getCpf()) <<  ";" << "-" <<  ";" << it->second->getnivelSeguranca() << std::endl;
+	dados_funcionarios_exportar << (to_string(it->second->getId())) << ";" << (it->second->getNome()) << ";" << (it->second->getFuncao()) << ";" << (it->second->getCpf()) <<  ";" << "-" <<  ";" << (t->getnivelSeguranca()) << std::endl;
+
+	}
 
 	}
 
@@ -2348,14 +2365,15 @@ namespace PetFera {
 
 	}
 
+
 	
 	void Menu::importar_dados_animais( std::ifstream& dados_animais_importar ) {
 
 
 	std::map<int, std::shared_ptr<Animal>>::iterator it;
-	std::map<int, std::shared_ptr<Veterinario>>::iterator it2;
-	std::map<int, std::shared_ptr<Tratador>>::iterator it3; 
-
+	std::map<int, std::shared_ptr<Funcionario>>::iterator it2;
+	std::map<int, std::shared_ptr<Funcionario>>::iterator it3;
+	
 	std::shared_ptr<Animal> animal;
 
 	std::shared_ptr<Tratador> trat = std::make_shared<Tratador>();
@@ -2407,8 +2425,7 @@ namespace PetFera {
    	else  {
 
    		sexo = 'M';
-   	}	
-    
+   	}	   
     
 
 
@@ -2416,8 +2433,8 @@ namespace PetFera {
     	
     	
 
-    	it2 = lista_veterinarios.find(veterinario);
-		it3 = lista_tratadores.find(tratador);
+    	it2 = lista_funcionarios.find(veterinario);
+		it3 = lista_funcionarios.find(tratador);
 
 		qtdmudas = std::stoi(qtdmudasx);
 
@@ -2426,6 +2443,7 @@ namespace PetFera {
 
 	    		vet = std::dynamic_pointer_cast<PetFera::Veterinario>(it2->second);
 	           	trat = std::dynamic_pointer_cast<PetFera::Tratador>(it3->second);
+
 	            animal = std::make_shared<AnfibioNativo>(id, classe, tipo, nome, cientifico, sexo, (*vet), (*trat), venenoso, habitat, qtdmudas, numibama, regiaoorigem);
 				lista_animais[id] = animal;
     		}
@@ -2457,9 +2475,8 @@ namespace PetFera {
     if (classe == "Ave") {
     	
 
-    	
-    	it2 = lista_veterinarios.find(veterinario);
-		it3 = lista_tratadores.find(tratador);
+    	it2 = lista_funcionarios.find(veterinario);
+		it3 = lista_funcionarios.find(tratador);
 
 		tambico = std::stoi(tambicox);
 
@@ -2498,8 +2515,8 @@ namespace PetFera {
     if (classe == "Mamifero") {
     	
     	
-    	it2 = lista_veterinarios.find(veterinario);
-		it3 = lista_tratadores.find(tratador);
+    	it2 = lista_funcionarios.find(veterinario);
+		it3 = lista_funcionarios.find(tratador);
 
 		tampelo = std::stoi(tampelox);
 
@@ -2536,8 +2553,8 @@ namespace PetFera {
     if (classe == "Reptil") {
     	
 
-    	it2 = lista_veterinarios.find(veterinario);
-		it3 = lista_tratadores.find(tratador);
+    	it2 = lista_funcionarios.find(veterinario);
+		it3 = lista_funcionarios.find(tratador);
 
 		
 	    	if (tipo == "Nativo") {
@@ -2773,24 +2790,9 @@ void Menu::exportar_dados_animais( std::ofstream& dados_animais_exportar )
 
 	dados_animais_exportar.close();
 
-}
+} 
 
-/*
-void Menu::teste() {
 
-	std::map<int, std::shared_ptr<Animal>>::iterator it;
-
-	for ( auto it = lista_animais.begin(); it != lista_animais.end(); ++it ) {
-
-	std::shared_ptr<Animal> animal;
-
-	shared_ptr<ReptilNativo> a = std::dynamic_pointer_cast<ReptilNativo>(animal);
-
-	std::cout << a->gettipoPele();
-
-	}
-
-} */
 
 }
 
