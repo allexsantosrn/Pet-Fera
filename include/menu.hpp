@@ -80,12 +80,16 @@ namespace PetFera {
 			/** @brief Método para consultar animais por funcionário */
 			void consultarporFuncionario();
 
+			/** @brief Método para exportar dados dos funcionários */
 			void exportar_dados_funcionarios( std::ofstream& dados_funcionarios_exportar );
 
+			/** @brief Método para importar dados dos funcionários */
 			void importar_dados_funcionarios( std::ifstream& dados_funcionarios_importar );
 
+			/** @brief Método para exportar dados dos animais */
 			void exportar_dados_animais( std::ofstream& dados_animais_exportar );
 
+			/** @brief Método para importar dados dos animais */
 			void importar_dados_animais( std::ifstream& dados_animais_importar );
 
 			
