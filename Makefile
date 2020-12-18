@@ -100,7 +100,6 @@ uninstall:
 	$(RM) $(PATH_DIR)/lib/libpetfera.so
 	$(RM) usr/lib/libpetfera.so
 
-
 clean:
 	$(RM) $(BIN_DIR)/*
 	$(RM) $(OBJ_DIR)/*
