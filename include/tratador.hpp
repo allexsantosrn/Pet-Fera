@@ -37,7 +37,7 @@ namespace PetFera {
 			Tratador(int _id, std::string _nome, std::string _funcao, std::string _cpf, std::string _nivelseguranca);
 
 			/** @brief Destrutor padrão */ 
-			~Tratador();
+			virtual ~Tratador();
 
 			/** @brief Método set que informa o Nivel de segurança do tratador */
 			void setnivelSeguranca(std::string _nivelseguranca);

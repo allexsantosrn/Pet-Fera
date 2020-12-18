@@ -42,7 +42,7 @@ namespace PetFera {
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _qtdmudas);
 
 			/** @brief Destrutor padrão */ 
-			~Anfibio();
+			virtual ~Anfibio();
 
 			/** @brief Método get que retorna o total de mudas de um anfíbio.*/ 
 			int getqtdMudas();

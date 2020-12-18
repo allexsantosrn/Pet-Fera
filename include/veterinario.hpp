@@ -39,7 +39,7 @@ namespace PetFera {
 			Veterinario(int _id, std::string _nome, std::string _funcao, std::string _cpf, std::string _crmv);
 
 			/** @brief Destrutor padrão */ 
-			~Veterinario();
+			virtual ~Veterinario();
 
 			/** @brief Método set que informa o CRMV do veterinario */ 
 			void setCrmv(std::string _crmv);

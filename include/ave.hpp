@@ -40,7 +40,7 @@ namespace PetFera {
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tambico);
 
 			/** @brief Destrutor padrão */ 
-			~Ave();
+			virtual ~Ave();
 
 			/** @brief Método get que retorna o tamanho do bico da ave.*/ 
 			int gettamBico();

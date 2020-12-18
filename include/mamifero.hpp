@@ -42,7 +42,7 @@ namespace PetFera {
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tampelo);
 
 			/** @brief Destrutor padrão */  
-			~Mamifero();
+			virtual ~Mamifero();
 
 			/** @brief Método get que retorna o tamanho de pelo do animal.*/  
 			int gettamPelo();

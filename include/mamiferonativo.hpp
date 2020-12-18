@@ -40,7 +40,7 @@ namespace PetFera {
 			std::string _ibama, std::string _regiaoorigem);
 
 			/** @brief Destrutor padrão */  
-			~MamiferoNativo();
+			virtual ~MamiferoNativo();
 
 		private:
 

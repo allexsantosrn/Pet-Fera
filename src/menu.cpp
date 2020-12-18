@@ -25,7 +25,7 @@ namespace PetFera {
 	Menu::~Menu() {}
 
 
-	// Método para cadastrar um novo funcionário (Tratador ou Veterinário).
+	// Método para cadastrar um novo funcionário (Tratador ou Veterinário).	
 	void 
 	Menu::cadastrarFuncionario() {
 		
@@ -117,7 +117,7 @@ namespace PetFera {
 	}
 	
 	
-	// Método para remoção de um funcionário.	
+	// Método para remoção de um funcionário.
 	void
 	Menu::removerFuncionario() {	
 
@@ -305,7 +305,7 @@ namespace PetFera {
 	
 
 	
-	//Método para cadastrar um novo animal. 
+	//Método para cadastrar um novo animal.
 	void Menu::cadastrarAnimal() {
 
 		int id, idvet, idtrat;
@@ -1067,7 +1067,7 @@ namespace PetFera {
 
 	
 
-	//Método para alteração de um animal. 
+	//Método para alteração de um animal.
 	void Menu::alterarAnimal() {
 
 
@@ -2146,7 +2146,7 @@ namespace PetFera {
 		
 	
 
-	//Método para remoção de um animal. 	
+	//Método para remoção de um animal.
 	void
 	Menu::removerAnimal() {	
 
@@ -2209,6 +2209,7 @@ namespace PetFera {
 
 	
 	//Método para consulta de animais por classe.
+
 	void 
 	Menu::consultarporClasse() {
 
@@ -2282,7 +2283,7 @@ namespace PetFera {
 		
 	} 
 
-	
+	// Método para importação dos funcionários de planilha .csv.
 	void Menu::importar_dados_funcionarios( std::ifstream& dados_funcionarios_importar ) {
 
 	std::shared_ptr<Funcionario> funcs;
@@ -2329,7 +2330,6 @@ namespace PetFera {
 	
 
 	//Método para exportação dos veterinários para csv.
-
 	void Menu::exportar_dados_funcionarios( std::ofstream& dados_funcionarios_exportar ) {
 
 	
@@ -2366,7 +2366,7 @@ namespace PetFera {
 	}
 
 
-	
+	// Método para importação de animais de planilha .csv.
 	void Menu::importar_dados_animais( std::ifstream& dados_animais_importar ) {
 
 
@@ -2590,14 +2590,12 @@ namespace PetFera {
 
 } 
 
-
+// Método para realização da exportação de animais para o formato .csv.
 void Menu::exportar_dados_animais( std::ofstream& dados_animais_exportar )
 
 	{
 
 
-	//std::map<int, std::shared_ptr<Animal>>::iterator it;
-	
 	
 	for ( auto it = lista_animais.begin(); it != lista_animais.end(); ++it) {
 	

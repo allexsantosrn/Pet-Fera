@@ -42,7 +42,7 @@ namespace PetFera {
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, std::string _tipopele);
 
 			/** @brief Destrutor padrão */  
-			~Reptil();
+			virtual ~Reptil();
 
 			/** @brief Método get que retorna o tipo de pele do Reptil */  
 			std::string gettipoPele();

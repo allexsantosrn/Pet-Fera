@@ -38,7 +38,7 @@ namespace PetFera {
 			std::string _numibama, std::string _paisorigem);
 
 			/** @brief Destrutor padrão */ 
-			~AveExotica();
+			virtual ~AveExotica();
 
 		private:
 

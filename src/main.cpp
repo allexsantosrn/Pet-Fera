@@ -99,12 +99,7 @@ int main () {
 				menu.consultarFuncionario();
 				break;
 
-				
-			//case 0:
-
-
-				//return 0;
-
+		
 			default:
 
 				if (selecao < 0 || selecao > 10) {
