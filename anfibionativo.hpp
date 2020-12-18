@@ -21,7 +21,7 @@ namespace PetFera {
  	 * @class 	anfibionativo.hpp
   	 * @brief	Classe que representa um Anfibio Nativo.
   	 * @details Os atributos de um anfibio nativo são: id, classe,
-  	 *			tipo, nome, cientifico, sexo, veterinario, tratador, 
+  	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat, qtdmudas, numero ibama e regiao de origem.
  	 */
 	
@@ -33,7 +33,7 @@ namespace PetFera {
 			AnfibioNativo();
 
 			/** @brief Construtor parametrizado */
-			AnfibioNativo(int _id, std::string _classe, std::string _tipo, std::string _nome, std::string _cientifico,
+			AnfibioNativo(int _id, std::string _classe, std::string _nome, std::string _cientifico,
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _qtdmudas, 
 			std::string _ibama, std::string _regiaoorigem);
 

@@ -21,7 +21,7 @@ namespace PetFera {
  	 * @class 	ave.hpp
   	 * @brief	Classe que representa uma Ave
   	 * @details Os atributos de uma ave são: id, classe,
-  	 *			tipo, nome, cientifico, sexo, veterinario, tratador, 
+  	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat e tamanho do bico.
  	 */
 	
@@ -36,7 +36,7 @@ namespace PetFera {
 			Ave();
 
 			/** @brief Construtor parametrizado */
-			Ave(int _id, std::string _classe, std::string _tipo, std::string _nome, std::string _cientifico,
+			Ave(int _id, std::string _classe, std::string _nome, std::string _cientifico,
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tambico);
 
 			/** @brief Destrutor padrão */ 

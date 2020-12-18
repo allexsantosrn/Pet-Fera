@@ -22,7 +22,7 @@ namespace PetFera {
  	 * @class 	aveexotica.hpp
   	 * @brief	Classe que representa uma Ave Exotica
   	 * @details Os atributos de uma ave exotica são: id, classe,
-  	 *			tipo, nome, cientifico, sexo, veterinario, tratador, 
+  	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat, tamanho do bico, numero ibama e pais de origem.
  	 */
 
@@ -33,7 +33,7 @@ namespace PetFera {
 			AveExotica();
 
 			/** @brief Construtor parametrizado */
-			AveExotica(int _id, std::string _classe, std::string _tipo, std::string _nome, std::string _cientifico,
+			AveExotica(int _id, std::string _classe, std::string _nome, std::string _cientifico,
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _tambico,
 			std::string _numibama, std::string _paisorigem);
 

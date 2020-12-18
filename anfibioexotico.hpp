@@ -20,7 +20,7 @@ namespace PetFera {
  	 * @class 	anfibioexotico.hpp
   	 * @brief	Classe que representa um Anfibio Exotico.
   	 * @details Os atributos de um anfibio exotico são: id, classe,
-  	 *			tipo, nome, cientifico, sexo, veterinario, tratador, 
+  	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat, qtdmudas, numero ibama e pais de origem.
  	 */
 	
@@ -32,7 +32,7 @@ namespace PetFera {
 			AnfibioExotico();
 
 			/** @brief Construtor parametrizado */ 	
-			AnfibioExotico(int _id, std::string _classe, std::string _tipo, std::string _nome, std::string _cientifico,
+			AnfibioExotico(int _id, std::string _classe, std::string _nome, std::string _cientifico,
 			char _sexo, Veterinario _veterinario, Tratador _tratador, bool _venenoso, std::string _habitat, int _qtdmudas,
 			std::string _numibama, std::string _paisorigem);
 
