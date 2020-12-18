@@ -21,8 +21,8 @@ namespace PetFera {
 	/**
  	 * @class 	avenativa.hpp
   	 * @brief	Classe que representa uma Ave Nativa
-  	 * @details Os atributos de uma ave nativa são: id, classe,
-  	 *		    tipo, nome, cientifico, sexo, veterinario, tratador, 
+  	 * @details Os atributos de uma ave nativa são: id, classe, tipo,
+  	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat, tamanho do bico, numero ibama e regiao de origem.
  	 */
 

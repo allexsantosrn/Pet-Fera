@@ -23,7 +23,7 @@ namespace PetFera {
 	/**
  	 * @class 	reptilexotico.hpp
   	 * @brief	Classe que representa um reptil exotico.
-  	 * @details Os atributos de um reptil exotico são: id, classe,
+  	 * @details Os atributos de um reptil exotico são: id, classe, tipo,
   	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat, tipopele, numero ibama e país de origem.
  	 */

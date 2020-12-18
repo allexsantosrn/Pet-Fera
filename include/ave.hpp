@@ -20,8 +20,8 @@ namespace PetFera {
 	/**
  	 * @class 	ave.hpp
   	 * @brief	Classe que representa uma Ave
-  	 * @details Os atributos de uma ave são: id, classe,
-  	 *			tipo, nome, cientifico, sexo, veterinario, tratador, 
+  	 * @details Os atributos de uma ave são: id, classe, tipo
+  	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat e tamanho do bico.
  	 */
 	

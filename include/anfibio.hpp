@@ -20,8 +20,8 @@ namespace PetFera {
 	/**
  	 * @class 	anfibio.hpp
   	 * @brief	Classe que representa um Anfibio
-  	 * @details Os atributos de um anfibio são: id, classe,
-  	 *			tipo, nome, cientifico, sexo, veterinario, tratador, 
+  	 * @details Os atributos de um anfibio são: id, classe, tipo,
+  	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat e qtdmudas.
  	 */
 	

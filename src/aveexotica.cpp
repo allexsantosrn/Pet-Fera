@@ -12,13 +12,12 @@
 namespace PetFera {
 
 
-	/** @brief Construtor padrão */
+	/** @brief Construtor padrão */ 
 	AveExotica::AveExotica() {}
 
 	/**
 	 * @param _id Identificador do animal
 	 * @param _classe Classe do animal
-	 * @param _tipo Tipo do animal
 	 * @param _nome Nome do animal
 	 * @param _cientifico Nome cientifico do animal
 	 * @param _sexo Sexo do animal

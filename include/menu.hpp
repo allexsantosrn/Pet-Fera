@@ -31,7 +31,7 @@ namespace PetFera {
 	
 	/**
  	 * @class 	Menu menu.hpp
-  	 * @brief	Classe que representa o menu.
+  	 * @brief	Classe que representa o menu da loja Pet Fera.
  	 * @details Os atributos da classe são: 
  	 *			lista_funcionarios e lista_animais  
  	 */
@@ -41,9 +41,7 @@ namespace PetFera {
 			
 		
 			std::map<int, std::shared_ptr<Animal>> lista_animais;			/**< Lista de animais */
-			//std::map<int, std::shared_ptr<Veterinario>> lista_veterinarios;   			/**< Lista de veterinários */
-			//std::map<int, std::shared_ptr<Tratador>> lista_tratadores;				/**< Lista de tratadores */
-			std::map<int, std::shared_ptr<Funcionario>> lista_funcionarios;	
+			std::map<int, std::shared_ptr<Funcionario>> lista_funcionarios;	     /**Lista de funcionários */
 
 		public:
 			/** @brief Construtor padrao */

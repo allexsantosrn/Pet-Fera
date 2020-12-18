@@ -21,7 +21,7 @@ namespace PetFera {
 	/**
  	 * @class 	mamiferonativo.hpp
   	 * @brief	Classe que representa um Mamífero Nativo
-  	 * @details Os atributos de um Mamífero nativo são: id, classe,tipo,
+  	 * @details Os atributos de um Mamífero nativo são: id, classe, tipo,
   	 *			nome, cientifico, sexo, veterinario, tratador, 
   	 *			venenoso, habitat, tampelo, numero ibama e regiao de origem.
  	 */
